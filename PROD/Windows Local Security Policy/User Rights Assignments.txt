@@ -1,0 +1,45 @@
+Policy	Security Setting
+Access Credential Manager as a trusted caller	
+Access this computer from the network	Authenticated Users,Administrators
+Act as part of the operating system	
+Add workstations to domain	FISH-NET\Administrator,FISH-NET\Domain Admins,Administrators
+Adjust memory quotas for a process	LOCAL SERVICE,NETWORK SERVICE,Administrators,*S-1-5-82-1452775423-1133038371-2488925589-1705205408-3068657170,IIS APPPOOL\.NET v4.5,IIS APPPOOL\DefaultAppPool,IIS APPPOOL\ACDPortal,IIS APPPOOL\.NET v4.5 Classic
+Allow log on locally	Administrators
+Allow log on through Remote Desktop Services	Administrators,Remote Desktop Users
+Back up files and directories	Administrators,Backup Operators
+Bypass traverse checking	Everyone,LOCAL SERVICE,NETWORK SERVICE,Administrators,Users,Backup Operators,Window Manager\Window Manager Group
+Change the system time	LOCAL SERVICE,Administrators
+Change the time zone	LOCAL SERVICE,Administrators
+Create a pagefile	Administrators
+Create a token object	
+Create global objects	LOCAL SERVICE,NETWORK SERVICE,Administrators,SERVICE
+Create permanent shared objects	
+Create symbolic links	Administrators
+Debug programs	FISH-NET\CLG_Server_Debug_Allow
+Deny access to this computer from the network	Guests
+Deny log on as a batch job	Guests
+Deny log on as a service	
+Deny log on locally	Guests
+Deny log on through Remote Desktop Services	FISH-NET\SVC_QABiztalk_AP,FISH-NET\SVC_QA_BIZTALK_SSO,FISH-NET\svc_qa_acd,FISH-NET\svc_qa_bts_custdata,Guests
+Enable computer and user accounts to be trusted for delegation	
+Force shutdown from a remote system	Administrators
+Generate security audits	LOCAL SERVICE,NETWORK SERVICE,*S-1-5-82-1452775423-1133038371-2488925589-1705205408-3068657170,IIS APPPOOL\.NET v4.5,IIS APPPOOL\DefaultAppPool,IIS APPPOOL\ACDPortal,IIS APPPOOL\.NET v4.5 Classic
+Impersonate a client after authentication	LOCAL SERVICE,NETWORK SERVICE,Administrators,IIS_IUSRS,SERVICE
+Increase a process working set	Users,Window Manager\Window Manager Group
+Increase scheduling priority	Administrators
+Load and unload device drivers	Administrators
+Lock pages in memory	
+Log on as a batch job	FISH-NET\SVC_ACD,FISH-NET\svc_bt_pajobs,Administrators,Backup Operators,Performance Log Users,IIS_IUSRS
+Log on as a service	NETWORK SERVICE,FISH-NET\SVC_ACD,FISH-NET\SVC_BizTalk_SSO_BAM,FISH-NET\SVC_BizTalk_AP,FISH-NET\SVC_QABiztalk_AP,FISH-NET\SVC_QA_BIZTALK_SSO,FISH-NET\SVC_QA_ACD,FISH-NET\svc_bt_custdata,FISH-NET\SVC_QA_BTS_CustData,FISH-NET\svc_bt_mktdata,FISH-NET\svc_bt_findata,FISH-NET\SVC_BT_salesData,FISH-NET\Svc_bt_partdata,FISH-NET\Svc_bt_plandata,FISH-NET\SVC_BT_GFIDATA,FISH-NET\SVC_QA_MIFID,FISH-NET\SVC_MIFID,FISH-NET\SVC_QA_BT_FINDATA,NT SERVICE\ALL SERVICES,NT SERVICE\MsDtsServer110,*S-1-5-82-1452775423-1133038371-2488925589-1705205408-3068657170,IIS APPPOOL\.NET v4.5,IIS APPPOOL\DefaultAppPool,IIS APPPOOL\ACDPortal,IIS APPPOOL\.NET v4.5 Classic
+Manage auditing and security log	Administrators
+Modify an object label	
+Modify firmware environment values	Administrators
+Perform volume maintenance tasks	Administrators
+Profile single process	Administrators
+Profile system performance	Administrators,NT SERVICE\WdiServiceHost
+Remove computer from docking station	Administrators
+Replace a process level token	LOCAL SERVICE,NETWORK SERVICE,*S-1-5-82-1452775423-1133038371-2488925589-1705205408-3068657170,IIS APPPOOL\.NET v4.5,IIS APPPOOL\DefaultAppPool,IIS APPPOOL\ACDPortal,IIS APPPOOL\.NET v4.5 Classic
+Restore files and directories	Administrators,Backup Operators
+Shut down the system	Administrators
+Synchronize directory service data	
+Take ownership of files or other objects	Administrators

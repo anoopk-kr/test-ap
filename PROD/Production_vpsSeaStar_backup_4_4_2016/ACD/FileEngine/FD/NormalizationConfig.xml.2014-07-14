@@ -1,0 +1,1151 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configurations>
+
+  <Configuration ID="FD.TRN">
+
+
+      <Item ID="1" Name="ExtractFDTRNData" Type="kroger.ACD.FilePipelineComponents.FileDataSectionExtractor,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+          <ConfigData>
+              <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDTRNMAIN.{{INSTANCEID}}</SrcFile>
+              <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDTRNMAIN_1.{{INSTANCEID}}.{{GUID}}</DestFile>
+              <ErrFile></ErrFile>
+              <OutputMode>CreateNew</OutputMode>
+              <!-- Remove the Header and footer info from the file which matches the RegEx provided-->
+              <HeaderRegEx>'^H*.*FIDELITY SYSTEMS*.*$'</HeaderRegEx>
+              <FooterRegEx>'^T BOOKKEEPING*.*$'</FooterRegEx>
+          </ConfigData>
+      </Item>
+
+      <Item ID="2" Name="FDTRNFileRecordColumnExtractor" Type="kroger.ACD.FilePipelineComponents.FileRecordColumnExtractor,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+          <ConfigData>
+              <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDTRNMAIN_1.{{INSTANCEID}}.{{GUID}}</SrcFile>
+              <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDTRNMAIN_2.{{INSTANCEID}}.{{GUID}}</DestFile>
+              <ErrFile></ErrFile>
+              <OutputMode>CreateNew</OutputMode>
+                <!-- For every record extract out records that satisfies the "Filter" expression (in this case, not containing the ";" caracter)
+                    extract the substring of each record and organize it as columns within the output file
+                    Columns are delimitered by tabs -->
+              <FileRecords>
+                  <Record Terminator="">
+                      <Expression Filter="notcontains($Line,';')">
+                          <Columns>
+                              <Column name="Account">substring_nullable($Line,'12','9')</Column>
+                              <Column name="TxnCode">substring_nullable($Line,'21','2')</Column>
+                              <Column name="KeyCode">substring_nullable($Line,'105','3')</Column>
+                              <Column name="BrokerCode">substring_nullable($Line,'75','7')</Column>
+                              <Column name="CUSIP">substring_nullable($Line,'128','12')</Column>
+                              <Column name="Symbol">substring_nullable($Line,'34','9')</Column>
+                              <Column name="Net2Amt">substring_nullable($Line,'221','15')</Column>
+                              <Column name="BuySellIndicator">substring_nullable($Line,'143','1')</Column>
+                              <Column name="Quantity">substring_nullable($Line,'294','19')</Column>
+                              <Column name="Price">substring_nullable($Line,'237','19')</Column>
+                              <Column name="Commission">substring_nullable($Line,'83','9')</Column>
+                              <Column name="State Tax Amt">substring_nullable($Line,'194','9')</Column>
+                              <Column name="Fee Amt">substring_nullable($Line,'204','9')</Column>
+                              <Column name="Service Fee">substring_nullable($Line,'183','11')</Column>
+                              <Column name="Interest Amt">substring_nullable($Line,'161','12')</Column>
+                              <Column name="Trade Date">substring_nullable($Line,'24','6')</Column>
+                              <Column name="Settlement Date">substring_nullable($Line,'93','6')</Column>
+                              <Column name="Entry Date">substring_nullable($Line,'99','6')</Column>
+                              <Column name="SecTypeCode">substring_nullable($Line,'31','2')</Column>
+                              <Column name="Amount">substring_nullable($Line,'43','11')</Column>
+                              <Column name="Principal">substring_nullable($Line,'145','16')</Column>
+                              <Column name="Ref Number">substring_nullable($Line,'117','11')</Column>
+                              <Column name="RR#">substring_nullable($Line,'111','3')</Column>
+                              <Column name="Exchange">substring_nullable($Line,'140','2')</Column>
+                              <Column name="Source-Dest">substring_nullable($Line,'55','7')</Column>
+                              <Column name="Misc. Charge Amt.">substring_nullable($Line,'183','11')</Column>
+                              <Column name="Comment">substring_nullable($Line,'31','61')</Column>
+                          </Columns>
+                      </Expression>
+                  </Record>
+              </FileRecords>
+          </ConfigData>
+      </Item>
+
+      <Item ID="3" Name="FDTRXFileRecordExtractor" Type="kroger.ACD.FilePipelineComponents.FileRecordExtractor,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+          <ConfigData>
+
+              <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDTRNMAIN_2.{{INSTANCEID}}.{{GUID}}</SrcFile>
+              <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDTRNMAIN_3.{{INSTANCEID}}.{{GUID}}</DestFile>
+              <OutputMode>CreateNew</OutputMode>
+              <ErrFile></ErrFile>
+               <!-- Only extract records out where column contains "01".
+               Columns are delimitered by tabs -->
+              <FileRecordTags>
+                  <Expression>notcontainsitemstring($Line,#tab#,'1','$01')</Expression>
+              </FileRecordTags>
+          </ConfigData>
+      </Item>
+      
+      <Item ID="4" Name="FDTRXFileDataColumnInserter" Type="kroger.ACD.FilePipelineComponents.FileDataColumnInserter,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+          <ConfigData>
+
+              <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDTRNMAIN_3.{{INSTANCEID}}.{{GUID}}</SrcFile>
+              <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDTRNMAIN_4.{{INSTANCEID}}.{{GUID}}</DestFile>
+              <OutputMode>CreateNew</OutputMode>
+              <ErrFile></ErrFile>
+
+              <Columns>
+                  <Column>
+                      <ColumnData>?IID?</ColumnData>
+                      <ColumnDelimiter>#tab#</ColumnDelimiter>
+                      <ColumnLength>'12'</ColumnLength>
+                  </Column>
+
+              </Columns>
+
+          </ConfigData>
+      </Item>
+
+      <Item ID="5" Name="FDTRXComplexXMLSerializer" Type="kroger.ACD.FilePipelineComponents.FileXMLSerializer,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+          <ConfigData>
+              <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDTRNMAIN_4.{{INSTANCEID}}.{{GUID}}</SrcFile>
+              <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\XML\FDTRN{{GUID}}.xml</DestFile>
+              <OutputMode>CreateNew</OutputMode>
+              <ErrFile></ErrFile>
+
+              <!--
+            To instruct the serializer to write the text as is, include it within '...'
+            To instruct the serializer to evaluate a expression at runtime, use
+            available functionmacros like substring, itemstring, concat etc.....
+        -->
+              <XMLSchema Root="'Transactions'" MixedSchema="'False'">
+
+                  <Transactions SourceCode="'FD'" BatchRunDate="concat(#now#,'')">
+                      <Transaction Name="'FDTransaction'" Value="''">
+                          <RecordID Name="'RecordID'" Value="itemstring($,#tab#,'0')"></RecordID>
+                          <CustodianCode Name="'CustodianCode'" Value="constant('FD')"></CustodianCode>
+                          <TransactionId Name="'RefNumber'" Value="itemstring($,#tab#,'22')"></TransactionId>
+                          <TransactionCode Name="'TxnCode'" Value="itemstring($,#tab#,'2')"></TransactionCode>
+                          <TransactionSubCode Name="'TxnKey'" Value="itemstring($,#tab#,'3')"></TransactionSubCode>
+                          <BrokerCode Name="'Broker'" Value="itemstring($,#tab#,'4')"></BrokerCode>
+                          <AcctNumber Name="'AccountNumber'" Value="itemstring($,#tab#,'1')"></AcctNumber>
+                          <AcctType Name="''" Value="''"></AcctType>
+                          <InstrumentLocalId Name="''" Value="''"></InstrumentLocalId>
+                          <InstrumentTypeCode Name="'SecurityTypeCode'" Value="itemstring($,#tab#,'19')"></InstrumentTypeCode>
+                          <Cusip Name="'CUSIP'" Value="itemstring($,#tab#,'5')"></Cusip>
+                          <Sedol Name="''" Value="''"></Sedol>
+                          <Isin Name="''" Value="''"></Isin>
+                          <Symbol Name="'Symbol'" Value="itemstring($,#tab#,'6')"></Symbol>
+                          <Quantity Name="'Quantity'" Value="itemstring($,#tab#,'9')"></Quantity>
+                          <Amount Name="'Amount'" Value="itemstring($,#tab#,'20')"></Amount>
+                          <Price Name="'Price'" Value="itemstring($,#tab#,'10')"></Price>
+                          <EffectDate Name="'EntryDate'" Value="itemstring($,#tab#,'18')"></EffectDate>
+                          <SettleDate Name="'SettlementDate'" Value="itemstring($,#tab#,'17')"></SettleDate>
+                          <TradeDate Name="'TradeDate'" Value="itemstring($,#tab#,'16')"></TradeDate>
+                          <Currency Name="''" Value="''"></Currency>
+                          <Commission Name="'Commission'" Value="itemstring($,#tab#,'11')"></Commission>
+                          <Interest Name="'Interest'" Value="itemstring($,#tab#,'15')"></Interest>
+                          <Principal Name="'PrincipalAmount'" Value="itemstring($,#tab#,'21')"></Principal>
+                          <Fee Name="'FeeAmt'" Value="itemstring($,#tab#,'13')"></Fee>
+                          <Description0 Name="'Description'" Value="''"></Description0>
+                          <Description1 Name="'Comments'" Value="itemstring($,#tab#,'27')"></Description1>
+                          <Description2 Name="'SecurityDesc'" Value="''"></Description2>
+                          <Description3 Name="'SecurityTypeDesc'" Value="''"></Description3>
+                          <Description4 Name="''" Value="''"></Description4>
+                          <DrCrInd Name="'Credit-Debit'" Value="itemstring($,#tab#,'8')"></DrCrInd>
+                          <CancelInd Name="''" Value="''"></CancelInd>
+                          <ConfirmInd Name="''" Value="''"></ConfirmInd>
+                          <CashAffectedInd Name="''" Value="''"></CashAffectedInd>
+                          <LongShortInd Name="''" Value="''"></LongShortInd>
+                          <UdfChar>
+                              <Udf Name="'KeyCode'" Value="itemstring($,#tab#,'3')"></Udf>
+                              <Udf Name="'Source-Dest'" Value="itemstring($,#tab#,'25')"></Udf>
+                              <Udf Name="'RR#'" Value="itemstring($,#tab#,'23')"></Udf>
+                              <Udf Name="'CoreFund'" Value="''"></Udf>
+                              <Udf Name="'Exchange'" Value="itemstring($,#tab#,'24')"></Udf>
+                              <Udf Name="'FloorSymbol'" Value="''"></Udf>
+
+                          </UdfChar>
+                          <UdfNum>
+                              <Udf Name="'Net2Amount'" Value="itemstring($,#tab#,'7')"></Udf>
+                              <Udf Name="'StateTax'" Value="itemstring($,#tab#,'12')"></Udf>
+                              <Udf Name="'MiscChrgAmount'" Value="itemstring($,#tab#,'26')"></Udf>
+
+                          </UdfNum>
+                          <UdfDate>
+
+                          </UdfDate>
+                      </Transaction>
+                  </Transactions>
+              </XMLSchema>
+          </ConfigData>
+      </Item>
+
+      <Item ID="6" Name="FDTRNBREMapper" Type="kroger.ACD.FilePipelineComponents.FileBREMapper,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+          <ConfigData>
+              <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\XML\FDTRN{{GUID}}.xml</SrcFile>
+              <DestFile>{{SSISFILEROOT}}\FDTRN{{GUID}}.SSIS</DestFile>
+              <OutputMode>CreateNew</OutputMode>
+              <ErrFile></ErrFile>
+              <BRE>
+                  <Policies>
+                      <Policy Name="'kroger.ACD.FD.TRN.Stage1'"></Policy>
+                      <Policy Name="'kroger.ACD.FD.TRN.Stage2'"></Policy>
+                      <Policy Name="'kroger.ACD.TRN.Stage3'"></Policy>
+                  </Policies>
+                  <Helpers>
+                      <Helper Name="'kroger.ACD.BRE.Helper.Facts,kroger.ACD.BRE.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c856c7c39650fee4'"></Helper>
+                  </Helpers>
+
+              </BRE>
+              <Mapper>
+                  <Input>
+                      <XMLDocTypeName>'FITDEXTransactionRecord_V1'</XMLDocTypeName>
+                      <XMLNodeName>'Transaction'</XMLNodeName>
+                  </Input>
+                  <Output>
+                      <Object TypeName="'kroger.ACD.FD.Entities.krogerFDTransaction,kroger.ACD.FD.Entities, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e'">
+                          <ObjectProperties>
+                              <Property>'CustodianCode'</Property>
+                              <Property>'RecordID'</Property>
+                              <Property>'AccountNumber'</Property>
+                              <Property>'TransactionType'</Property>
+                              <Property>'EffectDate'</Property>
+                              <Property>'TradeDate'</Property>
+                              <Property>'SettleDate'</Property>
+                              <Property>'Quantity'</Property>
+                              <Property>'NetAmount'</Property>
+                              <Property>'Price'</Property>
+                              <Property>'Commission'</Property>
+                              <Property>'Postage'</Property>
+                              <Property>'SECFee'</Property>
+                              <Property>'CancelInd'</Property>
+                              <Property>'CashAffectedInd'</Property>
+                              <Property>'ConfirmInd'</Property>
+                              <Property>'TranxTypeDefiner'</Property>
+                              <Property>'OffsetCurrency'</Property>
+                              <Property>'OffsetCash'</Property>
+                              <Property>'CashID'</Property>
+                              <Property>'Cusip'</Property>
+                              <Property>'Symbol'</Property>
+                              <Property>'Sedol'</Property>
+                              <Property>'Isin'</Property>
+                              <Property>'AltSymbol'</Property>
+                              <Property>'InstrumentId0'</Property>
+                              <Property>'InstrumentId1'</Property>
+                              <Property>'InstrumentId2'</Property>
+                              <Property>'Interest'</Property>
+                              <Property>'DrCrInd'</Property>
+                              <Property>'LongShortInd'</Property>
+                              <Property>'RulesStageId'</Property>
+                              <Property>'ErrorCode'</Property>
+                              <Property>'ErrorDesc'</Property>
+
+                          </ObjectProperties>
+                      </Object>
+                      <FlatFileFieldDelimiter>'~#@#~'</FlatFileFieldDelimiter>
+                  </Output>
+                  <References>
+                      <Reference>'kroger.ACD.Entities.krogerEntityPolicyTracker,kroger.ACD.Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e'</Reference>
+                  </References>
+              </Mapper>
+
+          </ConfigData>
+      </Item>
+  </Configuration>
+  
+  <Configuration ID="FD.SEC">
+
+      <Item ID="1" Name="FDSECFileHeaderRegexValueColumnInserter" Type="kroger.ACD.FilePipelineComponents.FileHeaderRegexValueColumnInserter,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+          <ConfigData>
+
+              <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDSECMAIN.{{INSTANCEID}}</SrcFile>
+              <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDSECMAIN_1.{{INSTANCEID}}.{{GUID}}</DestFile>
+              <OutputMode>CreateNew</OutputMode>
+              <ErrFile></ErrFile>
+
+              <FileRecordTags>
+                  <Expression>startswith($Line,'D1')</Expression>
+              </FileRecordTags>
+              <Columns>
+                  <Column>
+                      <ColumnData>regex((0[1-9]|1[012])(0[1-9]|[12][0-9]|3[01])([1-9][0-9]))</ColumnData>
+                      <ColumnDelimiter>EFFDATE</ColumnDelimiter>
+                      <ColumnLength>'12'</ColumnLength>
+                  </Column>
+
+              </Columns>
+
+          </ConfigData>
+      </Item>
+
+      <Item ID="2" Name="FDSECFileRecordExtractor" Type="kroger.ACD.FilePipelineComponents.FileRecordExtractor,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+          <ConfigData>
+
+              <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDSECMAIN_1.{{INSTANCEID}}.{{GUID}}</SrcFile>
+              <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDSECMAIN_2.{{INSTANCEID}}.{{GUID}}</DestFile>
+              <OutputMode>CreateNew</OutputMode>
+              <ErrFile></ErrFile>
+
+              <FileRecordTags>
+                  <Expression>startswith($Line,'D1')</Expression>
+                  <Expression>startswith($Line,'EFFDATE')</Expression>
+              </FileRecordTags>
+              <RecordGroupDelimiter>'~*~'</RecordGroupDelimiter>
+          </ConfigData>
+      </Item>
+
+
+      <Item ID="3" Name="FDSECFileRecordColumnExtractor" Type="kroger.ACD.FilePipelineComponents.FileRecordColumnExtractor,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+          <ConfigData>
+              <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDSECMAIN_2.{{INSTANCEID}}.{{GUID}}</SrcFile>
+              <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDSECMAIN_3.{{INSTANCEID}}.{{GUID}}</DestFile>
+              <ErrFile></ErrFile>
+              <OutputMode>CreateNew</OutputMode>
+
+              <FileRecords>
+                  <Record Terminator="~*~">
+                      <Expression Filter="startswith($Line,'D1')">
+                          <Columns>
+                              <Column name="Price">substring_nullable($Line,'472','18')</Column>
+                              <Column name="CUSIP">substring_nullable($Line,'3','9')</Column>
+                              <Column name="Symbol">substring_nullable($Line,'12','20')</Column>
+                              <Column name="Description">substring_nullable($Line,'55','120')</Column>
+                              <Column name="SecType">substring_nullable($Line,'52','1')</Column>
+                              <Column name="Asset Class">substring_nullable($Line,'53','1')</Column>
+                              <Column name="Foreign">substring_nullable($Line,'249','1')</Column>
+                              <Column name="Payment Frequency">substring_nullable($Line,'196','1')</Column>
+                              <Column name="State">substring_nullable($Line,'250','2')</Column>
+                              <Column name="Tradable">substring_nullable($Line,'950','1')</Column>
+                              <Column name="Call-Put Price">substring_nullable($Line,'910','29')</Column>
+                              <Column name="Current Factor">substring_nullable($Line,'390','9')</Column>
+                              <Column name="Interest Rate">substring_nullable($Line,'288','7')</Column>
+                              <Column name="FirstCouponDate">substring_nullable($Line,'282','6')</Column>
+                              <Column name="IssueDate">substring_nullable($Line,'175','8')</Column>
+                              <Column name="MaturityDate">substring_nullable($Line,'296','6')</Column>
+                              <Column name="Floor Symbol">substring_nullable($Line,'32','20')</Column>
+                              <Column name="Fund Family">substring_nullable($Line,'311','20')</Column>
+                              <Column name="Fund Family ID">substring_nullable($Line,'306','5')</Column>
+                              <Column name="Margin">substring_nullable($Line,'963','1')</Column>
+                              <Column name="Name">substring_nullable($Line,'12','20')</Column>
+                              <Column name="Exchange">substring_nullable($Line,'186','1')</Column>
+                          </Columns>
+                      </Expression>
+                      <Expression Filter="startswith($Line,'EFFDATE')">
+                          <Columns>
+                              <Column name="Date">substring_nullable($Line,'7','6')</Column>
+                          </Columns>
+                      </Expression>
+                  </Record>
+              </FileRecords>
+          </ConfigData>
+      </Item>
+
+      <Item ID="4" Name="FDTRXFileDataColumnInserter" Type="kroger.ACD.FilePipelineComponents.FileDataColumnInserter,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+          <ConfigData>
+
+              <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDSECMAIN_3.{{INSTANCEID}}.{{GUID}}</SrcFile>
+              <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDSECMAIN_4.{{INSTANCEID}}.{{GUID}}</DestFile>
+              <OutputMode>CreateNew</OutputMode>
+              <ErrFile></ErrFile>
+
+              <Columns>
+                  <Column>
+                      <ColumnData>?IID?</ColumnData>
+                      <ColumnDelimiter>#tab#</ColumnDelimiter>
+                      <ColumnLength>'12'</ColumnLength>
+                  </Column>
+
+              </Columns>
+
+          </ConfigData>
+      </Item>
+
+      <Item ID="5" Name="FDSECComplexXMLSerializer" Type="kroger.ACD.FilePipelineComponents.FileXMLSerializer,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+          <ConfigData>
+              <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDSECMAIN_4.{{INSTANCEID}}.{{GUID}}</SrcFile>
+              <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\XML\FDSEC{{GUID}}.xml</DestFile>
+              <OutputMode>CreateNew</OutputMode>
+              <ErrFile></ErrFile>
+
+              <!--
+            To instruct the serializer to write the text as is, include it within '...'
+            To instruct the serializer to evaluate a expression at runtime, use
+            available functionmacros like substring, itemstring, concat etc.....
+        -->
+              <XMLSchema Root="'Securities'" MixedSchema="'False'">
+
+                  <Securities SourceCode="'FD'" BatchRunDate="concat(#now#,'')">
+                      <Security Name="'Security'" Value="''">
+                          <RecordID Name="'RecordID'" Value="itemstring($,#tab#,'0')"/>
+                          <CustodianCode Name="'CustodianCode'" Value="'FD'"/>
+                          <Price Name="'ClosePrice'" Value="itemstring($,#tab#,'1')"/>
+                          <EffectDate Name="'AsOfDate'" Value="itemstring($,#tab#,'23')"/>
+                          <InstrumentLocalId Name="''" Value="''"/>
+                          <Cusip Name="'CUSIP'" Value="itemstring($,#tab#,'2')"/>
+                          <Sedol Name="''" Value="''"/>
+                          <Isin Name="''" Value="''"/>
+                          <Symbol Name="'Symbol'" Value="itemstring($,#tab#,'3')"/>
+                          <TypeCode Name="'SecurityType'" Value="itemstring($,#tab#,'5')"/>
+                          <Description Name="'Description'" Value="itemstring($,#tab#,'4')"/>
+                          <UdfChar>
+                              <Udf Name="'AbbreviatedFundName'" Value="''"></Udf>
+                              <Udf Name="'AssetClass'" Value="itemstring($,#tab#,'6')"></Udf>
+                              <Udf Name="'AssetClassType'" Value="''"></Udf>
+                              <Udf Name="'Exchange'" Value="itemstring($,#tab#,'22')"></Udf>
+                              <Udf Name="'FloorSymbol'" Value="itemstring($,#tab#,'17')"></Udf>
+                              <Udf Name="'Foreign'" Value="itemstring($,#tab#,'7')"></Udf>
+                              <Udf Name="'FundFamily'" Value="itemstring($,#tab#,'18')"></Udf>
+                              <Udf Name="'FundFamilyID'" Value="itemstring($,#tab#,'19')"></Udf>
+                              <Udf Name="'FundID'" Value="''"></Udf>
+                              <Udf Name="'HostTypeCode'" Value="''"></Udf>
+                              <Udf Name="'IndustryGroup'" Value="''"></Udf>
+                              <Udf Name="'Margin'" Value="itemstring($,#tab#,'20')"></Udf>
+                              <Udf Name="'Name'" Value="itemstring($,#tab#,'21')"></Udf>
+                              <Udf Name="'Objective'" Value="''"></Udf>
+                              <Udf Name="'OperationCode'" Value="''"></Udf>
+                              <Udf Name="'PaymentFrequency'" Value="itemstring($,#tab#,'8')"></Udf>
+                              <Udf Name="'ProductName'" Value="''"></Udf>
+                              <Udf Name="'ProductType'" Value="''"></Udf>
+                              <Udf Name="'SecGroup'" Value="''"></Udf>
+                              <Udf Name="'SecTypeDescription'" Value="''"></Udf>
+                              <Udf Name="'SICCode'" Value="''"></Udf>
+                              <Udf Name="'State'" Value="itemstring($,#tab#,'9')"></Udf>
+                              <Udf Name="'Tradable'" Value="itemstring($,#tab#,'10')"></Udf>
+                          </UdfChar>
+                          <UdfNum>
+                              <Udf Name="'Call-Put-Price'" Value="itemstring($,#tab#,'11')"></Udf>
+                              <Udf Name="'CurrentFactor'" Value="itemstring($,#tab#,'12')"></Udf>
+                              <Udf Name="'InterestRate'" Value="itemstring($,#tab#,'13')"></Udf>
+                              <Udf Name="'PricingFactor'" Value="''"></Udf>
+
+                          </UdfNum>
+                          <UdfDate>
+                              <Udf Name="'Call-Put-Date'" Value="itemstring($,#tab#,'5')"></Udf>
+                              <Udf Name="'CurrentFactorDate'" Value="itemstring($,#tab#,'9')"></Udf>
+                              <Udf Name="'FirstCouponDate'" Value="itemstring($,#tab#,'14')"></Udf>
+                              <Udf Name="'IssueDate'" Value="itemstring($,#tab#,'15')"></Udf>
+                              <Udf Name="'MaturityDate'" Value="itemstring($,#tab#,'16')"></Udf>
+                          </UdfDate>
+                      </Security>
+                  </Securities>
+              </XMLSchema>
+          </ConfigData>
+
+      </Item>
+
+      <Item ID="6" Name="FDSECBREMapper" Type="kroger.ACD.FilePipelineComponents.FileBREMapper,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+          <ConfigData>
+              <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\XML\FDSEC{{GUID}}.xml</SrcFile>
+              <DestFile>{{SSISFILEROOT}}\FDSEC{{GUID}}.SSIS</DestFile>
+              <OutputMode>CreateNew</OutputMode>
+              <ErrFile></ErrFile>
+              <BRE>
+                  <Policies>
+                      <Policy Name="'kroger.ACD.FD.SEC.Stage1'"></Policy>
+
+                  </Policies>
+                  <Helpers>
+                      <Helper Name="'kroger.ACD.BRE.Helper.Facts,kroger.ACD.BRE.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c856c7c39650fee4'"></Helper>
+                  </Helpers>
+
+              </BRE>
+              <Mapper>
+                  <Input>
+                      <XMLDocTypeName>'FITDEXSecurityRecord_V1'</XMLDocTypeName>
+                      <XMLNodeName>'Security'</XMLNodeName>
+                  </Input>
+                  <Output>
+                      <Object TypeName="'kroger.ACD.FD.Entities.krogerFDSecurity,kroger.ACD.FD.Entities, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e'">
+                          <ObjectProperties>
+                              <Property>'CustodianCode'</Property>
+                              <Property>'RecordID'</Property>
+                              <Property>'Price'</Property>
+                              <Property>'EffectiveDate'</Property>
+                              <Property>'CashID'</Property>
+                              <Property>'Cusip'</Property>
+                              <Property>'Symbol'</Property>
+                              <Property>'OptionSymbol'</Property>
+                              <Property>'Sedol'</Property>
+                              <Property>'Isin'</Property>
+                              <Property>'AltSymbol'</Property>
+
+
+
+                              <Property>'InstrumentId0'</Property>
+                              <Property>'InstrumentId1'</Property>
+                              <Property>'InstrumentId2'</Property>
+
+
+
+
+
+                              <Property>'RulesStageId'</Property>
+                              <Property>'ErrorCode'</Property>
+                              <Property>'ErrorDesc'</Property>
+                              <Property>'Description'</Property>
+
+                          </ObjectProperties>
+                      </Object>
+                      <FlatFileFieldDelimiter>'~#@#~'</FlatFileFieldDelimiter>
+                  </Output>
+                  <References>
+                      <Reference>'kroger.ACD.Entities.krogerEntityPolicyTracker,kroger.ACD.Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e'</Reference>
+                  </References>
+              </Mapper>
+
+          </ConfigData>
+      </Item>
+  </Configuration>
+
+  <Configuration ID="FD.ACCT">
+
+
+    <Item ID="1" Name="FDACCTFileRecordExtractor" Type="kroger.ACD.FilePipelineComponents.FileRecordExtractor,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDACCTMAIN.{{INSTANCEID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDACCTMAIN_1.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+
+          <FileRecordTags>
+              <Expression>startswith($Line,'D101')</Expression>
+              <Expression>startswith($Line,'D102')</Expression>
+              <Expression>startswith($Line,'D104')</Expression>
+          </FileRecordTags>
+          <RecordGroupDelimiter>'~*~'</RecordGroupDelimiter>
+      </ConfigData>
+    </Item>
+
+      <Item ID="2" Name="FDACCTFileRecordColumnExtractor" Type="kroger.ACD.FilePipelineComponents.FileRecordColumnExtractor,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+          <ConfigData>
+              <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDACCTMAIN_1.{{INSTANCEID}}.{{GUID}}</SrcFile>
+              <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDACCTMAIN_2.{{INSTANCEID}}.{{GUID}}</DestFile>
+              <ErrFile></ErrFile>
+              <OutputMode>CreateNew</OutputMode>
+
+              <FileRecords>
+                  <Record Terminator="~*~">
+                      <Expression Filter="startswith($Line,'D101')">
+                          <Columns>
+                              <Column name="Branch+AccountNo">substring_nullable($Line,'8','9')</Column>
+                              <Column name="Frequency Of Income Payment">substring_nullable($Line,'75','1')</Column>
+                              <Column name="RegType">substring_nullable($Line,'398','4')</Column>
+                              <Column name="Margin Agreement">substring_nullable($Line,'142','1')</Column>
+                              <Column name="Option Agreement">substring_nullable($Line,'144','1')</Column>
+                              <Column name="ProxyVoteIndicator">substring_nullable($Line,'459','1')</Column>
+                              <Column name="No of Statements">substring_nullable($Line,'19','2')</Column>
+                              <Column name="Established Date">substring_nullable($Line,'126','8')</Column>
+                          </Columns>
+                      </Expression>
+                      <Expression Filter="startswith($Line,'D102')">
+                          <Columns>
+                              <Column name="Fixed Format Name Type">substring_nullable($Line,'190','1')</Column>
+                              <Column name="Fixed Format Business Trust Name">substring_nullable($Line,'192','50')</Column>
+                              <Column name="Fixed Format Name Type">substring_nullable($Line,'306','1')</Column>
+                              <Column name="Fixed Format Business Trust Name">substring_nullable($Line,'308','50')</Column>
+                              <Column name="Fixed Format Name Type">substring_nullable($Line,'422','1')</Column>
+                              <Column name="Fixed Format Business Trust Name">substring_nullable($Line,'424','50')</Column>
+                              <Column name="Fixed Format Address 1">substring_nullable($Line,'31','32')</Column>
+                              <Column name="Fixed Format Address 2">substring_nullable($Line,'63','32')</Column>
+                              <Column name="Fixed Format Address 3">substring_nullable($Line,'95','32')</Column>
+                              <Column name="Fixed Format City Name">substring_nullable($Line,'127','30')</Column>
+                              <Column name="Fixed Format State">substring_nullable($Line,'157','2')</Column>
+                              <Column name="Fixed Format Postal Code">substring_nullable($Line,'159','9')</Column>
+                              <Column name="Fixed Format Country Code">substring_nullable($Line,'168','3')</Column>
+                          </Columns>
+                      </Expression>
+                      <Expression Filter="startswith($Line,'D104')">
+                          <Columns>
+                              <Column name="Home Phone">substring_nullable($Line,'17','10')</Column>
+                              <Column name="Business Phone">substring_nullable($Line,'147','10')</Column>
+                              <Column name="Sweep Fund">substring_nullable($Line,'204','9')</Column>
+                          </Columns>
+                      </Expression>
+                  </Record>
+              </FileRecords>
+              
+          </ConfigData>
+      </Item>
+      
+      <Item ID="3" Name="FDACCTFileDataColumnInserter" Type="kroger.ACD.FilePipelineComponents.FileDataColumnInserter,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+          <ConfigData>
+
+              <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDACCTMAIN_2.{{INSTANCEID}}.{{GUID}}</SrcFile>
+              <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDACCTMAIN_3.{{INSTANCEID}}.{{GUID}}</DestFile>
+              <OutputMode>CreateNew</OutputMode>
+              <ErrFile></ErrFile>
+
+              <Columns>
+                  <Column>
+                      <ColumnData>?IID?</ColumnData>
+                      <ColumnDelimiter>#tab#</ColumnDelimiter>
+                      <ColumnLength>'12'</ColumnLength>
+                  </Column>
+
+              </Columns>
+
+          </ConfigData>
+      </Item>
+
+      <Item ID="4" Name="FDACCTComplexXMLSerializer" Type="kroger.ACD.FilePipelineComponents.FileXMLSerializer,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+          <ConfigData>
+              <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDACCTMAIN_3.{{INSTANCEID}}.{{GUID}}</SrcFile>
+              <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\XML\FDACCT{{GUID}}.xml</DestFile>
+              <OutputMode>CreateNew</OutputMode>
+              <ErrFile></ErrFile>
+
+              <!--
+            To instruct the serializer to write the text as is, include it within '...'
+            To instruct the serializer to evaluate a expression at runtime, use
+            available functionmacros like substring, itemstring, concat etc.....
+        -->
+              <XMLSchema Root="'Accounts'" MixedSchema="'False'">
+
+                  <Accounts SourceCode="'FD'" BatchRunDate="concat(#now#,'')">
+                      <Account Name="'Account'" Value="''">
+                          <RecordID Name="'RecordID'" Value="itemstring($,#tab#,'0')"/>
+                          <CustodianCode Name="'CustodianCode'" Value="'FD'"/>
+                          <OpenDate Name="'EstablishedDate'" Value="itemstring($,#tab#,'8')"/>
+                          <AcctNumber Name="'AccountNo'" Value="itemstring($,#tab#,'1')"/>
+                          <AcctName1 Name="'Name1'" Value="itemstring($,#tab#,'10')"/>
+                          <AcctName2 Name="'Name2'" Value="itemstring($,#tab#,'12')"/>
+                          <AcctName3 Name="'Name3'" Value="itemstring($,#tab#,'14')"/>
+                          <AcctType Name="'Registration'" Value="itemstring($,#tab#,'3')"/>
+                          <AcctAddress1 Name="'Address1'" Value="itemstring($,#tab#,'15')"/>
+                          <AcctAddress2 Name="'Address2'" Value="itemstring($,#tab#,'16')"/>
+                          <AcctAddress3 Name="'Address3'" Value="itemstring($,#tab#,'17')"/>
+                          <City Name="'City'" Value="itemstring($,#tab#,'18')"/>
+                          <State Name="'State'" Value="itemstring($,#tab#,'19')"/>
+                          <ZIPCode Name="'ZipCode'" Value="itemstring($,#tab#,'20')"/>
+                          <Country Name="'Country'" Value="itemstring($,#tab#,'21')"/>
+                          <HomePhoneNumber Name="'Phone1'" Value="itemstring($,#tab#,'22')"/>
+                          <BusPhoneNumber Name="'Phone2'" Value="itemstring($,#tab#,'23')"/>
+                          <SweepFnd Name="'CoreFundCUSIP'" Value="itemstring($,#tab#,'24')"/>
+                          <MarginApproval Name="'MarginAgreement'" Value="itemstring($,#tab#,'4')"/>
+                          <OptionsApproval Name="'OptionLevel'" Value="itemstring($,#tab#,'5')"/>
+                          <PeriodicDist Name="''" Value="''"/>
+                          <EFTLink Name="''" Value="''"/>
+                          <CrDbCard Name="''" Value="''"/>
+                          <CheckWrite Name="''" Value="''"/>
+                          <OnlineAccess Name="''" Value="''"/>
+                          <DuplicateStmts Name="''" Value="itemstring($,#tab#,'7')"/>
+                          <ProxyVoting Name="''" Value="itemstring($,#tab#,'6')"/>
+                          <ERISAStatus Name="''" Value="''"/>
+                          <UdfChar>
+                              <Udf Name="'Name4'" Value="''"></Udf>
+                              <Udf Name="'FrequencyOfIncomePayment'" Value="''" />
+                              <Udf Name="'RetirementIndicator'" Value="''"></Udf>
+
+                          </UdfChar>
+                          <UdfNum>
+
+                          </UdfNum>
+                          <UdfDate>
+
+                          </UdfDate>
+                      </Account>
+                  </Accounts>
+
+              </XMLSchema>
+          </ConfigData>
+      </Item>
+
+      <Item ID="5" Name="FDACCTBREMapper" Type="kroger.ACD.FilePipelineComponents.FileBREMapper,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+          <ConfigData>
+              <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\XML\FDACCT{{GUID}}.xml</SrcFile>
+              <DestFile>{{SSISFILEROOT}}\FDACCT{{GUID}}.SSIS</DestFile>
+              <OutputMode>CreateNew</OutputMode>
+              <ErrFile></ErrFile>
+              <BRE>
+                  <Policies>
+                      <Policy Name="'kroger.ACD.FD.ACCT.Stage1'"></Policy>
+
+                  </Policies>
+                  <Helpers>
+                      <Helper Name="'kroger.ACD.BRE.Helper.Facts,kroger.ACD.BRE.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c856c7c39650fee4'"></Helper>
+                  </Helpers>
+
+              </BRE>
+              <Mapper>
+                  <Input>
+                      <XMLDocTypeName>'FITDEXAccountRecord_V1'</XMLDocTypeName>
+                      <XMLNodeName>'Account'</XMLNodeName>
+                  </Input>
+                  <Output>
+                      <Object TypeName="'kroger.ACD.FD.Entities.krogerFDAccount,kroger.ACD.FD.Entities, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e'">
+                          <ObjectProperties>
+                              <Property>'CustodianCode'</Property>
+                              <Property>'RecordID'</Property>
+                              <Property>'EffectiveDate'</Property>
+                              <Property>'AccountNumber'</Property>
+                              <Property>'AccountName1'</Property>
+                              <Property>'AccountName2'</Property>
+                              <Property>'AccountName3'</Property>
+                              <Property>'AccountType'</Property>
+                              <Property>'Address1'</Property>
+                              <Property>'Address2'</Property>
+                              <Property>'Address3'</Property>
+                              <Property>'AddressCity'</Property>
+                              <Property>'AddressState'</Property>
+                              <Property>'AddressZip'</Property>
+                              <Property>'AddressCountry'</Property>
+                              <Property>'HomePhoneNum'</Property>
+                              <Property>'BizPhoneNum'</Property>
+                              <Property>'SweepFund'</Property>
+                              <Property>'MarginApprovalInd'</Property>
+                              <Property>'OptionApprovalInd'</Property>
+                              <Property>'PeriodicDistInd'</Property>
+                              <Property>'EFTLinkVerifyInd'</Property>
+                              <Property>'CrDrCardInd'</Property>
+                              <Property>'CheckInd'</Property>
+                              <Property>'OnlineAccessInd'</Property>
+                              <Property>'DupStmtInd'</Property>
+                              <Property>'ProxyVoteInd'</Property>
+                              <Property>'ERISAStatusInd'</Property>
+                              <Property>'RulesStageId'</Property>
+                              <Property>'ErrorCode'</Property>
+                              <Property>'ErrorDesc'</Property>
+
+                          </ObjectProperties>
+                      </Object>
+                      <FlatFileFieldDelimiter>'~#@#~'</FlatFileFieldDelimiter>
+                  </Output>
+                  <References>
+                      <Reference>'kroger.ACD.Entities.krogerEntityPolicyTracker,kroger.ACD.Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e'</Reference>
+                  </References>
+              </Mapper>
+
+          </ConfigData>
+      </Item>
+  </Configuration>
+
+  <Configuration ID="FD.HOLD">
+       <!-- Process Reference Balance file first -->
+      
+
+
+      <Item ID="1" Name="FDACCTFileRecordExtractor" Type="kroger.ACD.FilePipelineComponents.FileRecordExtractor,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+          <ConfigData>
+
+              <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDHOLDREF2.{{INSTANCEID}}</SrcFile>
+              <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDHOLDREF2_1.{{INSTANCEID}}.{{GUID}}</DestFile>
+              <OutputMode>CreateNew</OutputMode>
+              <ErrFile></ErrFile>
+
+              <FileRecordTags>
+                  <Expression>startswith($Line,'D104')</Expression>
+              </FileRecordTags>
+          </ConfigData>
+      </Item>
+
+      <Item ID="2" Name="FDACCTFileRecordColumnExtractor" Type="kroger.ACD.FilePipelineComponents.FileRecordColumnExtractor,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+          <ConfigData>
+              <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDHOLDREF2_1.{{INSTANCEID}}.{{GUID}}</SrcFile>
+              <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDHOLDREF2_2.{{INSTANCEID}}.{{GUID}}</DestFile>
+              <ErrFile></ErrFile>
+              <OutputMode>CreateNew</OutputMode>
+
+              <FileRecords>
+                  <Record Terminator="">
+                      <Expression Filter="startswith($Line,'D104')">
+                          <Columns>
+                              <Column name="Branch+AccountNo">substring_nullable($Line,'8','9')</Column>
+                              <Column name="Sweep Fund">substring_nullable($Line,'204','9')</Column>
+                          </Columns>
+                      </Expression>
+                  </Record>
+              </FileRecords>
+
+          </ConfigData>
+      </Item>
+
+      <Item ID="3" Name="FDHOLDREFFileHeaderRegexValueColumnInserter" Type="kroger.ACD.FilePipelineComponents.FileHeaderRegexValueColumnInserter,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+          <ConfigData>
+
+              <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDHOLDREF1.{{INSTANCEID}}</SrcFile>
+              <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDHOLDREF1_1.{{INSTANCEID}}.{{GUID}}</DestFile>
+              <OutputMode>CreateNew</OutputMode>
+              <ErrFile></ErrFile>
+
+              <FileRecordTags>
+                  <Expression>startswith($Line,'D')</Expression>
+              </FileRecordTags>
+              <Columns>
+                  <Column>
+                      <ColumnData>regex((0[1-9]|1[012])(0[1-9]|[12][0-9]|3[01])([1-9][0-9]))</ColumnData>
+                      <ColumnDelimiter>ASOFDATE</ColumnDelimiter>
+                      <ColumnLength>'12'</ColumnLength>
+                  </Column>
+
+              </Columns>
+
+          </ConfigData>
+      </Item>
+
+      <Item ID="4" Name="FDHOLDREFFileRecordExtractor" Type="kroger.ACD.FilePipelineComponents.FileRecordExtractor,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+          <ConfigData>
+
+              <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDHOLDREF1_1.{{INSTANCEID}}.{{GUID}}</SrcFile>
+              <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDHOLDREF1_2.{{INSTANCEID}}.{{GUID}}</DestFile>
+              <OutputMode>CreateNew</OutputMode>
+              <ErrFile></ErrFile>
+
+              <FileRecordTags>
+                  <Expression>startswith($Line,'D')</Expression>
+                  <Expression>startswith($Line,'ASOFDATE')</Expression>
+              </FileRecordTags>
+              <RecordGroupDelimiter>'~*~'</RecordGroupDelimiter>
+          </ConfigData>
+      </Item>
+
+      <Item ID="5" Name="FDHOLDREFFileRecordColumnExtractor" Type="kroger.ACD.FilePipelineComponents.FileRecordColumnExtractor,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+          <ConfigData>
+              <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDHOLDREF1_2.{{INSTANCEID}}.{{GUID}}</SrcFile>
+              <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDHOLDREF1_3.{{INSTANCEID}}.{{GUID}}</DestFile>
+              <ErrFile></ErrFile>
+              <OutputMode>CreateNew</OutputMode>
+              <!-- For every record extract out records that satisfies the "Filter" expression (in this case, not containing the ";" caracter)
+                    extract the substring of each record and organize it as columns within the output file
+                    Columns are delimitered by tabs -->
+              <FileRecords>
+                  <Record Terminator="~*~">
+                      <Expression Filter="startswith($Line,'D')">
+                          <Columns>
+                              <Column name="Account">substring_nullable($Line,'1','9')</Column>
+                              <Column name="CoreMoneyMarketSign">substring_nullable($Line,'322','1')</Column>
+                              <Column name="CoreMoneyMarketValue">substring_nullable($Line,'323','17')</Column>
+                              <Column name="MarginBalanceSign">substring_nullable($Line,'635','1')</Column>
+                              <Column name="MarginBalanceValue">substring_nullable($Line,'636','17')</Column>
+                              <Column name="UnsettledCashSign">substring_nullable($Line,'580','1')</Column>
+                              <Column name="UnsettledCashValue">substring_nullable($Line,'581','17')</Column>
+                          </Columns>
+                      </Expression>
+                      <Expression Filter="startswith($Line,'ASOFDATE')">
+                          <Columns>
+                              <Column name="AsOfDate">substring_nullable($Line,'8','6')</Column>
+                          </Columns>
+                      </Expression>
+                  </Record>
+              </FileRecords>
+          </ConfigData>
+      </Item>
+      
+      
+      
+      
+      <!-- Now process main HOLD file -->
+      <Item ID="6" Name="FDHOLDFileHeaderRegexValueColumnInserter" Type="kroger.ACD.FilePipelineComponents.FileHeaderRegexValueColumnInserter,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+          <ConfigData>
+
+              <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDHOLDMAIN.{{INSTANCEID}}</SrcFile>
+              <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDHOLD_1.{{INSTANCEID}}.{{GUID}}</DestFile>
+              <OutputMode>CreateNew</OutputMode>
+              <ErrFile></ErrFile>
+
+              <FileRecordTags>
+                  <Expression>startswith($Line,'D')</Expression>
+              </FileRecordTags>
+              <Columns>
+                  <Column>
+                      <ColumnData>regex((0[1-9]|1[012])(0[1-9]|[12][0-9]|3[01])([1-9][0-9]))</ColumnData>
+                      <ColumnDelimiter>ASOFDATE</ColumnDelimiter>
+                      <ColumnLength>'12'</ColumnLength>
+                  </Column>
+
+              </Columns>
+
+          </ConfigData>
+      </Item>
+
+      <Item ID="7" Name="FDHOLDFileRecordExtractor" Type="kroger.ACD.FilePipelineComponents.FileRecordExtractor,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+          <ConfigData>
+
+              <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDHOLD_1.{{INSTANCEID}}.{{GUID}}</SrcFile>
+              <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDHOLD_2.{{INSTANCEID}}.{{GUID}}</DestFile>
+              <OutputMode>CreateNew</OutputMode>
+              <ErrFile></ErrFile>
+
+              <FileRecordTags>
+                  <Expression>startswith($Line,'D')</Expression>
+                  <Expression>startswith($Line,'ASOFDATE')</Expression>
+              </FileRecordTags>
+              <RecordGroupDelimiter>'~*~'</RecordGroupDelimiter>
+          </ConfigData>
+      </Item>
+      
+      <Item ID="8" Name="FDHOLDFileRecordColumnExtractor" Type="kroger.ACD.FilePipelineComponents.FileRecordColumnExtractor,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+          <ConfigData>
+              <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDHOLD_2.{{INSTANCEID}}.{{GUID}}</SrcFile>
+              <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDHOLD_3.{{INSTANCEID}}.{{GUID}}</DestFile>
+              <ErrFile></ErrFile>
+              <OutputMode>CreateNew</OutputMode>
+
+              <FileRecords>
+                  <Record Terminator="~*~">
+                      <Expression Filter="startswith($Line,'D')">
+                          <Columns>
+                              <Column name="Account">substring_nullable($Line,'5','9')</Column>
+                              <Column name="CUSIP">substring_nullable($Line,'17','9')</Column>
+                              <Column name="Symbol">substring_nullable($Line,'48','9')</Column>
+                              <Column name="Quantity">substring_nullable($Line,'76','15')</Column>
+                              <Column name="PositionType">substring_nullable($Line,'91','1')</Column>
+                              <Column name="Market Price">substring_nullable($Line,'57','18')</Column>
+                              <Column name="Market Value">substring_nullable($Line,'564','13')</Column>
+                              <Column name="SecType">substring_nullable($Line,'27','1')</Column>
+                              <Column name="SecTypeModifier">substring_nullable($Line,'28','1')</Column>
+                              <Column name="DivReinvest">substring_nullable($Line,'462','1')</Column>
+                              <Column name="AccountCode">substring_nullable($Line,'14','1')</Column>
+                              <Column name="SettlementDate Quantity">substring_nullable($Line,'100','15')</Column>
+                              <Column name="Product Code">substring_nullable($Line,'529','12')</Column>
+                          </Columns>
+                      </Expression>
+                      <Expression Filter="startswith($Line,'ASOFDATE')">
+                          <Columns>
+                              <Column name="AsOfDate">substring_nullable($Line,'8','6')</Column>
+                          </Columns>
+                      </Expression>
+                    </Record>
+              </FileRecords>
+          </ConfigData>
+      </Item>
+
+      <Item ID="9" Name="FDHoldFileUnionCreator" Type="kroger.ACD.FilePipelineComponents.FileUnionCreator,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+          <ConfigData>
+              <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDHOLD_3.{{INSTANCEID}}.{{GUID}}</SrcFile>
+              <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDHOLD_4.{{INSTANCEID}}.{{GUID}}</DestFile>
+              <ErrFile></ErrFile>
+              <OutputMode>CreateNew</OutputMode>
+              <Output>
+                  <FieldDelimiter>#tab#</FieldDelimiter>
+              </Output>
+              <Source ID="'POS'" Path="'{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDHOLD_3.{{INSTANCEID}}.{{GUID}}'" Tag="'P'">
+
+                  <FillerField>
+                      <Data>#tab#</Data>
+                      <Occurrences>'14'</Occurrences>
+
+                  </FillerField>
+                  <Fields>
+                      <Field>itemstring($,#tab#,'0')</Field>
+                      <Field>itemstring($,#tab#,'1')</Field>
+                      <Field>itemstring($,#tab#,'2')</Field>
+                      <Field>itemstring($,#tab#,'3')</Field>
+                      <Field>itemstring($,#tab#,'4')</Field>
+                      <Field>itemstring($,#tab#,'5')</Field>
+                      <Field>itemstring($,#tab#,'6')</Field>
+                      <Field>itemstring($,#tab#,'7')</Field>
+                      <Field>itemstring($,#tab#,'8')</Field>
+                      <Field>itemstring($,#tab#,'9')</Field>
+                      <Field>itemstring($,#tab#,'10')</Field>
+                      <Field>itemstring($,#tab#,'11')</Field>
+                      <Field>itemstring($,#tab#,'12')</Field>
+                      <Field>itemstring($,#tab#,'13')</Field>
+                  </Fields>
+              </Source>
+              <References>
+                  <Reference ID="'BAL'" Path="'{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDHOLDREF1_3.{{INSTANCEID}}.{{GUID}}'" Tag="'B'">
+                      <FillerField>
+                          <Data>#tab#</Data>
+                          <Occurrences>'8'</Occurrences>
+
+                      </FillerField>
+                      <Fields>
+                          <Field>itemstring($,#tab#,'0')</Field>
+                          <Field>itemstring($,#tab#,'1')</Field>
+                          <Field>itemstring($,#tab#,'2')</Field>
+                          <Field>itemstring($,#tab#,'3')</Field>
+                          <Field>itemstring($,#tab#,'4')</Field>
+                          <Field>itemstring($,#tab#,'5')</Field>
+                          <Field>itemstring($,#tab#,'6')</Field>
+                          <Field>itemstring($,#tab#,'7')</Field>
+                      </Fields>
+                  </Reference>
+              </References>
+          </ConfigData>
+      </Item>
+
+    <Item ID="10" Name="FDHOLDFileDataColumnInserter" Type="kroger.ACD.FilePipelineComponents.FileDataColumnInserter,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDHOLD_4.{{INSTANCEID}}.{{GUID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDHOLD_5.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+
+        <Columns>
+          <Column>
+            <ColumnData>?IID?</ColumnData>
+            <ColumnDelimiter>#tab#</ColumnDelimiter>
+            <ColumnLength>'12'</ColumnLength>
+          </Column>
+
+        </Columns>
+
+      </ConfigData>
+    </Item>
+
+      <!-- Merge REF Files -->
+
+      <Item ID="6" Name="FDHoldingANdSecInfoMerger" Type="kroger.ACD.FilePipelineComponents.FileMerger,kroger.ACD.FilePipelineComponents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+          <ConfigData>
+              <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDHOLD_5.{{INSTANCEID}}.{{GUID}}</SrcFile>
+              <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDHOLD_6.{{INSTANCEID}}.{{GUID}}</DestFile>
+              <ErrFile></ErrFile>
+              <OutputMode>CreateNew</OutputMode>
+              <Source ID="'FDHoldingsMain'">
+                  <Keys>
+                      <Key ID="'FDHoldingsMainAcctID'" Name="'Account Number" Expression="itemstring($,#tab#,'2')"></Key>
+
+                  </Keys>
+
+              </Source>
+
+              <References>
+
+                  <Reference ID="'FDHoldingsRef2_'" File="'{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDHOLDREF2_2.{{INSTANCEID}}.{{GUID}}'" >
+                      <RefRecord Occurrences="'1'">
+                          <FillerField>
+                              <Data>#tab#</Data>
+                              <Occurrences>'1'</Occurrences>
+                          </FillerField>
+                      </RefRecord>
+                      <Keys>
+                          <Key ID="'FDHoldingsRef2AcctID'" Expression="itemstring($,#tab#,'0')"></Key>
+                      </Keys>
+                      <Maps>
+                          <Map ID="'1'" Src="'FDHoldingsMainAcctID'" Ref="'FDHoldingsRef2AcctID'"></Map>
+
+                      </Maps>
+                  </Reference>
+
+              </References>
+
+
+          </ConfigData>
+      </Item>
+
+    <Item ID="11" Name="FDHOLDComplexXMLSerializer" Type="kroger.ACD.FilePipelineComponents.FileXMLSerializer,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\FDHOLD_6.{{INSTANCEID}}.{{GUID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\XML\FDHOLD{{GUID}}.xml</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+     
+        <!--
+            To instruct the serializer to write the text as is, include it within '...'
+            To instruct the serializer to evaluate a expression at runtime, use
+            available functionmacros like substring, itemstring, concat etc.....
+        -->
+
+        <XMLSchema Root="'Positions'" MixedSchema="'True'">
+
+          <Positions SourceCode="'FD'" BatchRunDate="concat(#now#,'')">
+            <Position Name="concat(itemstring($FDHoldingsMain,#tab#,'2'),'_FDPosition',)" Value="''">
+
+              <RecordID Name="'RecordID'" Value="itemstring($FDHoldingsMain,#tab#,'0')"/>
+              <CustodianCode Name="'CustodianCode'" Value="'FD'"/>
+              <AcctNumber Name="'Account'" Value="itemstring($FDHoldingsMain,#tab#,'2')"/>
+
+              <EffectDate Name="'AsOfDate'" Value="itemstring($FDHoldingsMain,#tab#,'15')"/>
+              <InstrumentLocalId Name="''" Value="''"/>
+              <Cusip Name="'CUSIP'" Value="itemstring($FDHoldingsMain,#tab#,'3')"/>
+              <Sedol Name="''" Value="''"/>
+              <Isin Name="''" Value="''"/>
+              <Symbol Name="'Symbol'" Value="itemstring($FDHoldingsMain,#tab#,'4')"/>
+              <Quantity Name="'TradeDateQty'" Value="itemstring($FDHoldingsMain,#tab#,'5')"/>
+              <Price Name="'Price'" Value="itemstring($FDHoldingsMain,#tab#,'7')"/>
+              <MarketValue Name="'MarketValue'" Value="itemstring($FDHoldingsMain,#tab#,'8')"/>
+              <LongShortInd Name="'PositionType'" Value="itemstring($FDHoldingsMain,#tab#,'6')"/>
+              <RestrictedInd Name="''" Value="''"/>
+              <Description Name="''" Value="''"/>
+              <UdfChar>
+                <Udf Name="'FileID'" Value="itemstring($FDHoldingsMain,#tab#,'1')"></Udf>
+                <Udf Name="'AccountType'" Value="''"></Udf>
+                <Udf Name="'AcctCode'" Value="itemstring($FDHoldingsMain,#tab#,'12')"></Udf>
+                <Udf Name="'AccountIndicator'" Value="'B'"></Udf>
+                <Udf Name="'FloorSymbol'" Value="''"></Udf>
+                <Udf Name="'SecurityName'" Value="itemstring($FDHoldingsMain,#tab#,'3')"></Udf>
+                <Udf Name="'SecurityType'" Value="itemstring($FDHoldingsMain,#tab#,'9')"></Udf>
+                <Udf Name="'SecurityTypeModifier'" Value="itemstring($FDHoldingsMain,#tab#,'10')"></Udf>
+                <Udf Name="'CoreFund'" Value="itemstring($FDHoldingsRef2_1,#tab#,'1')"></Udf>
+                <Udf Name="'DivReInvestment'" Value="itemstring($FDHoldingsMain,#tab#,'11')"></Udf>
+                <Udf Name="'B_Account'" Value="itemstring($FDHoldingsMain,#tab#,'16')"></Udf>
+                <Udf Name="'B_CoreMoneyMarket'" Value="itemstring($FDHoldingsMain,#tab#,'18')"></Udf>
+                  <Udf Name="'B_CoreMoneyMarket_Sign'" Value="itemstring($FDHoldingsMain,#tab#,'17')"></Udf>
+                  <Udf Name="'B_MarginBalance_Sign'" Value="itemstring($FDHoldingsMain,#tab#,'19')"></Udf>
+                  <Udf Name="'B_UnsettledCash_Sign'" Value="itemstring($FDHoldingsMain,#tab#,'21')"></Udf>
+                  <Udf Name="'ProductCode'" Value="itemstring($FDHoldingsMain,#tab#,'14')"></Udf>
+              </UdfChar>
+              <UdfNum>
+                <Udf Name="'SettleDateQuantity'" Value="itemstring($FDHoldingsMain,#tab#,'13')"></Udf>
+                <Udf Name="'PricingFactor'" Value="''"></Udf>
+                <Udf Name="'B_MarginBalance'" Value="itemstring($FDHoldingsMain,#tab#,'20')"></Udf>
+                <Udf Name="'B_UnsettledCash'" Value="itemstring($FDHoldingsMain,#tab#,'22')"></Udf>
+
+              </UdfNum>
+              <UdfDate>
+                <Udf Name="'B_AsOfDate'" Value="itemstring($FDHoldingsMain,#tab#,'23')"></Udf>
+                
+              </UdfDate>
+            </Position>
+          </Positions>
+        </XMLSchema>
+      </ConfigData>
+
+    </Item>
+      
+    <Item ID="13" Name="FDHOLDBREMapper" Type="kroger.ACD.FilePipelineComponents.FileBREMapper,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\XML\FDHOLD{{GUID}}.xml</SrcFile>
+        <DestFile>{{SSISFILEROOT}}\FDHOLD{{GUID}}.SSIS</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+        <BRE>
+          <Policies>
+            <Policy Name="'kroger.ACD.FD.HOLD.Stage1'"></Policy>
+
+          </Policies>
+          <Helpers>
+            <Helper Name="'kroger.ACD.BRE.Helper.Facts,kroger.ACD.BRE.Helper, Version=2.0.0.0, Culture=neutral, PublicKeyToken=c856c7c39650fee4'"></Helper>
+          </Helpers>
+
+        </BRE>
+        <Mapper>
+          <Input>
+            <XMLDocTypeName>'FITDEXPositionRecord_V1'</XMLDocTypeName>
+            <XMLNodeName>'Position'</XMLNodeName>
+          </Input>
+          <Output>
+            <Object TypeName="'kroger.ACD.FD.Entities.krogerFDPosition,kroger.ACD.FD.Entities, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e'">
+              <ObjectProperties>
+                <Property>'CustodianCode'</Property>
+                <Property>'RecordID'</Property>
+                <Property>'AccountNumber'</Property>
+                <Property>'EffectiveDate'</Property>
+                <Property>'Quantity'</Property>
+                <Property>'Price'</Property>
+                <Property>'MarketValue'</Property>
+                <Property>'LongShortInd'</Property>
+                <Property>'RestrictedSecInd'</Property>
+                <Property>'CashID'</Property>
+                <Property>'Cusip'</Property>
+                <Property>'Symbol'</Property>
+                <Property>'Sedol'</Property>
+                <Property>'Isin'</Property>
+                <Property>'AltSymbol'</Property>
+                <Property>'InstrumentId0'</Property>
+                <Property>'InstrumentId1'</Property>
+                <Property>'InstrumentId2'</Property>
+                <Property>'RulesStageId'</Property>
+                <Property>'ErrorCode'</Property>
+                <Property>'ErrorDesc'</Property>
+              </ObjectProperties>
+            </Object>
+            <FlatFileFieldDelimiter>'~#@#~'</FlatFileFieldDelimiter>
+          </Output>
+          <References>
+            <Reference>'kroger.ACD.Entities.krogerEntityPolicyTracker,kroger.ACD.Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e'</Reference>
+          </References>
+        </Mapper>
+
+      </ConfigData>
+    </Item>
+      
+  </Configuration>
+
+    
+</Configurations>

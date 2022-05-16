@@ -1,0 +1,1177 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configurations>
+
+  <Configuration ID="MSSB.TRN">
+
+    <Item ID="1" Name="MSSBTRNMAINFileTypeConverter" Type="kroger.ACD.FilePipelineComponents.FileTypeConverter,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBTRNMAIN.{{INSTANCEID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBTRNMAIN_1.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+
+        <ReplacableControlExpressions>
+
+          <ExpressionItem ControlExpression="'[\x00]+'" StringValue="' '"></ExpressionItem>
+
+        </ReplacableControlExpressions>
+
+
+      </ConfigData>
+    </Item>
+
+    <Item ID="2" Name="ExtractMSSBTRNData" Type="kroger.ACD.FilePipelineComponents.FileDataSectionExtractor,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBTRNMAIN_1.{{INSTANCEID}}.{{GUID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBTRNMAIN_2.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <ErrFile></ErrFile>
+        <OutputMode>CreateNew</OutputMode>
+        <HeaderRegEx>'^HEADERTRAN[ ]*[0-9]{4}-[0-9]{2}-[0-9]{2}[ ]*$'</HeaderRegEx>
+        <FooterRegEx>'^TRAILRTRAN[ ]*[0-9]*[ ]*$'</FooterRegEx>
+      </ConfigData>
+    </Item>
+    <Item ID="3" Name="MSSBTRNFileDataColumnInserter" Type="kroger.ACD.FilePipelineComponents.FileDataColumnInserter,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBTRNMAIN_2.{{INSTANCEID}}.{{GUID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBTRNMAIN_3.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+
+        <Columns>
+          <Column>
+            <ColumnData>'M'</ColumnData>
+            <ColumnDelimiter>''</ColumnDelimiter>
+            <ColumnLength>'1'</ColumnLength>
+          </Column>
+
+        </Columns>
+
+      </ConfigData>
+    </Item>
+
+    <Item ID="4" Name="MSSBTRNRef1FileTypeConverter" Type="kroger.ACD.FilePipelineComponents.FileTypeConverter,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBTRNREF1.{{INSTANCEID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBTRNREF1_1.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+
+        <ReplacableControlExpressions>
+
+          <ExpressionItem ControlExpression="'[\x00]+'" StringValue="' '"></ExpressionItem>
+
+        </ReplacableControlExpressions>
+
+
+      </ConfigData>
+    </Item>
+    <Item ID="5" Name="ExtractMSSBTRNRef1Data" Type="kroger.ACD.FilePipelineComponents.FileDataSectionExtractor,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBTRNREF1_1.{{INSTANCEID}}.{{GUID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBTRNREF1_2.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <ErrFile></ErrFile>
+        <OutputMode>CreateNew</OutputMode>
+        <HeaderRegEx>'^HEADERTRAN[ ]*[0-9]{4}-[0-9]{2}-[0-9]{2}[ ]*$'</HeaderRegEx>
+        <FooterRegEx>'^TRAILRTRAN[ ]*[0-9]*[ ]*$'</FooterRegEx>
+      </ConfigData>
+    </Item>
+    <Item ID="6" Name="MSSBTRNRef1FileDataColumnInserter" Type="kroger.ACD.FilePipelineComponents.FileDataColumnInserter,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBTRNREF1_2.{{INSTANCEID}}.{{GUID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBTRNREF1_3.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+
+        <Columns>
+          <Column>
+            <ColumnData>'R'</ColumnData>
+            <ColumnDelimiter>''</ColumnDelimiter>
+            <ColumnLength>'1'</ColumnLength>
+          </Column>
+
+        </Columns>
+
+      </ConfigData>
+    </Item>
+
+    <Item ID="7" Name="MSSBTRNFilesConcatenator" Type="kroger.ACD.FilePipelineComponents.FlatFileConcatenator,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBTRNMAIN_3.{{INSTANCEID}}.{{GUID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBTRNCONCAT.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <ErrFile></ErrFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ConcatFiles>
+          <File>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBTRNREF1_3.{{INSTANCEID}}.{{GUID}}</File>
+        </ConcatFiles>
+
+      </ConfigData>
+    </Item>
+    <Item ID="8" Name="MSSBTRNFileDataColumnInserter" Type="kroger.ACD.FilePipelineComponents.FileDataColumnInserter,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBTRNCONCAT.{{INSTANCEID}}.{{GUID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBTRNCONCAT_1.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+
+        <Columns>
+          <Column>
+            <ColumnData>?IID?</ColumnData>
+            <ColumnDelimiter>''</ColumnDelimiter>
+            <ColumnLength>'12'</ColumnLength>
+          </Column>
+
+        </Columns>
+
+      </ConfigData>
+    </Item>
+    <Item ID="9" Name="MSSBTRNComplexXMLSerializer" Type="kroger.ACD.FilePipelineComponents.FileXMLSerializer,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBTRNCONCAT_1.{{INSTANCEID}}.{{GUID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\XML\MSSBTRN{{GUID}}.xml</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+
+        <!--
+            To instruct the serializer to write the text as is, include it within '...'
+            To instruct the serializer to evaluate a expression at runtime, use
+            available functionmacros like substring, itemstring, concat etc.....
+        -->
+        <XMLSchema Root="'Transactions'" MixedSchema="'False'">
+
+          <Transactions SourceCode="'MSSB'" BatchRunDate="concat(#now#,'')">
+            <Transaction Name="'MSSBTransaction'" Value="''">
+              <RecordID Name="'RecordID'" Value="substring($,'0','12')"></RecordID>
+              <CustodianCode Name="'CustodianCode'" Value="constant('MSSB')"></CustodianCode>
+              <TransactionId Name="''" Value="''"></TransactionId>
+              <TransactionCode Name="'TransactionCode'" Value="substring($,'76','10')"></TransactionCode>
+              <TransactionSubCode Name="'SBAlphaTranCode'" Value="substring($,'541','2')"></TransactionSubCode>
+              <BrokerCode Name="''" Value="''"></BrokerCode>
+              <AcctNumber Name="'Account'" Value="substring($,'19','9')"></AcctNumber>
+              <AcctType Name="''" Value="''"></AcctType>
+              <InstrumentLocalId Name="'SecurityCode'" Value="substring($,'417','2')"></InstrumentLocalId>
+              <InstrumentTypeCode Name="''" Value="''"></InstrumentTypeCode>
+              <Cusip Name="'CUSIP'" Value="substring($,'28','12')"></Cusip>
+              <Sedol Name="'SEDOL'" Value="substring($,'456','7')"></Sedol>
+              <Isin Name="'ISIN'" Value="substring($,'463','12')"></Isin>
+              <Symbol Name="'Symbol'" Value="substring($,'394','21')"></Symbol>
+              <Quantity Name="'Quantity'" Value="substring($,'116','18')"></Quantity>
+              <Amount Name="'TotalAmount'" Value="substring($,'220','20')"></Amount>
+              <Price Name="'Price'" Value="substring($,'134','17')"></Price>
+              <EffectDate Name="'TranDate'" Value="substring($,'86','10')"></EffectDate>
+              <SettleDate Name="'SettlementDate'" Value="substring($,'106','10')"></SettleDate>
+              <TradeDate Name="'TradeDate'" Value="substring($,'96','10')"></TradeDate>
+              <Currency Name="''" Value="''"></Currency>
+              <Commission Name="'CommBase'" Value="substring($,'192','14')"></Commission>
+              <Interest Name="'AccruedInterest'" Value="substring($,'151','13')"></Interest>
+              <Principal Name="'Principal'" Value="substring($,'475','17')"></Principal>
+              <Fee Name="'OtherFeeBase'" Value="substring($,'164','14')"></Fee>
+
+              <Description0 Name="'SecurityDescription'" Value="substring($,'40','36')"></Description0>
+              <Description1 Name="'AlternateTranCode'" Value="substring($,'528','5')"></Description1>
+              <Description2 Name="'ConfirmTrailer'" Value="substring($,'492','30')"></Description2>
+              <Description3 Name="''" Value="''"></Description3>
+              <Description4 Name="''" Value="''"></Description4>
+              <DrCrInd Name="''" Value="''"></DrCrInd>
+              <CancelInd Name="'CancelInd'" Value="substring($,'392','1')"></CancelInd>
+              <ConfirmInd Name="''" Value="''"></ConfirmInd>
+              <CashAffectedInd Name="''" Value="''"></CashAffectedInd>
+              <LongShortInd Name="''" Value="''"></LongShortInd>
+              <UdfChar>
+                <Udf Name="'FileTypeFlag'" Value="substring($,'12','1')"></Udf>
+                <Udf Name="'SBSrcDestination'" Value="substring($,'543','7')"></Udf>
+                <Udf Name="'BuySellInd'" Value="substring($,'393','1')"></Udf>
+                <Udf Name="'LinkedFlag'" Value="substring($,'554','1')"></Udf>
+                <Udf Name="'LinkedOfficeNumber'" Value="substring($,'555','3')"></Udf>
+                <Udf Name="'LinkedAcctNumber'" Value="substring($,'558','6')"></Udf>
+
+              </UdfChar>
+              <UdfNum>
+                <Udf Name="'SecondaryFeeBase'" Value="substring($,'267','14')"></Udf>
+                <Udf Name="'OriginalFace'" Value="substring($,'295','20')"></Udf>
+                <Udf Name="'Factor'" Value="substring($,'315','13')"></Udf>
+                <Udf Name="'PostageAmount'" Value="substring($,'428','7')"></Udf>
+                <Udf Name="'ForeignTax'" Value="substring($,'435','8')"></Udf>
+
+              </UdfNum>
+              <UdfDate>
+
+              </UdfDate>
+
+
+
+
+            </Transaction>
+          </Transactions>
+
+
+        </XMLSchema>
+
+
+
+      </ConfigData>
+
+    </Item>
+    <Item ID="10" Name="MSSBTRNBREMapper" Type="kroger.ACD.FilePipelineComponents.FileBREMapper,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\XML\MSSBTRN{{GUID}}.xml</SrcFile>
+        <DestFile>{{SSISFILEROOT}}\MSSBTRN{{GUID}}.SSIS</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+        <BRE>
+          <Policies>
+            <Policy Name="'kroger.ACD.MSSB.TRN.Stage1'"></Policy>
+            <Policy Name="'kroger.ACD.MSSB.TRN.Stage2'"></Policy>
+            <Policy Name="'kroger.ACD.TRN.Stage3'"></Policy>
+          </Policies>
+          <Helpers>
+            <Helper Name="'kroger.ACD.BRE.Helper.Facts,kroger.ACD.BRE.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c856c7c39650fee4'"></Helper>
+          </Helpers>
+
+        </BRE>
+        <Mapper>
+          <Input>
+            <XMLDocTypeName>'FITDEXTransactionRecord_V1'</XMLDocTypeName>
+            <XMLNodeName>'Transaction'</XMLNodeName>
+          </Input>
+          <Output>
+            <Object TypeName="'kroger.ACD.MSSB.Entities.krogerMSSBTransaction,kroger.ACD.MSSB.Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e'">
+              <ObjectProperties>
+                <Property>'CustodianCode'</Property>
+                <Property>'RecordID'</Property>
+                <Property>'AccountNumber'</Property>
+                <Property>'TransactionType'</Property>
+                <Property>'EffectDate'</Property>
+                <Property>'TradeDate'</Property>
+                <Property>'SettleDate'</Property>
+                <Property>'Quantity'</Property>
+                <Property>'NetAmount'</Property>
+                <Property>'Price'</Property>
+                <Property>'Commission'</Property>
+                <Property>'Postage'</Property>
+                <Property>'SECFee'</Property>
+                <Property>'CancelInd'</Property>
+                <Property>'CashAffectedInd'</Property>
+                <Property>'ConfirmInd'</Property>
+                <Property>'TranxTypeDefiner'</Property>
+                <Property>'OffsetCurrency'</Property>
+                <Property>'OffsetCash'</Property>
+                <Property>'CashID'</Property>
+                <Property>'Cusip'</Property>
+                <Property>'Symbol'</Property>
+                <Property>'Sedol'</Property>
+                <Property>'Isin'</Property>
+                <Property>'AltSymbol'</Property>
+                <Property>'InstrumentId0'</Property>
+                <Property>'InstrumentId1'</Property>
+                <Property>'InstrumentId2'</Property>
+                <Property>'Interest'</Property>
+                <Property>'DrCrInd'</Property>
+                <Property>'LongShortInd'</Property>
+                <Property>'TradeCurrency'</Property>
+                <Property>'StateTax'</Property>
+                <Property>'ExchangeRate'</Property>
+                <Property>'RulesStageId'</Property>
+                <Property>'ErrorCode'</Property>
+                <Property>'ErrorDesc'</Property>
+
+              </ObjectProperties>
+            </Object>
+            <FlatFileFieldDelimiter>'~#@#~'</FlatFileFieldDelimiter>
+          </Output>
+          <References>
+            <Reference>'kroger.ACD.Entities.krogerEntityPolicyTracker,kroger.ACD.Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e'</Reference>
+          </References>
+        </Mapper>
+
+      </ConfigData>
+    </Item>
+
+
+
+
+
+
+
+  </Configuration>
+
+
+
+  
+
+
+  <Configuration ID="MSSB.HOLD">
+
+    <Item ID="1" Name="MSSBHOLDMAINFileTypeConverter" Type="kroger.ACD.FilePipelineComponents.FileTypeConverter,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBHOLDMAIN.{{INSTANCEID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBHOLDMAIN_1.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+
+        <ReplacableControlExpressions>
+
+          <ExpressionItem ControlExpression="'[\x00]+'" StringValue="' '"></ExpressionItem>
+
+        </ReplacableControlExpressions>
+
+
+      </ConfigData>
+    </Item>
+
+    <Item ID="2" Name="ExtractMSSBHOLDData" Type="kroger.ACD.FilePipelineComponents.FileDataSectionExtractor,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBHOLDMAIN_1.{{INSTANCEID}}.{{GUID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBHOLDMAIN_2.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <ErrFile></ErrFile>
+        <OutputMode>CreateNew</OutputMode>
+        <HeaderRegEx>'^HEADERPOSITION[0-9]{4}-[0-9]{2}-[0-9]{2}[ ]*$'</HeaderRegEx>
+        <FooterRegEx>'^TRAILRPOSITION[0-9]*[ ]*$'</FooterRegEx>
+      </ConfigData>
+    </Item>
+    <Item ID="3" Name="MSSBHOLDFileDataColumnInserter" Type="kroger.ACD.FilePipelineComponents.FileDataColumnInserter,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBHOLDMAIN_2.{{INSTANCEID}}.{{GUID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBHOLDMAIN_3.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+
+        <Columns>
+          <Column>
+            <ColumnData>'M'</ColumnData>
+            <ColumnDelimiter>''</ColumnDelimiter>
+            <ColumnLength>'1'</ColumnLength>
+          </Column>
+
+        </Columns>
+
+      </ConfigData>
+    </Item>
+
+    <Item ID="4" Name="MSSBHOLDRef1FileTypeConverter" Type="kroger.ACD.FilePipelineComponents.FileTypeConverter,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBHOLDREF1.{{INSTANCEID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBHOLDREF1_1.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+
+        <ReplacableControlExpressions>
+
+          <ExpressionItem ControlExpression="'[\x00]+'" StringValue="' '"></ExpressionItem>
+
+        </ReplacableControlExpressions>
+
+
+      </ConfigData>
+    </Item>
+    <Item ID="5" Name="ExtractMSSBHOLD2Data" Type="kroger.ACD.FilePipelineComponents.FileDataSectionExtractor,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBHOLDREF1_1.{{INSTANCEID}}.{{GUID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBHOLDREF1_2.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <ErrFile></ErrFile>
+        <OutputMode>CreateNew</OutputMode>
+        <HeaderRegEx>'^HEADERPOSITION[0-9]{4}-[0-9]{2}-[0-9]{2}[ ]*$'</HeaderRegEx>
+        <FooterRegEx>'^TRAILRPOSITION[0-9]*[ ]*$'</FooterRegEx>
+      </ConfigData>
+    </Item>
+    <Item ID="6" Name="MSSBHOLD2FileDataColumnInserter" Type="kroger.ACD.FilePipelineComponents.FileDataColumnInserter,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBHOLDREF1_2.{{INSTANCEID}}.{{GUID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBHOLDREF1_3.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+
+        <Columns>
+          <Column>
+            <ColumnData>'R'</ColumnData>
+            <ColumnDelimiter>''</ColumnDelimiter>
+            <ColumnLength>'1'</ColumnLength>
+          </Column>
+
+        </Columns>
+
+      </ConfigData>
+    </Item>
+
+    <Item ID="7" Name="MSSBHOLDFilesConcatenator" Type="kroger.ACD.FilePipelineComponents.FlatFileConcatenator,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBHOLDMAIN_3.{{INSTANCEID}}.{{GUID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBHOLDCONCAT.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <ErrFile></ErrFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ConcatFiles>
+          <File>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBHOLDREF1_3.{{INSTANCEID}}.{{GUID}}</File>
+        </ConcatFiles>
+      
+      </ConfigData>
+    </Item>
+    <Item ID="8" Name="MSSBHOLDFileDataColumnInserter" Type="kroger.ACD.FilePipelineComponents.FileDataColumnInserter,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBHOLDCONCAT.{{INSTANCEID}}.{{GUID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBHOLDCONCAT_1.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+
+        <Columns>
+          <Column>
+            <ColumnData>?IID?</ColumnData>
+            <ColumnDelimiter>''</ColumnDelimiter>
+            <ColumnLength>'12'</ColumnLength>
+          </Column>
+
+        </Columns>
+
+      </ConfigData>
+    </Item>
+
+    <Item ID="9" Name="MSSBMSSBSecPriceFileTypeConverter" Type="kroger.ACD.FilePipelineComponents.FileTypeConverter,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBHOLDREF2.{{INSTANCEID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBHOLDREF2_1.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+
+        <ReplacableControlExpressions>
+
+          <ExpressionItem ControlExpression="'[\x00]+'" StringValue="' '"></ExpressionItem>
+
+        </ReplacableControlExpressions>
+
+
+      </ConfigData>
+    </Item>
+
+    <Item ID="10" Name="ExtractMSSBSecPriceData" Type="kroger.ACD.FilePipelineComponents.FileDataSectionExtractor,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBHOLDREF2_1.{{INSTANCEID}}.{{GUID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBHOLDREF2_2.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <ErrFile></ErrFile>
+        <OutputMode>CreateNew</OutputMode>
+        <HeaderRegEx>'^HEADERPRICE'</HeaderRegEx>
+        <FooterRegEx>'^TRAILRPRICE'</FooterRegEx>
+      </ConfigData>
+    </Item>
+
+    <Item ID="11" Name="MSSBHOLDPriceFileMerger" Type="kroger.ACD.FilePipelineComponents.FileMerger,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBHOLDCONCAT_1.{{INSTANCEID}}.{{GUID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBHOLDPROCEMERGED.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <ErrFile></ErrFile>
+        <OutputMode>CreateNew</OutputMode>
+        <Source ID="'MSSBHoldMain'">
+          <Keys>
+            <Key ID="'MSSBHoldCUSIP'" Name="'MSSBHoldCUSIP'" Expression="trim(substring($,'28','9'))"></Key>
+            <Key ID="'MSSBHoldOptionSymbol'" Name="'MSSBHoldOptSymbol'" Expression="trim(substring($,'201','21'))"></Key>
+          </Keys>
+
+        </Source>
+
+        <References>
+
+          <Reference ID="'MSSBHoldPrice'" File="'{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBHOLDREF2_2.{{INSTANCEID}}.{{GUID}}'" >
+            <RefRecord Occurrences="'1'">
+              <FillerField>
+                <Data>' '</Data>
+                <Occurrences>'100'</Occurrences>
+
+              </FillerField>
+            </RefRecord>
+            <Keys>
+              <Key ID="'MSSBSecPriceCUSIP'" Expression="substring($,'69','9')"></Key>
+              <Key ID="'MSSBSecPriceOptSymbol'" Expression="substring($,'36','21')"></Key>
+            </Keys>
+            <Maps>
+              <Map ID="'1'" Src="'MSSBHoldCUSIP'" Ref="'MSSBSecPriceCUSIP'"></Map>
+              <Map ID="'2'" Src="'MSSBHoldOptionSymbol'" Ref="'MSSBSecPriceOptSymbol'"></Map>
+            </Maps>
+          </Reference>
+
+        </References>
+
+
+      </ConfigData>
+    </Item>
+
+
+    <Item ID="12" Name="MSSBHOLDComplexXMLSerializer" Type="kroger.ACD.FilePipelineComponents.FileXMLSerializer,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBHOLDPROCEMERGED.{{INSTANCEID}}.{{GUID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\XML\MSSBHOLD{{GUID}}.xml</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+
+        <!--
+            To instruct the serializer to write the text as is, include it within '...'
+            To instruct the serializer to evaluate a expression at runtime, use
+            available functionmacros like substring, itemstring, concat etc.....
+        -->
+        <XMLSchema Root="'Positions'" MixedSchema="'True'">
+
+          <Positions SourceCode="'MSSB'" BatchRunDate="concat(#now#,'')">
+            <Position Name="'Position'" Value="''">
+
+              <RecordID Name="'RecordID'" Value="substring($MSSBHoldMain,'0','12')"/>
+              <CustodianCode Name="'CustodianCode'" Value="'MSSB'"/>
+              <AcctNumber Name="'AccountNumber'" Value="substring($MSSBHoldMain,'19','9')"/>
+
+              <EffectDate Name="'EffectiveDate'" Value="substring($MSSBHoldMain,'390','10')"/>
+              <InstrumentLocalId Name="'SecurityNumber'" Value="substring($MSSBHoldMain,'242','9')"/>
+              <Cusip Name="'CUSIP'" Value="substring($MSSBHoldMain,'28','12')"/>
+              <Sedol Name="'Sedol'" Value="substring($MSSBHoldMain,'251','7')"/>
+              <Isin Name="'ISIN'" Value="substring($MSSBHoldMain,'258','12')"/>
+              <Symbol Name="'Symbol'" Value="substring($MSSBHoldMain,'201','21')"/>
+              <Quantity Name="'Quantity'" Value="substring($MSSBHoldMain,'76','20')"/>
+              <Price Name="'Price'" Value="substring($MSSBHoldPrice1,'79','11')"/>
+              <MarketValue Name="'MarketLocal'" Value="substring($MSSBHoldMain,'116','20')"/>
+              <LongShortInd Name="'LongShortInd'" Value="substring($MSSBHoldMain,'337','2')"/>
+              <RestrictedInd Name="'RestrictedSecFlag'" Value="substring($MSSBHoldMain,'316','1')"/>
+              <Description Name="'SecurityDescription'" Value="substring($MSSBHoldMain,'40','36')"/>
+
+
+              <UdfChar>
+                <Udf Name="'FileTypeFlag'" Value="substring($MSSBHoldMain,'12','1')"></Udf>
+                
+                
+                <Udf Name="'Currency'" Value="substring($MSSBHoldMain,'198','3')"></Udf>
+
+                
+                <Udf Name="'AccountType'" Value="substring($MSSBHoldMain,'239','1')"></Udf>
+                <Udf Name="'SecurityCode'" Value="substring($MSSBHoldMain,'240','2')"></Udf>
+                
+                <Udf Name="'ProductID'" Value="substring($MSSBHoldMain,'310','6')"></Udf>
+                <Udf Name="'LinkedFlag'" Value="substring($MSSBHoldMain,'339','1')"></Udf>
+                <Udf Name="'LinkedOfficeNumber'" Value="substring($MSSBHoldMain,'340','3')"></Udf>
+                <Udf Name="'LinkedAcctNumber'" Value="substring($MSSBHoldMain,'343','6')"></Udf>
+                
+              </UdfChar>
+              <UdfNum>
+                
+                
+                <Udf Name="'OriginalFace'" Value="substring($MSSBHoldMain,'166','20')"></Udf>
+                <Udf Name="'Factor'" Value="substring($MSSBHoldMain,'186','12')"></Udf>
+                
+                
+                
+                
+              </UdfNum>
+              <UdfDate>
+               
+              </UdfDate>
+            </Position>
+          </Positions>
+
+        </XMLSchema>
+
+
+
+      </ConfigData>
+
+    </Item>
+
+    <Item ID="13" Name="MSSBHOLDBREMapper" Type="kroger.ACD.FilePipelineComponents.FileBREMapper,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\XML\MSSBHOLD{{GUID}}.xml</SrcFile>
+        <DestFile>{{SSISFILEROOT}}\MSSBHOLD{{GUID}}.SSIS</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+        <BRE>
+          <Policies>
+            <Policy Name="'kroger.ACD.MSSB.HOLD.Stage1'"></Policy>
+
+          </Policies>
+          <Helpers>
+            <Helper Name="'kroger.ACD.BRE.Helper.Facts,kroger.ACD.BRE.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c856c7c39650fee4'"></Helper>
+          </Helpers>
+
+        </BRE>
+        <Mapper>
+          <Input>
+            <XMLDocTypeName>'FITDEXPositionRecord_V1'</XMLDocTypeName>
+            <XMLNodeName>'Position'</XMLNodeName>
+          </Input>
+          <Output>
+            <Object TypeName="'kroger.ACD.MSSB.Entities.krogerMSSBPosition,kroger.ACD.MSSB.Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e'">
+              <ObjectProperties>
+                <Property>'CustodianCode'</Property>
+                <Property>'RecordID'</Property>
+
+                <Property>'AccountNumber'</Property>
+                <Property>'EffectiveDate'</Property>
+                <Property>'Quantity'</Property>
+                <Property>'Price'</Property>
+                <Property>'MarketValue'</Property>
+                <Property>'LongShortInd'</Property>
+                <Property>'RestrictedSecInd'</Property>
+                <Property>'CashID'</Property>
+                <Property>'Cusip'</Property>
+                <Property>'Symbol'</Property>
+                <Property>'Sedol'</Property>
+                <Property>'Isin'</Property>
+                <Property>'AltSymbol'</Property>
+                <Property>'InstrumentId0'</Property>
+                <Property>'InstrumentId1'</Property>
+                <Property>'InstrumentId2'</Property>
+
+
+                <Property>'RulesStageId'</Property>
+                <Property>'ErrorCode'</Property>
+                <Property>'ErrorDesc'</Property>
+
+              </ObjectProperties>
+            </Object>
+            <FlatFileFieldDelimiter>'~#@#~'</FlatFileFieldDelimiter>
+          </Output>
+          <References>
+            <Reference>'kroger.ACD.Entities.krogerEntityPolicyTracker,kroger.ACD.Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e'</Reference>
+          </References>
+        </Mapper>
+
+      </ConfigData>
+    </Item>
+
+
+
+
+
+
+
+
+
+  </Configuration>
+
+
+
+  <Configuration ID="MSSB.SEC">
+
+    <Item ID="1" Name="MSSBSECMAINFileTypeConverter" Type="kroger.ACD.FilePipelineComponents.FileTypeConverter,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBSECMAIN.{{INSTANCEID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBSECMAIN_1.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+
+        <ReplacableControlExpressions>
+
+          <ExpressionItem ControlExpression="'[\x00]+'" StringValue="' '"></ExpressionItem>
+
+        </ReplacableControlExpressions>
+
+
+      </ConfigData>
+    </Item>
+
+    <Item ID="2" Name="ExtractMSSBSECData" Type="kroger.ACD.FilePipelineComponents.FileDataSectionExtractor,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBSECMAIN_1.{{INSTANCEID}}.{{GUID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBSECMAIN_2.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <ErrFile></ErrFile>
+        <OutputMode>CreateNew</OutputMode>
+        <HeaderRegEx>'^HEADERSECURITY[0-9]{4}-[0-9]{2}-[0-9]{2}[ ]*$'</HeaderRegEx>
+        <FooterRegEx>'^TRAILRSECURITY[0-9]*[ ]*$'</FooterRegEx>
+      </ConfigData>
+    </Item>
+
+    <Item ID="3" Name="MSSBSECFileDataColumnInserter" Type="kroger.ACD.FilePipelineComponents.FileDataColumnInserter,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBSECMAIN_2.{{INSTANCEID}}.{{GUID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBSECMAIN_3.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+
+        <Columns>
+          <Column>
+            <ColumnData>?IID?</ColumnData>
+            <ColumnDelimiter>''</ColumnDelimiter>
+            <ColumnLength>'12'</ColumnLength>
+          </Column>
+
+        </Columns>
+
+      </ConfigData>
+    </Item>
+    <Item ID="4" Name="MSSBSECPriceFileTypeConverter" Type="kroger.ACD.FilePipelineComponents.FileTypeConverter,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBSECREF1.{{INSTANCEID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBSECREF1_1.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+
+        <ReplacableControlExpressions>
+
+          <ExpressionItem ControlExpression="'[\x00]+'" StringValue="' '"></ExpressionItem>
+
+        </ReplacableControlExpressions>
+
+
+      </ConfigData>
+    </Item>
+    <Item ID="5" Name="ExtractMSSBSecPriceData" Type="kroger.ACD.FilePipelineComponents.FileDataSectionExtractor,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBSECREF1_1.{{INSTANCEID}}.{{GUID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBSECREF1_2.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <ErrFile></ErrFile>
+        <OutputMode>CreateNew</OutputMode>
+        <HeaderRegEx>'^HEADERPRICE'</HeaderRegEx>
+        <FooterRegEx>'^TRAILRPRICE'</FooterRegEx>
+      </ConfigData>
+    </Item>
+
+    <Item ID="6" Name="MSSBSecPriceFileMerger" Type="kroger.ACD.FilePipelineComponents.FileMerger,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBSECMAIN_3.{{INSTANCEID}}.{{GUID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBSECMERGED_1.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <ErrFile></ErrFile>
+        <OutputMode>CreateNew</OutputMode>
+        <Source ID="'MSSBSecurityMain'">
+          <Keys>
+            <Key ID="'MSSBSecurityCUSIP'" Name="'MSSBSecCUSIP'" Expression="substring($,'18','9')"></Key>
+            <Key ID="'MSSBSecurityOptionSymbol'" Name="'MSSBSecOptSymbol'" Expression="substring($,'30','21')"></Key>
+          </Keys>
+
+        </Source>
+
+        <References>
+
+          <Reference ID="'MSSBSecPrice'" File="'{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBSECREF1_2.{{INSTANCEID}}.{{GUID}}'" >
+            <RefRecord Occurrences="'2'">
+              <FillerField>
+                <Data>' '</Data>
+                <Occurrences>'100'</Occurrences>
+
+              </FillerField>
+            </RefRecord>
+            <Keys>
+              <Key ID="'MSSBSecPriceCUSIP'" Expression="substring($,'69','9')"></Key>
+              <Key ID="'MSSBSecPriceOptSymbol'" Expression="substring($,'36','21')"></Key>
+            </Keys>
+            <Maps>
+              <Map ID="'1'" Src="'MSSBSecurityCUSIP'" Ref="'MSSBSecPriceCUSIP'"></Map>
+              <Map ID="'2'" Src="'MSSBSecurityOptionSymbol'" Ref="'MSSBSecPriceOptSymbol'"></Map>
+            </Maps>
+          </Reference>
+
+        </References>
+
+
+      </ConfigData>
+    </Item>
+
+    <Item ID="7" Name="MSSBSECComplexXMLSerializer" Type="kroger.ACD.FilePipelineComponents.FileXMLSerializer,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBSECMERGED_1.{{INSTANCEID}}.{{GUID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\XML\MSSBSEC_small{{GUID}}.xml</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+
+        <!--
+            To instruct the serializer to write the text as is, include it within '...'
+            To instruct the serializer to evaluate a expression at runtime, use
+            available functionmacros like substring, itemstring, concat etc.....
+        -->
+        <XMLSchema Root="'Securities'" MixedSchema="'True'">
+
+          <Securities SourceCode="'MSSB'" BatchRunDate="concat(#now#,'')">
+            <Security Name="'Security'" Value="''">
+ 
+              <Cusip Name="'CUSIP'" Value="substring($MSSBSecurityMain,'18','12')"/>
+            
+              <Symbol Name="'SymbolandOSISymbol'" Value="substring($MSSBSecurityMain,'30','21')"/>
+
+
+              <Price Name="'ClosingPrice'" Value="substring($MSSBSecPrice1,'79','11')"/>
+              <EffectDate Name="'PriceLastDate'" Value="substring($MSSBSecPrice1,'58','10')"/>
+             
+             
+                <Udf Name="'Closeprice_MainSecFile'" Value="substring($MSSBSecurityMain,'122','17')"></Udf>
+  
+                <Udf Name="'LastPriceDate_MainSecFile'" Value="substring($MSSBSecurityMain,'278','10')"></Udf>
+             
+
+
+            </Security>
+          </Securities>
+
+        </XMLSchema>
+
+
+
+      </ConfigData>
+
+    </Item>
+
+
+    <Item ID="8" Name="MSSBSECComplexXMLSerializer" Type="kroger.ACD.FilePipelineComponents.FileXMLSerializer,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBSECMERGED_1.{{INSTANCEID}}.{{GUID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\XML\MSSBSEC{{GUID}}.xml</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+
+        <!--
+            To instruct the serializer to write the text as is, include it within '...'
+            To instruct the serializer to evaluate a expression at runtime, use
+            available functionmacros like substring, itemstring, concat etc.....
+        -->
+        <XMLSchema Root="'Securities'" MixedSchema="'True'">
+
+          <Securities SourceCode="'MSSB'" BatchRunDate="concat(#now#,'')">
+            <Security Name="'Security'" Value="''">
+              <RecordID Name="'RecordID'" Value="substring($MSSBSecurityMain,'0','12')"/>
+              <CustodianCode Name="'CustodianCode'" Value="'MSSB'"/>
+              <Price Name="'ClosingPrice'" Value="substring($MSSBSecPrice1,'79','11')"/>
+              <EffectDate Name="'PriceLastDate'" Value="substring($MSSBSecPrice1,'58','10')"/>
+              <InstrumentLocalId Name="'ProductID'" Value="substring($MSSBSecurityMain,'272','6')"/>
+              <Cusip Name="'CUSIP'" Value="substring($MSSBSecurityMain,'18','12')"/>
+              <Sedol Name="'Sedol'" Value="substring($MSSBSecurityMain,'93','7')"/>
+              <Isin Name="'ISIN'" Value="substring($MSSBSecurityMain,'100','12')"/>
+              <Symbol Name="'SymbolandOSISymbol'" Value="substring($MSSBSecurityMain,'30','21')"/>
+              <TypeCode Name="'InstrumentType'" Value="substring($MSSBSecurityMain,'290','2')"/>
+              <Description Name="'SecurityDescription'" Value="substring($MSSBSecurityMain,'51','30')"/>
+              <UdfChar>
+                <Udf Name="'RoutingCode'" Value="substring($MSSBSecurityMain,'12','6')"></Udf>
+                <Udf Name="'UnderlyingCUSIP'" Value="substring($MSSBSecurityMain,'81','12')"></Udf>
+                <Udf Name="'SPRating'" Value="substring($MSSBSecurityMain,'112','5')"></Udf>
+                <Udf Name="'MoodyRating'" Value="substring($MSSBSecurityMain,'117','5')"></Udf>
+                <Udf Name="'Currency'" Value="substring($MSSBSecurityMain,'184','3')"></Udf>
+                <Udf Name="'DayCount'" Value="substring($MSSBSecurityMain,'227','1')"></Udf>
+                <Udf Name="'PayFrequency'" Value="substring($MSSBSecurityMain,'228','2')"></Udf>
+                <Udf Name="'StateCode'" Value="substring($MSSBSecurityMain,'230','2')"></Udf>
+                <Udf Name="'CountryCode'" Value="substring($MSSBSecurityMain,'232','2')"></Udf>
+                <Udf Name="'ExchangeCode'" Value="substring($MSSBSecurityMain,'234','2')"></Udf>
+                <Udf Name="'TaxCode'" Value="substring($MSSBSecurityMain,'236','2')"></Udf>
+                <Udf Name="'MaturiyType'" Value="substring($MSSBSecurityMain,'237','1')"></Udf>
+                <Udf Name="'SecurityCode'" Value="substring($MSSBSecurityMain,'258','2')"></Udf>
+                <Udf Name="'RestrictFlag'" Value="substring($MSSBSecurityMain,'288','2')"></Udf>
+                <Udf Name="'Filler'" Value="substring($MSSBSecurityMain,'292','9')"></Udf>
+                <Udf Name="'AdvSecurityType'" Value="substring($MSSBSecurityMain,'301','2')"></Udf>
+                <Udf Name="'Filler_Last'" Value="substring($MSSBSecurityMain,'309','3')"></Udf>
+ 
+              </UdfChar>
+              <UdfNum>
+                <Udf Name="'ClosePrice_MainSecFile'" Value="substring($MSSBSecurityMain,'122','17')"></Udf>
+                <Udf Name="'CurrentFace'" Value="substring($MSSBSecurityMain,'139','11')"></Udf>
+                <Udf Name="'OriginalFace'" Value="substring($MSSBSecurityMain,'150','11')"></Udf>
+                <Udf Name="'CurrentMBSFactor'" Value="substring($MSSBSecurityMain,'161','13')"></Udf>
+                <Udf Name="'CouponRate'" Value="substring($MSSBSecurityMain,'260','9')"></Udf>
+                <Udf Name="'ShareMultiplier'" Value="substring($MSSBSecurityMain,'269','3')"></Udf>
+  
+              </UdfNum>
+              <UdfDate>
+                <Udf Name="'CurrentMBSFactorDate'" Value="substring($MSSBSecurityMain,'174','10')"></Udf>
+                <Udf Name="'IssueDate'" Value="substring($MSSBSecurityMain,'187','10')"></Udf>
+                <Udf Name="'DatedDate'" Value="substring($MSSBSecurityMain,'197','10')"></Udf>
+                <Udf Name="'PayDate'" Value="substring($MSSBSecurityMain,'207','10')"></Udf>
+                <Udf Name="'MaturityExpDate'" Value="substring($MSSBSecurityMain,'217','10')"></Udf>
+                <Udf Name="'ExDivDate'" Value="substring($MSSBSecurityMain,'238','10')"></Udf>
+                <Udf Name="'RecordDate'" Value="substring($MSSBSecurityMain,'248','10')"></Udf>
+                <Udf Name="'LastPriceDate_MainSecFile'" Value="substring($MSSBSecurityMain,'278','10')"></Udf>
+                <Udf Name="'MaturityDate'" Value="substring($MSSBSecurityMain,'303','6')"></Udf>
+
+
+
+
+
+              </UdfDate>
+
+            </Security>
+          </Securities>
+
+        </XMLSchema>
+
+
+
+      </ConfigData>
+
+    </Item>
+    <Item ID="9" Name="MSSBSECBREMapper" Type="kroger.ACD.FilePipelineComponents.FileBREMapper,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\XML\MSSBSEC{{GUID}}.xml</SrcFile>
+        <DestFile>{{SSISFILEROOT}}\MSSBSEC{{GUID}}.SSIS</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+        <BRE>
+          <Policies>
+            <Policy Name="'kroger.ACD.MSSB.SEC.Stage1'"></Policy>
+
+          </Policies>
+          <Helpers>
+            <Helper Name="'kroger.ACD.BRE.Helper.Facts,kroger.ACD.BRE.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c856c7c39650fee4'"></Helper>
+          </Helpers>
+
+        </BRE>
+        <Mapper>
+          <Input>
+            <XMLDocTypeName>'FITDEXSecurityRecord_V1'</XMLDocTypeName>
+            <XMLNodeName>'Security'</XMLNodeName>
+          </Input>
+          <Output>
+            <Object TypeName="'kroger.ACD.MSSB.Entities.krogerMSSBSecurity,kroger.ACD.MSSB.Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e'">
+              <ObjectProperties>
+                <Property>'CustodianCode'</Property>
+                <Property>'RecordID'</Property>
+                <Property>'Price'</Property>
+                <Property>'EffectiveDate'</Property>
+                <Property>'CashID'</Property>
+                <Property>'Cusip'</Property>
+                <Property>'Symbol'</Property>
+                <Property>'OptionSymbol'</Property>
+                <Property>'Sedol'</Property>
+                <Property>'Isin'</Property>
+                <Property>'AltSymbol'</Property>
+
+
+
+                <Property>'InstrumentId0'</Property>
+                <Property>'InstrumentId1'</Property>
+                <Property>'InstrumentId2'</Property>
+
+
+
+
+
+                <Property>'RulesStageId'</Property>
+                <Property>'ErrorCode'</Property>
+                <Property>'ErrorDesc'</Property>
+                <Property>'Description'</Property>
+
+                <Property>'Market'</Property>
+                <Property>'Currency'</Property>
+                
+              </ObjectProperties>
+            </Object>
+            <FlatFileFieldDelimiter>'~#@#~'</FlatFileFieldDelimiter>
+          </Output>
+          <References>
+            <Reference>'kroger.ACD.Entities.krogerEntityPolicyTracker,kroger.ACD.Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e'</Reference>
+          </References>
+        </Mapper>
+
+      </ConfigData>
+    </Item>
+
+
+
+
+
+
+
+  </Configuration>
+
+
+  <Configuration ID="MSSB.ACCT">
+
+    <Item ID="1" Name="MSSBACCTMAINFileTypeConverter" Type="kroger.ACD.FilePipelineComponents.FileTypeConverter,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBACCTMAIN.{{INSTANCEID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBACCTMAIN_1.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+
+        <ReplacableControlExpressions>
+
+          <ExpressionItem ControlExpression="'[\x00]+'" StringValue="' '"></ExpressionItem>
+
+        </ReplacableControlExpressions>
+
+
+      </ConfigData>
+    </Item>
+
+    <Item ID="2" Name="ExtractMSSBACCTData" Type="kroger.ACD.FilePipelineComponents.FileDataSectionExtractor,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBACCTMAIN_1.{{INSTANCEID}}.{{GUID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBACCTMAIN_2.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <ErrFile></ErrFile>
+        <OutputMode>CreateNew</OutputMode>
+        <HeaderRegEx>'^HEADERACCOUNTS[0-9]{4}-[0-9]{2}-[0-9]{2}[ ]*$'</HeaderRegEx>
+        <FooterRegEx>'^TRAILRACCOUNTS[0-9]*[ ]*$'</FooterRegEx>
+      </ConfigData>
+    </Item>
+
+   
+    <Item ID="3" Name="MSSBACCTFileDataColumnInserter" Type="kroger.ACD.FilePipelineComponents.FileDataColumnInserter,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBACCTMAIN_2.{{INSTANCEID}}.{{GUID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBACCTMAIN_3.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+
+        <Columns>
+          <Column>
+            <ColumnData>?IID?</ColumnData>
+            <ColumnDelimiter>''</ColumnDelimiter>
+            <ColumnLength>'12'</ColumnLength>
+          </Column>
+
+        </Columns>
+
+      </ConfigData>
+    </Item>
+
+    <Item ID="4" Name="MSSBACCTComplexXMLSerializer" Type="kroger.ACD.FilePipelineComponents.FileXMLSerializer,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\MSSBACCTMAIN_3.{{INSTANCEID}}.{{GUID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\XML\MSSBACCT{{GUID}}.xml</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+       
+        <!--
+            To instruct the serializer to write the text as is, include it within '...'
+            To instruct the serializer to evaluate a expression at runtime, use
+            available functionmacros like substring, itemstring, concat etc.....
+        -->
+        <XMLSchema Root="'Accounts'" MixedSchema="'False'">
+
+          <Accounts SourceCode="'MSSB'" BatchRunDate="concat(#now#,'')">
+            <Account Name="'Account'" Value="''">
+              <RecordID Name="'RecordID'" Value="substring($,'0','12')"/>
+              <CustodianCode Name="'CustodianCode'" Value="'MSSB'"/>
+              <OpenDate Name="'AccountOpenDate'" Value="substring($,'330','10')"/>
+              <AcctNumber Name="'MSSBAccountNumber'" Value="substring($,'321','6')"/>
+              <AcctName1 Name="'AddressLine1'" Value="substring($,'18','50')"/>
+              <AcctName2 Name="'AddressLine2'" Value="substring($,'68','50')"/>
+              <AcctName3 Name="'AddressLine3'" Value="substring($,'118','50')"/>
+              <AcctType Name="'TypeOfAccount'" Value="substring($,'327','3')"/>
+              <AcctAddress1 Name="'AddressLine4'" Value="substring($,'168','50')"/>
+              <AcctAddress2 Name="'AddressLine5'" Value="substring($,'218','50')"/>
+              <AcctAddress3 Name="'AddressLine6'" Value="substring($,'268','50')"/>
+              <City Name="'CityName'" Value="''"/>
+              <State Name="'StateCode'" Value="substring($,'368','2')"/>
+              <ZIPCode Name="'ZipCode'" Value="substring($,'359','9')"/>
+              <Country Name="'CountryCode'" Value="''"/>
+              <HomePhoneNumber Name="''" Value="''"/>
+              <BusPhoneNumber Name="''" Value="''"/>
+              <SweepFnd Name="'SweepFnd'" Value="''"/>
+              <MarginApproval Name="'MarginCode'" Value="substring($,'370','1')"/>
+              <OptionsApproval Name="'OptionCode'" Value="substring($,'371','1')"/>
+              <PeriodicDist Name="''" Value="''"/>
+              <EFTLink Name="''" Value="''"/>
+              <CrDbCard Name="''" Value="''"/>
+              <CheckWrite Name="''" Value="''"/>
+              <OnlineAccess Name="''" Value="''"/>
+              <DuplicateStmts Name="''" Value="''"/>
+              <ProxyVoting Name="''" Value="''"/>
+              <ERISAStatus Name="''" Value="''"/>
+              <UdfChar>
+
+                
+                <Udf Name="'RoutingCode'" Value="substring($,'12','6')"></Udf>
+                <Udf Name="'Office'" Value="substring($,'318','3')"></Udf>
+                <Udf Name="'OLDOfficeNumber'" Value="substring($,'340','3')"></Udf>
+                <Udf Name="'OLDAccountNumber'" Value="substring($,'343','6')"></Udf>
+                <Udf Name="'ManagedAccountFlag'" Value="substring($,'372','1')"></Udf>
+                <Udf Name="'FANumber'" Value="substring($,'373','3')"></Udf>
+                <Udf Name="'AccountType'" Value="substring($,'376','1')"></Udf>
+                <Udf Name="'CheckDigit'" Value="substring($,'377','1')"></Udf>
+                
+              </UdfChar>
+              <UdfNum>
+                
+              </UdfNum>
+              <UdfDate>
+                <Udf Name="'DateOfTrick'" Value="substring($,'349','10')"></Udf>
+              </UdfDate>
+            </Account>
+          </Accounts>
+
+        </XMLSchema>
+      </ConfigData>
+    </Item>
+
+    <Item ID="5" Name="MSSBACCTBREMapper" Type="kroger.ACD.FilePipelineComponents.FileBREMapper,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\XML\MSSBACCT{{GUID}}.xml</SrcFile>
+        <DestFile>{{SSISFILEROOT}}\MSSBACCT{{GUID}}.SSIS</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+        <BRE>
+          <Policies>
+            <Policy Name="'kroger.ACD.MSSB.ACCT.Stage1'"></Policy>
+
+          </Policies>
+          <Helpers>
+            <Helper Name="'kroger.ACD.BRE.Helper.Facts,kroger.ACD.BRE.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c856c7c39650fee4'"></Helper>
+          </Helpers>
+
+        </BRE>
+        <Mapper>
+          <Input>
+            <XMLDocTypeName>'FITDEXAccountRecord_V1'</XMLDocTypeName>
+            <XMLNodeName>'Account'</XMLNodeName>
+          </Input>
+          <Output>
+            <Object TypeName="'kroger.ACD.MSSB.Entities.krogerMSSBAccount,kroger.ACD.MSSB.Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e'">
+              <ObjectProperties>
+                <Property>'CustodianCode'</Property>
+                <Property>'RecordID'</Property>
+
+                <Property>'EffectiveDate'</Property>
+                <Property>'AccountNumber'</Property>
+                <Property>'AccountName1'</Property>
+                <Property>'AccountName2'</Property>
+                <Property>'AccountName3'</Property>
+                <Property>'AccountType'</Property>
+                <Property>'Address1'</Property>
+                <Property>'Address2'</Property>
+                <Property>'Address3'</Property>
+                <Property>'AddressCity'</Property>
+                <Property>'AddressState'</Property>
+                <Property>'AddressZip'</Property>
+                <Property>'AddressCountry'</Property>
+                <Property>'HomePhoneNum'</Property>
+                <Property>'BizPhoneNum'</Property>
+                <Property>'SweepFund'</Property>
+                <Property>'MarginApprovalInd'</Property>
+                <Property>'OptionApprovalInd'</Property>
+                <Property>'PeriodicDistInd'</Property>
+                <Property>'EFTLinkVerifyInd'</Property>
+                <Property>'CrDrCardInd'</Property>
+                <Property>'CheckInd'</Property>
+                <Property>'OnlineAccessInd'</Property>
+                <Property>'DupStmtInd'</Property>
+                <Property>'ProxyVoteInd'</Property>
+                <Property>'ERISAStatusInd'</Property>
+
+
+
+
+                <Property>'RulesStageId'</Property>
+                <Property>'ErrorCode'</Property>
+                <Property>'ErrorDesc'</Property>
+
+              </ObjectProperties>
+            </Object>
+            <FlatFileFieldDelimiter>'~#@#~'</FlatFileFieldDelimiter>
+          </Output>
+          <References>
+            <Reference>'kroger.ACD.Entities.krogerEntityPolicyTracker,kroger.ACD.Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e'</Reference>
+          </References>
+        </Mapper>
+
+      </ConfigData>
+    </Item>
+
+
+
+
+
+
+
+  </Configuration>
+
+</Configurations>

@@ -1,0 +1,1016 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configurations>
+
+  <Configuration ID="RBC.TRN">
+
+    <Item ID="1" Name="RBCTRNMAINFileFieldQuoteWrapper" Type="kroger.ACD.FilePipelineComponents.FileFieldQuoteWrapper,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\RBCTRNMAIN.{{INSTANCEID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\RBCTRNMAIN_1.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+        <Delimiter>','</Delimiter>
+      </ConfigData>
+    </Item>
+    
+    <Item ID="2" Name="RBCTRNREF1FileFieldQuoteWrapper" Type="kroger.ACD.FilePipelineComponents.FileFieldQuoteWrapper,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\RBCTRNREF1.{{INSTANCEID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\RBCTRNREF1_1.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+        <Delimiter>','</Delimiter>
+      </ConfigData>
+    </Item>
+    
+    <Item ID="3" Name="RBCTRNFileUnionCreator" Type="kroger.ACD.FilePipelineComponents.FileUnionCreator,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\RBCTRNMAIN_1.{{INSTANCEID}}.{{GUID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\RBCTRNUNION_1.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <ErrFile></ErrFile>
+        <OutputMode>CreateNew</OutputMode>
+
+        <Output>
+
+
+          <FieldDelimiter>','</FieldDelimiter>
+
+        </Output>
+        <Source ID="'TRD'" Path="'{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\RBCTRNMAIN_1.{{INSTANCEID}}.{{GUID}}'" Tag="wrapstring('T','&quot;')">
+
+          <FillerField>
+            <Data>'"",'</Data>
+            <Occurrences>'43'</Occurrences>
+
+          </FillerField>
+          <Fields>
+
+            <Field>wrapstring(wrappeditemstring($,',','0'),'"')</Field>
+            <Field>wrapstring(wrappeditemstring($,',','2'),'"')</Field>
+            <Field>wrapstring(wrappeditemstring($,',','3'),'"')</Field>
+            <Field>wrapstring(wrappeditemstring($,',','5'),'"')</Field>
+            <Field>wrapstring(wrappeditemstring($,',','6'),'"')</Field>
+            <Field>wrapstring(wrappeditemstring($,',','7'),'"')</Field>
+            <Field>wrapstring(wrappeditemstring($,',','8'),'"')</Field>
+            <Field>wrapstring(wrappeditemstring($,',','10'),'"')</Field>
+            <Field>wrapstring(wrappeditemstring($,',','11'),'"')</Field>
+            <Field>wrapstring(wrappeditemstring($,',','12'),'"')</Field>
+            <Field>wrapstring(wrappeditemstring($,',','13'),'"')</Field>
+            <Field>wrapstring(wrappeditemstring($,',','14'),'"')</Field>
+            <Field>wrapstring(wrappeditemstring($,',','18'),'"')</Field>
+            <Field>wrapstring(wrappeditemstring($,',','19'),'"')</Field>
+            <Field>wrapstring(wrappeditemstring($,',','20'),'"')</Field>
+            <Field>wrapstring(wrappeditemstring($,',','21'),'"')</Field>
+            <Field>wrapstring(wrappeditemstring($,',','23'),'"')</Field>
+            <Field>wrapstring(wrappeditemstring($,',','25'),'"')</Field>
+            <Field>wrapstring(wrappeditemstring($,',','26'),'"')</Field>
+            <Field>wrapstring(wrappeditemstring($,',','27'),'"')</Field>
+            <Field>wrapstring(wrappeditemstring($,',','28'),'"')</Field>
+            <Field>wrapstring(wrappeditemstring($,',','30'),'"')</Field>
+            <Field>wrapstring(wrappeditemstring($,',','31'),'"')</Field>
+            <Field>wrapstring(wrappeditemstring($,',','33'),'"')</Field>
+            <Field>wrapstring(wrappeditemstring($,',','32'),'"')</Field>
+            <Field>wrapstring(wrappeditemstring($,',','34'),'"')</Field>
+            <Field>wrapstring(wrappeditemstring($,',','36'),'"')</Field>
+            <Field>wrapstring(wrappeditemstring($,',','39'),'"')</Field>
+            <Field>wrapstring(wrappeditemstring($,',','40'),'"')</Field>
+            <Field>wrapstring(wrappeditemstring($,',','41'),'"')</Field>
+            <Field>wrapstring(wrappeditemstring($,',','42'),'"')</Field>
+            <Field>wrapstring(wrappeditemstring($,',','43'),'"')</Field>
+            <Field>wrapstring(wrappeditemstring($,',','44'),'"')</Field>
+            <Field>wrapstring(wrappeditemstring($,',','49'),'"')</Field>
+            <Field>wrapstring(wrappeditemstring($,',','53'),'"')</Field>
+            <Field>wrapstring(wrappeditemstring($,',','55'),'"')</Field>
+            <Field>wrapstring(wrappeditemstring($,',','64'),'"')</Field>
+            <Field>wrapstring(wrappeditemstring($,',','67'),'"')</Field>
+            <Field>wrapstring(wrappeditemstring($,',','70'),'"')</Field>
+            <Field>wrapstring(wrappeditemstring($,',','94'),'"')</Field>
+            <Field>wrapstring(wrappeditemstring($,',','105'),'"')</Field>
+            <Field>wrapstring(wrappeditemstring($,',','126'),'"')</Field>
+            <Field>wrapstring(wrappeditemstring($,',','127'),'"')</Field>
+          </Fields>
+        </Source>
+
+        <References>
+
+          <Reference ID="'NTR'" Path="'{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\RBCTRNREF1_1.{{INSTANCEID}}.{{GUID}}'" Tag="wrapstring('N','&quot;')">
+            <FillerField>
+              <Data>'"",'</Data>
+              <Occurrences>'26'</Occurrences>
+
+            </FillerField>
+            <Fields>
+              <Field>wrapstring(wrappeditemstring($,',','0'),'"')</Field>
+              <Field>wrapstring(wrappeditemstring($,',','1'),'"')</Field>
+              <Field>wrapstring(wrappeditemstring($,',','2'),'"')</Field>
+              <Field>wrapstring(wrappeditemstring($,',','3'),'"')</Field>
+              <Field>wrapstring(wrappeditemstring($,',','4'),'"')</Field>
+              <Field>wrapstring(wrappeditemstring($,',','5'),'"')</Field>
+              <Field>wrapstring(wrappeditemstring($,',','6'),'"')</Field>
+              <Field>wrapstring(wrappeditemstring($,',','7'),'"')</Field>
+              <Field>wrapstring(wrappeditemstring($,',','8'),'"')</Field>
+              <Field>wrapstring(wrappeditemstring($,',','9'),'"')</Field>
+              <Field>wrapstring(wrappeditemstring($,',','10'),'"')</Field>
+              <Field>wrapstring(wrappeditemstring($,',','11'),'"')</Field>
+              <Field>wrapstring(wrappeditemstring($,',','12'),'"')</Field>
+              <Field>wrapstring(wrappeditemstring($,',','13'),'"')</Field>
+              <Field>wrapstring(wrappeditemstring($,',','14'),'"')</Field>
+              <Field>wrapstring(wrappeditemstring($,',','15'),'"')</Field>
+              <Field>wrapstring(wrappeditemstring($,',','16'),'"')</Field>
+              <Field>wrapstring(wrappeditemstring($,',','17'),'"')</Field>
+              <Field>wrapstring(wrappeditemstring($,',','18'),'"')</Field>
+              <Field>wrapstring(wrappeditemstring($,',','19'),'"')</Field>
+              <Field>wrapstring(wrappeditemstring($,',','20'),'"')</Field>
+              <Field>wrapstring(wrappeditemstring($,',','21'),'"')</Field>
+              <Field>wrapstring(wrappeditemstring($,',','22'),'"')</Field>
+              <Field>wrapstring(wrappeditemstring($,',','23'),'"')</Field>
+              <Field>wrapstring(wrappeditemstring($,',','31'),'"')</Field>
+              <Field>wrapstring(wrappeditemstring($,',','32'),'"')</Field>
+
+            </Fields>
+
+          </Reference>
+
+        </References>
+
+
+      </ConfigData>
+    </Item>
+
+    <Item ID="4" Name="RBCTRNUNIONFileDataColumnInserter" Type="kroger.ACD.FilePipelineComponents.FileDataColumnInserter,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\RBCTRNUNION_1.{{INSTANCEID}}.{{GUID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\RBCTRNUNION_2.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+
+        <Columns>
+          <Column>
+            <ColumnData>'"'</ColumnData>
+            <ColumnDelimiter>''</ColumnDelimiter>
+            <ColumnLength>'1'</ColumnLength>
+          </Column>
+          <Column>
+            <ColumnData>?IID?</ColumnData>
+            <ColumnDelimiter>'",'</ColumnDelimiter>
+            <ColumnLength>'12'</ColumnLength>
+          </Column>
+
+        </Columns>
+
+      </ConfigData>
+    </Item>
+
+    <Item ID="5" Name="RBCTRNComplexXMLSerializer" Type="kroger.ACD.FilePipelineComponents.FileXMLSerializer,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\RBCTRNUNION_2.{{INSTANCEID}}.{{GUID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\XML\RBCTRN{{GUID}}.xml</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+
+        <!--
+            To instruct the serializer to write the text as is, include it within '...'
+            To instruct the serializer to evaluate a expression at runtime, use
+            available functionmacros like substring, itemstring, concat etc.....
+        -->
+        <XMLSchema Root="'Transactions'" MixedSchema="'False'">
+
+          <Transactions SourceCode="'RBC'" BatchRunDate="concat(#now#,'')">
+            <Transaction Name="'RBCTransaction'" Value="''">
+              <RecordID Name="'RecordID'" Value="wrappeditemstring($,',','0')"></RecordID>
+              <CustodianCode Name="'CustodianCode'" Value="constant('RBC')"></CustodianCode>
+              <TransactionId Name="''" Value="''"></TransactionId>
+              <TransactionCode Name="''" Value="''"></TransactionCode>
+              <TransactionSubCode Name="''" Value="''"></TransactionSubCode>
+              <BrokerCode Name="''" Value="''"></BrokerCode>
+              <AcctNumber Name="'ClientAccount'" Value="wrappeditemstring($,',','4')"></AcctNumber>
+              <AcctType Name="''" Value="''"></AcctType>
+              <InstrumentLocalId Name="'RBCSecurityNumber'" Value="wrappeditemstring($,',','42')"></InstrumentLocalId>
+              <InstrumentTypeCode Name="'SecurityType'" Value="wrappeditemstring($,',','3')"></InstrumentTypeCode>
+
+              <Cusip Name="'CUSIP'" Value="wrappeditemstring($,',','21')"></Cusip>
+              <Sedol Name="'SEDOL'" Value="wrappeditemstring($,',','43')"></Sedol>
+              <Isin Name="'ISIN'" Value="wrappeditemstring($,',','44')"></Isin>
+              <Symbol Name="'Symbol'" Value="wrappeditemstring($,',','18')"></Symbol>
+              <Quantity Name="'Quantity'" Value="wrappeditemstring($,',','9')"></Quantity>
+              <Amount Name="'NetAmount'" Value="wrappeditemstring($,',','17')"></Amount>
+              <Price Name="'Price'" Value="wrappeditemstring($,',','10')"></Price>
+              <EffectDate Name="'AsOfDate'" Value="wrappeditemstring($,',','8')"></EffectDate>
+              <SettleDate Name="'SettlementDate'" Value="wrappeditemstring($,',','7')"></SettleDate>
+              <TradeDate Name="'TradeDate'" Value="wrappeditemstring($,',','6')"></TradeDate>
+              <Currency Name="''" Value="''"></Currency>
+              <Commission Name="'Commission'" Value="wrappeditemstring($,',','16')"></Commission>
+              <Interest Name="'AccruedInterest'" Value="wrappeditemstring($,',','38')"></Interest>
+              <Principal Name="'Principal'" Value="wrappeditemstring($,',','14')"></Principal>
+              <Fee Name="'SECFee'" Value="wrappeditemstring($,',','15')"></Fee>
+              <Description0 Name="'SecurityDescription1'" Value="wrappeditemstring($,',','29')"></Description0>
+              <Description1 Name="'SecurityDescription2'" Value="wrappeditemstring($,',','30')"></Description1>
+              <Description2 Name="'SecurityDescription3'" Value="wrappeditemstring($,',','31')"></Description2>
+              <Description3 Name="'SecurityDescription4'" Value="wrappeditemstring($,',','32')"></Description3>
+              <Description4 Name="'SecurityDescription5'" Value="wrappeditemstring($,',','33')"></Description4>
+              <DrCrInd Name="''" Value="''"></DrCrInd>
+              <CancelInd Name="''" Value="''"></CancelInd>
+              <ConfirmInd Name="''" Value="''"></ConfirmInd>
+              <CashAffectedInd Name="''" Value="''"></CashAffectedInd>
+              <LongShortInd Name="''" Value="''"></LongShortInd>
+              <UdfChar>
+                <Udf Name="'FileID'" Value="wrappeditemstring($,',','1')"></Udf>
+                <Udf Name="'Firm_Branch_FC'" Value="wrappeditemstring($,',','2')"></Udf>
+                <Udf Name="'BuyorSell'" Value="wrappeditemstring($,',','11')"></Udf>
+                <Udf Name="'Cancel_RebillIndicator'" Value="wrappeditemstring($,',','12')"></Udf>
+                <Udf Name="'BlotterCode'" Value="wrappeditemstring($,',','13')"></Udf>
+                <Udf Name="'OffsetEntity'" Value="wrappeditemstring($,',','19')"></Udf>
+                <Udf Name="'OffsetEntityType'" Value="wrappeditemstring($,',','20')"></Udf>
+                <Udf Name="'CommissionCode'" Value="wrappeditemstring($,',','24')"></Udf>
+                <Udf Name="'SecuritySubtype'" Value="wrappeditemstring($,',','28')"></Udf>
+                <Udf Name="'SecurityDescription6'" Value="wrappeditemstring($,',','34')"></Udf>
+                <Udf Name="'AccountCodes'" Value="wrappeditemstring($,',','40')"></Udf>
+                <Udf Name="'ControlNumber'" Value="wrappeditemstring($,',','41')"></Udf>
+
+                <Udf Name="'N_Firm_Branch_FC'" Value="wrappeditemstring($,',','45')"></Udf>
+                <Udf Name="'N_CategoryCode'" Value="wrappeditemstring($,',','46')"></Udf>
+                <Udf Name="'N_RecordCode'" Value="wrappeditemstring($,',','47')"></Udf>
+                <Udf Name="'N_SecurityNumber'" Value="wrappeditemstring($,',','55')"></Udf>
+                <Udf Name="'N_LineOneMemoDescription'" Value="wrappeditemstring($,',','56')"></Udf>
+                <Udf Name="'N_LineTwoMemoDescription'" Value="wrappeditemstring($,',','57')"></Udf>
+                <Udf Name="'N_CUSIP'" Value="wrappeditemstring($,',','58')"></Udf>
+                <Udf Name="'N_Symbol'" Value="wrappeditemstring($,',','59')"></Udf>
+                <Udf Name="'N_AccountCode'" Value="wrappeditemstring($,',','60')"></Udf>
+                <Udf Name="'N_BatchCode'" Value="wrappeditemstring($,',','62')"></Udf>
+                <Udf Name="'N_EntryCode'" Value="wrappeditemstring($,',','63')"></Udf>
+                <Udf Name="'N_OCCSymbol'" Value="wrappeditemstring($,',','65')"></Udf>
+                <Udf Name="'N_OPRASymbol'" Value="wrappeditemstring($,',','66')"></Udf>
+                <Udf Name="'N_ThomsonOneSymbol'" Value="wrappeditemstring($,',','67')"></Udf>
+                <Udf Name="'N_ExpandedSymbol'" Value="wrappeditemstring($,',','68')"></Udf>
+                <Udf Name="'N_SEDOL'" Value="wrappeditemstring($,',','69')"></Udf>
+                <Udf Name="'N_ISIN'" Value="wrappeditemstring($,',','70')"></Udf>
+                
+
+              </UdfChar>
+              <UdfNum>                
+                <Udf Name="'BondBasisYield'" Value="wrappeditemstring($,',','5')"></Udf>
+                <Udf Name="'HandlingFee'" Value="wrappeditemstring($,',','26')"></Udf>
+                <Udf Name="'UnderlyingSecurity'" Value="wrappeditemstring($,',','22')"></Udf>
+                <Udf Name="'Discount'" Value="wrappeditemstring($,',','23')"></Udf>
+                <Udf Name="'BasisPrice'" Value="wrappeditemstring($,',','25')"></Udf>
+                <Udf Name="'Factor'" Value="wrappeditemstring($,',','27')"></Udf>
+                <Udf Name="'FullCommission'" Value="wrappeditemstring($,',','35')"></Udf>
+                <Udf Name="'MarketPrice'" Value="wrappeditemstring($,',','36')"></Udf>
+                <Udf Name="'PostageFees'" Value="wrappeditemstring($,',','37')"></Udf>
+                <Udf Name="'SalesCreditAmount'" Value="wrappeditemstring($,',','39')"></Udf>                
+                <Udf Name="'N_AccountNumber'" Value="wrappeditemstring($,',','49')"></Udf>
+                <Udf Name="'N_AccountType'" Value="wrappeditemstring($,',','50')"></Udf>
+                <Udf Name="'N_Quantity'" Value="wrappeditemstring($,',','51')"></Udf>
+                <Udf Name="'N_NetAmountOfTransaction'" Value="wrappeditemstring($,',','52')"></Udf>                
+                <Udf Name="'N_ValueOfTransaction'" Value="wrappeditemstring($,',','61')"></Udf>
+                <Udf Name="'N_RBCSecurityNumber'" Value="wrappeditemstring($,',','64')"></Udf>
+                
+
+              </UdfNum>
+              <UdfDate>
+                <Udf Name="'N_TradeDate'" Value="wrappeditemstring($,',','48')"></Udf>
+                <Udf Name="'N_DatePosted'" Value="wrappeditemstring($,',','53')"></Udf>
+                <Udf Name="'N_AsOfDate'" Value="wrappeditemstring($,',','54')"></Udf>
+              </UdfDate>
+
+
+
+            </Transaction>
+          </Transactions>
+
+
+        </XMLSchema>
+
+
+
+      </ConfigData>
+
+    </Item>
+
+    <Item ID="6" Name="RBCTRXBREMapper" Type="kroger.ACD.FilePipelineComponents.FileBREMapper,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\XML\RBCTRN{{GUID}}.xml</SrcFile>
+        <DestFile>{{SSISFILEROOT}}\RBCTRN{{GUID}}.SSIS</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+        <BRE>
+          <Policies>
+            <Policy Name="'kroger.ACD.RBC.TRN.Stage1'"></Policy>
+            <Policy Name="'kroger.ACD.RBC.TRN.Stage2'"></Policy>
+            <Policy Name="'kroger.ACD.TRN.Stage3'"></Policy>
+          </Policies>
+          <Helpers>
+            <Helper Name="'kroger.ACD.BRE.Helper.Facts,kroger.ACD.BRE.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c856c7c39650fee4'"></Helper>
+          </Helpers>
+
+        </BRE>
+        <Mapper>
+          <Input>
+            <XMLDocTypeName>'FITDEXTransactionRecord_V1'</XMLDocTypeName>
+            <XMLNodeName>'Transaction'</XMLNodeName>
+          </Input>
+          <Output>
+            <Object TypeName="'kroger.ACD.RBC.Entities.krogerRBCTransaction,kroger.ACD.RBC.Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e'">
+              <ObjectProperties>
+                <Property>'CustodianCode'</Property>
+                <Property>'RecordID'</Property>
+                <Property>'AccountNumber'</Property>
+                <Property>'TransactionType'</Property>
+                <Property>'EffectDate'</Property>
+                <Property>'TradeDate'</Property>
+                <Property>'SettleDate'</Property>
+                <Property>'Quantity'</Property>
+                <Property>'NetAmount'</Property>
+                <Property>'Price'</Property>
+                <Property>'Commission'</Property>
+                <Property>'Postage'</Property>
+                <Property>'SECFee'</Property>
+                <Property>'CancelInd'</Property>
+                <Property>'CashAffectedInd'</Property>
+                <Property>'ConfirmInd'</Property>
+                <Property>'TranxTypeDefiner'</Property>
+                <Property>'OffsetCurrency'</Property>
+                <Property>'OffsetCash'</Property>
+                <Property>'CashID'</Property>
+                <Property>'Cusip'</Property>
+                <Property>'Symbol'</Property>
+                <Property>'Sedol'</Property>
+                <Property>'Isin'</Property>
+                <Property>'AltSymbol'</Property>
+                <Property>'InstrumentId0'</Property>
+                <Property>'InstrumentId1'</Property>
+                <Property>'InstrumentId2'</Property>
+                <Property>'Interest'</Property>
+                <Property>'DrCrInd'</Property>
+                <Property>'LongShortInd'</Property>
+                <Property>'TradeCurrency'</Property>
+                <Property>'StateTax'</Property>
+                <Property>'ExchangeRate'</Property>
+                <Property>'RulesStageId'</Property>
+                <Property>'ErrorCode'</Property>
+                <Property>'ErrorDesc'</Property>
+
+              </ObjectProperties>
+            </Object>
+            <FlatFileFieldDelimiter>'~#@#~'</FlatFileFieldDelimiter>
+          </Output>
+          <References>
+            <Reference>'kroger.ACD.Entities.krogerEntityPolicyTracker,kroger.ACD.Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e'</Reference>
+          </References>
+        </Mapper>
+
+      </ConfigData>
+    </Item>
+
+
+
+
+
+  </Configuration>
+
+  
+
+  <Configuration ID="RBC.HOLD">
+    
+    <Item ID="1" Name="RBCHOLDMAINFileDataColumnInserter" Type="kroger.ACD.FilePipelineComponents.FileDataColumnInserter,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\RBCHOLDMAIN.{{INSTANCEID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\RBCHOLDMAIN_1.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+
+        <Columns>
+          <Column>
+            <ColumnData>?IID?</ColumnData>
+            <ColumnDelimiter>','</ColumnDelimiter>
+            <ColumnLength>'12'</ColumnLength>
+          </Column>
+
+        </Columns>
+
+      </ConfigData>
+    </Item>
+
+    <Item ID="2" Name="RBCHOLDMAINFileFieldQuoteWrapper" Type="kroger.ACD.FilePipelineComponents.FileFieldQuoteWrapper,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\RBCHOLDMAIN_1.{{INSTANCEID}}.{{GUID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\RBCHOLDMAIN_2.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+        <Delimiter>','</Delimiter>
+      </ConfigData>
+    </Item>
+    
+    <Item ID="3" Name="RBCSECFileFileFieldQuoteWrapper" Type="kroger.ACD.FilePipelineComponents.FileFieldQuoteWrapper,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\RBCHOLDREF1.{{INSTANCEID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\RBCHOLDREF1_1.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+        <Delimiter>','</Delimiter>
+      </ConfigData>
+    </Item>
+    
+    <Item ID="4" Name="RBCHoldFileMerger" Type="kroger.ACD.FilePipelineComponents.FileMerger,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\RBCHOLDMAIN_2.{{INSTANCEID}}.{{GUID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\RBCHOLDMERGED_1.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <ErrFile></ErrFile>
+        <OutputMode>CreateNew</OutputMode>
+        <Source ID="'RBCHoldingsMain'">
+          <Keys>
+            <Key ID="'RBCHoldingsMainRBCSecNumber'" Name="'RBCSecurityNumber'" Expression="wrappeditemstring($,',','19')"></Key>
+
+          </Keys>
+
+        </Source>
+
+        <References>
+
+          <Reference ID="'RBCHoldingsRef_RBCSEC'" File="'{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\RBCHOLDREF1_1.{{INSTANCEID}}.{{GUID}}'" >
+            <RefRecord Occurrences="'1'">
+              <FillerField>
+                <Data>'"",'</Data>
+                <Occurrences>'66'</Occurrences>
+
+              </FillerField>
+            </RefRecord>
+            <Keys>
+              <Key ID="'RBCHoldingsRefRBCSecNumber'" Expression="wrappeditemstring($,',','61')"></Key>
+            </Keys>
+            <Maps>
+              <Map ID="'1'" Src="'RBCHoldingsMainRBCSecNumber'" Ref="'RBCHoldingsRefRBCSecNumber'"></Map>
+
+            </Maps>
+          </Reference>
+
+        </References>
+
+
+      </ConfigData>
+    </Item>
+
+    <Item ID="5" Name="RBCHOLDComplexXMLSerializer" Type="kroger.ACD.FilePipelineComponents.FileXMLSerializer,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\RBCHOLDMERGED_1.{{INSTANCEID}}.{{GUID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\XML\RBCHOLD{{GUID}}.xml</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+
+        <!--
+            To instruct the serializer to write the text as is, include it within '...'
+            To instruct the serializer to evaluate a expression at runtime, use
+            available functionmacros like substring, itemstring, concat etc.....
+        -->
+        <XMLSchema Root="'Positions'" MixedSchema="'True'">
+
+          <Positions SourceCode="'RBC'" BatchRunDate="concat(#now#,'')">
+            <Position Name="'Position'" Value="''">
+
+              <RecordID Name="'RecordID'" Value="wrappeditemstring($RBCHoldingsMain,',','0')"/>
+              <CustodianCode Name="'CustodianCode'" Value="'RBC'"/>
+              <AcctNumber Name="'Account'" Value="wrappeditemstring($RBCHoldingsMain,',','2')"/>
+
+              <EffectDate Name="'PositionDate'" Value="wrappeditemstring($RBCHoldingsMain,',','11')"/>
+              <InstrumentLocalId Name="''" Value="''"/>
+              <Cusip Name="'CUSIP'" Value="wrappeditemstring($RBCHoldingsMain,',','7')"/>
+              <Sedol Name="'SEDOL'" Value="wrappeditemstring($RBCHoldingsMain,',','36')"/>
+              <Isin Name="'ISIN'" Value="wrappeditemstring($RBCHoldingsMain,',','37')"/>
+              <Symbol Name="'Symbol'" Value="wrappeditemstring($RBCHoldingsMain,',','8')"/>
+              <Quantity Name="'TradeDateQuantity'" Value="wrappeditemstring($RBCHoldingsMain,',','5')"/>
+              <Price Name="'MarketPrice'" Value="wrappeditemstring($RBCHoldingsMain,',','28')"/>
+              <MarketValue Name="'TradeDateValue'" Value="wrappeditemstring($RBCHoldingsMain,',','6')"/>
+              <LongShortInd Name="''" Value="''"/>
+              <RestrictedInd Name="''" Value="''"/>
+              <Description Name="''" Value="''"/>
+
+
+              <UdfChar>
+                <Udf Name="'Firm-Branch-FC'" Value="wrappeditemstring($RBCHoldingsMain,',','1')"></Udf>
+                <Udf Name="'BalanceType'" Value="wrappeditemstring($RBCHoldingsMain,',','3')"></Udf>
+                <Udf Name="'SecurityNumber'" Value="wrappeditemstring($RBCHoldingsMain,',','4')"></Udf>
+                <Udf Name="'SecurityType'" Value="wrappeditemstring($RBCHoldingsMain,',','9')"></Udf>
+                <Udf Name="'SecuritySubTypes'" Value="wrappeditemstring($RBCHoldingsMain,',','10')"></Udf>
+                <Udf Name="'OptionType_PutorCall'" Value="wrappeditemstring($RBCHoldingsMain,',','12')"></Udf>
+                <Udf Name="'AccountCode'" Value="wrappeditemstring($RBCHoldingsMain,',','13')"></Udf>
+                <Udf Name="'AccountType'" Value="wrappeditemstring($RBCHoldingsMain,',','14')"></Udf>
+                <Udf Name="'MarginableCode'" Value="wrappeditemstring($RBCHoldingsMain,',','15')"></Udf>
+                <Udf Name="'AssetType'" Value="wrappeditemstring($RBCHoldingsMain,',','18')"></Udf>
+                <Udf Name="'OCCSymbol '" Value="wrappeditemstring($RBCHoldingsMain,',','20')"></Udf>
+                <Udf Name="'OPRASymbol'" Value="wrappeditemstring($RBCHoldingsMain,',','21')"></Udf>
+                <Udf Name="'ThomsonOneSymbol '" Value="wrappeditemstring($RBCHoldingsMain,',','22')"></Udf>
+                <Udf Name="'ExpandedSymbol'" Value="wrappeditemstring($RBCHoldingsMain,',','23')"></Udf>
+                <Udf Name="'DescriptionLine1'" Value="wrappeditemstring($RBCHoldingsRef_RBCSEC1,',','39')"></Udf>
+                <Udf Name="'DescriptionLine2'" Value="wrappeditemstring($RBCHoldingsRef_RBCSEC1,',','40')"></Udf>
+                <Udf Name="'DescriptionLine3'" Value="wrappeditemstring($RBCHoldingsRef_RBCSEC1,',','41')"></Udf>
+
+              </UdfChar>
+              <UdfNum>
+                <Udf Name="'Factor'" Value="wrappeditemstring($RBCHoldingsMain,',','16')"></Udf>
+                <Udf Name="'OtherBalance_TradeDate'" Value="wrappeditemstring($RBCHoldingsMain,',','17')"></Udf>
+                <Udf Name="'RBCSecurityNumber'" Value="wrappeditemstring($RBCHoldingsMain,',','19')"></Udf>
+                <Udf Name="'RBCSecurityNumber_RBCSEC'" Value="wrappeditemstring($RBCHoldingsRef_RBCSEC1,',','61')"></Udf>
+
+              </UdfNum>
+              <UdfDate>
+
+              </UdfDate>
+            </Position>
+          </Positions>
+
+        </XMLSchema>
+
+
+
+      </ConfigData>
+
+    </Item>
+
+    <Item ID="6" Name="RBCHOLDBREMapper" Type="kroger.ACD.FilePipelineComponents.FileBREMapper,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\XML\RBCHOLD{{GUID}}.xml</SrcFile>
+        <DestFile>{{SSISFILEROOT}}\RBCHOLD{{GUID}}.SSIS</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+        <BRE>
+          <Policies>
+            <Policy Name="'kroger.ACD.RBC.HOLD.Stage1'"></Policy>
+
+          </Policies>
+          <Helpers>
+            <Helper Name="'kroger.ACD.BRE.Helper.Facts,kroger.ACD.BRE.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c856c7c39650fee4'"></Helper>
+          </Helpers>
+
+        </BRE>
+        <Mapper>
+          <Input>
+            <XMLDocTypeName>'FITDEXPositionRecord_V1'</XMLDocTypeName>
+            <XMLNodeName>'Position'</XMLNodeName>
+          </Input>
+          <Output>
+            <Object TypeName="'kroger.ACD.RBC.Entities.krogerRBCPosition,kroger.ACD.RBC.Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e'">
+              <ObjectProperties>
+                <Property>'CustodianCode'</Property>
+                <Property>'RecordID'</Property>
+
+                <Property>'AccountNumber'</Property>
+                <Property>'EffectiveDate'</Property>
+                <Property>'Quantity'</Property>
+                <Property>'Price'</Property>
+                <Property>'MarketValue'</Property>
+                <Property>'LongShortInd'</Property>
+                <Property>'RestrictedSecInd'</Property>
+                <Property>'CashID'</Property>
+                <Property>'Cusip'</Property>
+                <Property>'Symbol'</Property>
+                <Property>'Sedol'</Property>
+                <Property>'Isin'</Property>
+                <Property>'AltSymbol'</Property>
+                <Property>'InstrumentId0'</Property>
+                <Property>'InstrumentId1'</Property>
+                <Property>'InstrumentId2'</Property>
+
+
+                <Property>'RulesStageId'</Property>
+                <Property>'ErrorCode'</Property>
+                <Property>'ErrorDesc'</Property>
+
+              </ObjectProperties>
+            </Object>
+            <FlatFileFieldDelimiter>'~#@#~'</FlatFileFieldDelimiter>
+          </Output>
+          <References>
+            <Reference>'kroger.ACD.Entities.krogerEntityPolicyTracker,kroger.ACD.Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e'</Reference>
+          </References>
+        </Mapper>
+
+      </ConfigData>
+    </Item>
+
+  </Configuration>
+  
+  
+  <Configuration ID="RBC.SEC">
+   
+
+    <Item ID="1" Name="RBCSECFileDataColumnInserter" Type="kroger.ACD.FilePipelineComponents.FileDataColumnInserter,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\RBCSECMAIN.{{INSTANCEID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\RBCSECMAIN_1.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+
+        <Columns>
+          <Column>
+            <ColumnData>?IID?</ColumnData>
+            <ColumnDelimiter>','</ColumnDelimiter>
+            <ColumnLength>'12'</ColumnLength>
+          </Column>
+
+        </Columns>
+
+      </ConfigData>
+    </Item>
+    
+    <Item ID="2" Name="RBCSECFileFileFieldQuoteWrapper" Type="kroger.ACD.FilePipelineComponents.FileFieldQuoteWrapper,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\RBCSECMAIN_1.{{INSTANCEID}}.{{GUID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\RBCSECMAIN_2.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+        <Delimiter>','</Delimiter>
+      </ConfigData>
+    </Item>
+
+    <Item ID="3" Name="RBCSECComplexXMLSerializer" Type="kroger.ACD.FilePipelineComponents.FileXMLSerializer,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\RBCSECMAIN_2.{{INSTANCEID}}.{{GUID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\XML\RBCSEC{{GUID}}.xml</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+       
+        <!--
+            To instruct the serializer to write the text as is, include it within '...'
+            To instruct the serializer to evaluate a expression at runtime, use
+            available functionmacros like substring, itemstring, concat etc.....
+        -->
+        <XMLSchema Root="'Securities'" MixedSchema="'False'">
+
+          <Securities SourceCode="'RBC'" BatchRunDate="concat(#now#,'')">
+            <Security Name="'Security'" Value="''">
+              <RecordID Name="'RecordID'" Value="wrappeditemstring($,',','0')"/>
+              <CustodianCode Name="'CustodianCode'" Value="'RBC'"/>
+              <Price Name="'MarketPrice'" Value="wrappeditemstring($,',','55')"/>
+              <EffectDate Name="'PricingDate'" Value="wrappeditemstring($,',','69')"/>
+              <InstrumentLocalId Name="'RBCSecurityNumber'" Value="wrappeditemstring($,',','62')"/>
+              <Cusip Name="'CUSIP'" Value="wrappeditemstring($,',','4')"/>
+              <Sedol Name="'SEDOL'" Value="wrappeditemstring($,',','74')"/>
+              <Isin Name="'ISIN'" Value="wrappeditemstring($,',','75')"/>
+              <Symbol Name="'Symbol'" Value="wrappeditemstring($,',','3')"/>
+              <TypeCode Name="'SecurityType'" Value="wrappeditemstring($,',','5')"/>
+              <Description Name="'DescriptionLine1'" Value="wrappeditemstring($,',','40')"/>
+              <UdfChar>
+                <Udf Name="'Firm-Branch-FC'" Value="wrappeditemstring($,',','1')"></Udf>
+                <Udf Name="'SecurityNumber'" Value="wrappeditemstring($,',','2')"></Udf>
+                <Udf Name="'SecuritySubtype'" Value="wrappeditemstring($,',','6')"></Udf>
+                <Udf Name="'Filler_Field10'" Value="wrappeditemstring($,',','10')"></Udf>
+                <Udf Name="'Filler_Field11'" Value="wrappeditemstring($,',','11')"></Udf>
+                <Udf Name="'IndustryGroup'" Value="wrappeditemstring($,',','12')"></Udf>
+                <Udf Name="'Filler_Field14'" Value="wrappeditemstring($,',','14')"></Udf>
+                <Udf Name="'Filler_Field15'" Value="wrappeditemstring($,',','15')"></Udf>
+                <Udf Name="'SPRating'" Value="wrappeditemstring($,',','16')"></Udf>
+                <Udf Name="'MoodysRating'" Value="wrappeditemstring($,',','17')"></Udf>
+                <Udf Name="'HowPriced'" Value="wrappeditemstring($,',','20')"></Udf>
+                <Udf Name="'TradedFlat'" Value="wrappeditemstring($,',','21')"></Udf>                
+                <Udf Name="'Filler_Field24'" Value="wrappeditemstring($,',','24')"></Udf>
+                <Udf Name="'Filler_Field25'" Value="wrappeditemstring($,',','25')"></Udf>
+                <Udf Name="'BondInterestCalculation'" Value="wrappeditemstring($,',','30')"></Udf>
+                <Udf Name="'InterestPaymentFreq'" Value="wrappeditemstring($,',','37')"></Udf>
+                <Udf Name="'IsBondInDefault'" Value="wrappeditemstring($,',','38')"></Udf>
+                <Udf Name="'Filler_Field39'" Value="wrappeditemstring($,',','39')"></Udf>
+                <Udf Name="'DescriptionLine2'" Value="wrappeditemstring($,',','41')"></Udf>
+                <Udf Name="'DescriptionLine3'" Value="wrappeditemstring($,',','42')"></Udf>
+                <Udf Name="'MonroeBondCode'" Value="wrappeditemstring($,',','44')"></Udf>
+                <Udf Name="'CallType'" Value="wrappeditemstring($,',','47')"></Udf>
+                <Udf Name="'PSAPre-paymentSpeed'" Value="wrappeditemstring($,',','49')"></Udf>
+                <Udf Name="'Taxable'" Value="wrappeditemstring($,',','51')"></Udf>
+                <Udf Name="'RefundType'" Value="wrappeditemstring($,',','53')"></Udf>
+                <Udf Name="'ShareClass'" Value="wrappeditemstring($,',','56')"></Udf>
+                <Udf Name="'CUSIPUnderlyingSecurity'" Value="wrappeditemstring($,',','59')"></Udf>
+                <Udf Name="'Put-CallIndicator'" Value="wrappeditemstring($,',','60')"></Udf>                
+                <Udf Name="'OCCSymbol'" Value="wrappeditemstring($,',','63')"></Udf>
+                <Udf Name="'OPRASymbol'" Value="wrappeditemstring($,',','64')"></Udf>
+                <Udf Name="'ThomsonOneSymbol'" Value="wrappeditemstring($,',','65')"></Udf>
+                <Udf Name="'ExpandedSymbol'" Value="wrappeditemstring($,',','66')"></Udf>
+                <Udf Name="'PrimaryExchange'" Value="wrappeditemstring($,',','67')"></Udf>
+                <Udf Name="'Country'" Value="wrappeditemstring($,',','70')"></Udf>
+                <Udf Name="'ISOCode-Security'" Value="wrappeditemstring($,',','71')"></Udf>
+                <Udf Name="'CurrencySymbol-Security'" Value="wrappeditemstring($,',','72')"></Udf>
+                <Udf Name="'NumericCurrencyCode-Security'" Value="wrappeditemstring($,',','73')"></Udf>  
+              </UdfChar>
+              <UdfNum>
+
+                <Udf Name="'Coupon'" Value="wrappeditemstring($,',','9')"></Udf>
+                <Udf Name="'AnnualDividend-Interest'" Value="wrappeditemstring($,',','13')"></Udf>
+                <Udf Name="'Year-endPrice'" Value="wrappeditemstring($,',','18')"></Udf>
+                <Udf Name="'UnderlyingSecurity'" Value="wrappeditemstring($,',','22')"></Udf>
+                <Udf Name="'OptionStrikePrice'" Value="wrappeditemstring($,',','23')"></Udf>
+                <Udf Name="'FirstBondCallPrice'" Value="wrappeditemstring($,',','27')"></Udf>
+                <Udf Name="'SecondBondCallPrice'" Value="wrappeditemstring($,',','29')"></Udf>
+                <Udf Name="'PutPrice'" Value="wrappeditemstring($,',','32')"></Udf>
+                <Udf Name="'Pre-refundingPrice'" Value="wrappeditemstring($,',','34')"></Udf>
+                <Udf Name="'PriceMultiplier'" Value="wrappeditemstring($,',','36')"></Udf>
+                <Udf Name="'CalledPrice'" Value="wrappeditemstring($,',','46')"></Udf>
+                <Udf Name="'AverageLife'" Value="wrappeditemstring($,',','48')"></Udf>
+                <Udf Name="'Duration'" Value="wrappeditemstring($,',','50')"></Udf>
+                <Udf Name="'OriginalIssueDiscount'" Value="wrappeditemstring($,',','52')"></Udf>
+                <Udf Name="'AssetClass'" Value="wrappeditemstring($,',','54')"></Udf>
+                <Udf Name="'Factor'" Value="wrappeditemstring($,',','58')"></Udf>
+                <Udf Name="'OptionStockPrice'" Value="wrappeditemstring($,',','61')"></Udf>
+              </UdfNum>
+              <UdfDate>
+
+                <Udf Name="'MaturityDate'" Value="wrappeditemstring($,',','7')"></Udf>
+                <Udf Name="'BondIssuedDate'" Value="wrappeditemstring($,',','8')"></Udf>
+                <Udf Name="'ExpirationDate'" Value="wrappeditemstring($,',','19')"></Udf>
+                <Udf Name="'FirstBondCallDate'" Value="wrappeditemstring($,',','26')"></Udf>
+                <Udf Name="'SecondBondCallDate'" Value="wrappeditemstring($,',','28')"></Udf>
+                <Udf Name="'PutDate'" Value="wrappeditemstring($,',','31')"></Udf>
+                <Udf Name="'Pre-refundingDate'" Value="wrappeditemstring($,',','33')"></Udf>
+                <Udf Name="'MandatoryRedemptionDate'" Value="wrappeditemstring($,',','35')"></Udf>
+                <Udf Name="'FirstCouponDate'" Value="wrappeditemstring($,',','43')"></Udf>
+                <Udf Name="'DateCalled'" Value="wrappeditemstring($,',','45')"></Udf>
+                <Udf Name="'ExpireDate'" Value="wrappeditemstring($,',','57')"></Udf>
+                <Udf Name="'FactorDate'" Value="wrappeditemstring($,',','68')"></Udf>
+              </UdfDate>
+              
+            </Security>
+          </Securities>
+
+        </XMLSchema>
+
+
+
+      </ConfigData>
+
+    </Item>
+
+    <Item ID="4" Name="RBCSECBREMapper" Type="kroger.ACD.FilePipelineComponents.FileBREMapper,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\XML\RBCSEC{{GUID}}.xml</SrcFile>
+        <DestFile>{{SSISFILEROOT}}\RBCSEC{{GUID}}.SSIS</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+        <BRE>
+          <Policies>
+            <Policy Name="'kroger.ACD.RBC.SEC.Stage1'"></Policy>
+
+          </Policies>
+          <Helpers>
+            <Helper Name="'kroger.ACD.BRE.Helper.Facts,kroger.ACD.BRE.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c856c7c39650fee4'"></Helper>
+          </Helpers>
+
+        </BRE>
+        <Mapper>
+          <Input>
+            <XMLDocTypeName>'FITDEXSecurityRecord_V1'</XMLDocTypeName>
+            <XMLNodeName>'Security'</XMLNodeName>
+          </Input>
+          <Output>
+            <Object TypeName="'kroger.ACD.RBC.Entities.krogerRBCSecurity,kroger.ACD.RBC.Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e'">
+              <ObjectProperties>
+                <Property>'CustodianCode'</Property>
+                <Property>'RecordID'</Property>
+                <Property>'Price'</Property>
+                <Property>'EffectiveDate'</Property>
+                <Property>'CashID'</Property>
+                <Property>'Cusip'</Property>
+                <Property>'Symbol'</Property>
+                <Property>'OptionSymbol'</Property>
+                <Property>'Sedol'</Property>
+                <Property>'Isin'</Property>
+                <Property>'AltSymbol'</Property>
+
+
+
+                <Property>'InstrumentId0'</Property>
+                <Property>'InstrumentId1'</Property>
+                <Property>'InstrumentId2'</Property>
+
+
+
+
+
+                <Property>'RulesStageId'</Property>
+                <Property>'ErrorCode'</Property>
+                <Property>'ErrorDesc'</Property>
+                <Property>'Description'</Property>
+
+                <Property>'Market'</Property>
+                <Property>'Currency'</Property>
+                
+              </ObjectProperties>
+            </Object>
+            <FlatFileFieldDelimiter>'~#@#~'</FlatFileFieldDelimiter>
+          </Output>
+          <References>
+            <Reference>'kroger.ACD.Entities.krogerEntityPolicyTracker,kroger.ACD.Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e'</Reference>
+          </References>
+        </Mapper>
+
+      </ConfigData>
+    </Item>
+
+
+  </Configuration>
+
+
+  <Configuration ID="RBC.ACCT">
+
+
+    <Item ID="1" Name="RBCACCTFileDataColumnInserter" Type="kroger.ACD.FilePipelineComponents.FileDataColumnInserter,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\RBCACCTMAIN.{{INSTANCEID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\RBCACCTMAIN_1.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+
+        <Columns>
+          <Column>
+            <ColumnData>?IID?</ColumnData>
+            <ColumnDelimiter>','</ColumnDelimiter>
+            <ColumnLength>'12'</ColumnLength>
+          </Column>
+
+        </Columns>
+
+      </ConfigData>
+    </Item>
+
+    <Item ID="2" Name="RBCACCTFileFileFieldQuoteWrapper" Type="kroger.ACD.FilePipelineComponents.FileFieldQuoteWrapper,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\RBCACCTMAIN_1.{{INSTANCEID}}.{{GUID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\RBCACCTMAIN_2.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+        <Delimiter>','</Delimiter>
+      </ConfigData>
+    </Item>
+
+    <Item ID="3" Name="RBCACCTComplexXMLSerializer" Type="kroger.ACD.FilePipelineComponents.FileXMLSerializer,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\RBCACCTMAIN_2.{{INSTANCEID}}.{{GUID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\XML\RBCACCT{{GUID}}.xml</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+      
+        <!--
+            To instruct the serializer to write the text as is, include it within '...'
+            To instruct the serializer to evaluate a expression at runtime, use
+            available functionmacros like substring, itemstring, concat etc.....
+            very complex parsing when file contains a mix of wrapped and unwrapped text
+        -->
+        <XMLSchema Root="'Accounts'" MixedSchema="'False'">
+
+          <Accounts SourceCode="'RBC'" BatchRunDate="concat(#now#,'')">
+            <Account Name="'Account'" Value="''">
+              <RecordID Name="'RecordID'" Value="wrappeditemstring($,',','0')"/>
+              <CustodianCode Name="'CustodianCode'" Value="'RBC'"/>
+              <OpenDate Name="'OpenDate'" Value="wrappeditemstring($,',','11')"/>
+              <AcctNumber Name="'AccountNumber'" Value="wrappeditemstring($,',','2')"/>
+              <AcctName1 Name="'ClientName1'" Value="wrappeditemstring($,',','15')"/>
+              <AcctName2 Name="'ClientName2'" Value="wrappeditemstring($,',','20')"/>
+              <AcctName3 Name="''" Value="''"/>
+              <AcctType Name="'AccountCode'" Value="wrappeditemstring($,',','3')"/>
+              <AcctAddress1 Name="'StreetAddress-POBox'" Value="wrappeditemstring($,',','27')"/>
+              <AcctAddress2 Name="'Suite-Apartment'" Value="wrappeditemstring($,',','26')"/>
+              <AcctAddress3 Name="''" Value="''"/>
+              <City Name="'City'" Value="wrappeditemstring($,',','28')"/>
+              <State Name="'State'" Value="wrappeditemstring($,',','29')"/>
+              <ZIPCode Name="'ZIPCode'" Value="wrappeditemstring($,',','32')"/>
+              <Country Name="'Country-Mailing'" Value="wrappeditemstring($,',','30')"/>
+              <HomePhoneNumber Name="'HomeTelephone'" Value="wrappeditemstring($,',','40')"/>
+              <BusPhoneNumber Name="'BusinessTelephone'" Value="wrappeditemstring($,',','41')"/>
+              <SweepFnd Name="''" Value="''"/>
+              <MarginApproval Name="'MarginAgreement'" Value="wrappeditemstring($,',','100')"/>
+              <OptionsApproval Name="''" Value="''"/>
+              <PeriodicDist Name="''" Value="''"/>
+              <EFTLink Name="''" Value="''"/>
+              <CrDbCard Name="''" Value="''"/>
+              <CheckWrite Name="''" Value="''"/>
+              <OnlineAccess Name="''" Value="''"/>
+              <DuplicateStmts Name="''" Value="''"/>
+              <ProxyVoting Name="''" Value="''"/>
+              <ERISAStatus Name="''" Value="''"/>
+              <UdfChar>
+                <Udf Name="'Firm-Branch-FC'" Value="wrappeditemstring($,',','1')"></Udf>
+                <Udf Name="'FinancialConsultant'" Value="wrappeditemstring($,',','6')"></Udf>
+                <Udf Name="'LastName'" Value="wrappeditemstring($,',','16')"></Udf>
+                <Udf Name="'FirstName'" Value="wrappeditemstring($,',','17')"></Udf>
+                <Udf Name="'MiddleInitial'" Value="wrappeditemstring($,',','18')"></Udf>
+                <Udf Name="'Title1'" Value="wrappeditemstring($,',','23')"></Udf>
+                <Udf Name="'Title2'" Value="wrappeditemstring($,',','24')"></Udf>
+                <Udf Name="'MailCorporateName'" Value="wrappeditemstring($,',','25')"></Udf>                              
+                <Udf Name="'PostalCode'" Value="wrappeditemstring($,',','33')"></Udf>
+                <Udf Name="'NamesAndAddressLine1'" Value="wrappeditemstring($,',','34')"></Udf>
+                <Udf Name="'NamesAndAddressLine2'" Value="wrappeditemstring($,',','35')"></Udf>
+                <Udf Name="'NamesAndAddressLine3'" Value="wrappeditemstring($,',','36')"></Udf>
+                <Udf Name="'NamesAndAddressLine4'" Value="wrappeditemstring($,',','37')"></Udf>
+                <Udf Name="'NamesAndAddressLine5'" Value="wrappeditemstring($,',','38')"></Udf>
+                <Udf Name="'NamesAndAddressLine6'" Value="wrappeditemstring($,',','39')"></Udf>
+                <Udf Name="'ManagedAccountName'" Value="wrappeditemstring($,',','48')"></Udf>
+                <Udf Name="'CMAAccount'" Value="wrappeditemstring($,',','52')"></Udf>
+                <Udf Name="'SweepCode'" Value="wrappeditemstring($,',','53')"></Udf>
+                <Udf Name="'ACHSwitch'" Value="wrappeditemstring($,',','54')"></Udf>
+                <Udf Name="'AccountClass'" Value="wrappeditemstring($,',','61')"></Udf>
+                <Udf Name="'OptionApprovalLevels'" Value="wrappeditemstring($,',','75')"></Udf>
+                <Udf Name="'DiscretionaryCode'" Value="wrappeditemstring($,',','80')"></Udf>
+                <Udf Name="'Put-WriteIndicator'" Value="wrappeditemstring($,',','99')"></Udf>
+
+
+                
+              </UdfChar>
+              <UdfNum>
+
+              </UdfNum>
+              <UdfDate>
+
+              </UdfDate>
+            </Account>
+          </Accounts>
+
+        </XMLSchema>
+        
+      </ConfigData>
+    </Item>
+
+    <Item ID="4" Name="RBCACCTBREMapper" Type="kroger.ACD.FilePipelineComponents.FileBREMapper,kroger.ACD.FilePipelineComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\XML\RBCACCT{{GUID}}.xml</SrcFile>
+        <DestFile>{{SSISFILEROOT}}\RBCACCT{{GUID}}.SSIS</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+        <BRE>
+          <Policies>
+            <Policy Name="'kroger.ACD.RBC.ACCT.Stage1'"></Policy>
+
+          </Policies>
+          <Helpers>
+            <Helper Name="'kroger.ACD.BRE.Helper.Facts,kroger.ACD.BRE.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c856c7c39650fee4'"></Helper>
+          </Helpers>
+
+        </BRE>
+        <Mapper>
+          <Input>
+            <XMLDocTypeName>'FITDEXAccountRecord_V1'</XMLDocTypeName>
+            <XMLNodeName>'Account'</XMLNodeName>
+          </Input>
+          <Output>
+            <Object TypeName="'kroger.ACD.RBC.Entities.krogerRBCAccount,kroger.ACD.RBC.Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e'">
+              <ObjectProperties>
+                <Property>'CustodianCode'</Property>
+                <Property>'RecordID'</Property>
+
+                <Property>'EffectiveDate'</Property>
+                <Property>'AccountNumber'</Property>
+                <Property>'AccountName1'</Property>
+                <Property>'AccountName2'</Property>
+                <Property>'AccountName3'</Property>
+                <Property>'AccountType'</Property>
+                <Property>'Address1'</Property>
+                <Property>'Address2'</Property>
+                <Property>'Address3'</Property>
+                <Property>'AddressCity'</Property>
+                <Property>'AddressState'</Property>
+                <Property>'AddressZip'</Property>
+                <Property>'AddressCountry'</Property>
+                <Property>'HomePhoneNum'</Property>
+                <Property>'BizPhoneNum'</Property>
+                <Property>'SweepFund'</Property>
+                <Property>'MarginApprovalInd'</Property>
+                <Property>'OptionApprovalInd'</Property>
+                <Property>'PeriodicDistInd'</Property>
+                <Property>'EFTLinkVerifyInd'</Property>
+                <Property>'CrDrCardInd'</Property>
+                <Property>'CheckInd'</Property>
+                <Property>'OnlineAccessInd'</Property>
+                <Property>'DupStmtInd'</Property>
+                <Property>'ProxyVoteInd'</Property>
+                <Property>'ERISAStatusInd'</Property>
+
+
+
+
+                <Property>'RulesStageId'</Property>
+                <Property>'ErrorCode'</Property>
+                <Property>'ErrorDesc'</Property>
+
+              </ObjectProperties>
+            </Object>
+            <FlatFileFieldDelimiter>'~#@#~'</FlatFileFieldDelimiter>
+          </Output>
+          <References>
+            <Reference>'kroger.ACD.Entities.krogerEntityPolicyTracker,kroger.ACD.Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e'</Reference>
+          </References>
+        </Mapper>
+
+      </ConfigData>
+    </Item>
+
+  </Configuration>
+
+  
+
+
+
+</Configurations>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="NoBindings" BoundEndpoints="0" TotalEndpoints="0">
+  <Timestamp>2018-11-06T10:52:26.005359-08:00</Timestamp>
+  <ModuleRefCollection>
+    <ModuleRef Name="[Application:FI.BizTalk.Common]" Version="" Culture="" PublicKeyToken="" FullName="[Application:FI.BizTalk.Common], Version=, Culture=, PublicKeyToken=">
+      <Services />
+      <TrackedSchemas>
+        <Schema FullName="FI.CustodianDownloads.LoggingService.horseneck.Reference1" RootName="ArrayOfFILogLevel" AssemblyQualifiedName="FI.CustodianDownloads.LoggingService.horseneck.Reference1,FI.CustodianDownloads.LoggingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=acc91ce51b73e057" AlwaysTrackAllProperties="false" Description="">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="FI.CustodianDownloads.LoggingService.horseneck.Reference1" RootName="FILogLevel" AssemblyQualifiedName="FI.CustodianDownloads.LoggingService.horseneck.Reference1,FI.CustodianDownloads.LoggingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=acc91ce51b73e057" AlwaysTrackAllProperties="false" Description="">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="FI.CustodianDownloads.LoggingService.horseneck.Reference" RootName="ArrayOfString" AssemblyQualifiedName="FI.CustodianDownloads.LoggingService.horseneck.Reference,FI.CustodianDownloads.LoggingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=acc91ce51b73e057" AlwaysTrackAllProperties="false" Description="">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="FI.BizTalk.Common.SchemasAndMaps.PropertySchema" AssemblyQualifiedName="FI.BizTalk.Common.SchemasAndMaps.PropertySchema,FI.BizTalk.Common.SchemasAndMaps, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a92e39940de981cd" AlwaysTrackAllProperties="false" Description="">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="FI.BizTalk.Common.SchemasAndMaps.SSISAdapterResponse" RootName="SSISAdapterResponse" AssemblyQualifiedName="FI.BizTalk.Common.SchemasAndMaps.SSISAdapterResponse,FI.BizTalk.Common.SchemasAndMaps, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a92e39940de981cd" AlwaysTrackAllProperties="false" Description="">
+          <TrackedPropertyNames />
+        </Schema>
+      </TrackedSchemas>
+    </ModuleRef>
+    <ModuleRef Name="FI.CustodianDownloads.LoggingService" Version="1.0.0.0" Culture="neutral" PublicKeyToken="acc91ce51b73e057" FullName="FI.CustodianDownloads.LoggingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=acc91ce51b73e057">
+      <Services>
+        <Service Name="FI.CustodianDownloads.LoggingService.Logger_ORCH" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
+          <Ports />
+          <Roles />
+          <Host Name="OrchestrationsHost" NTGroupName="FISH-NET\CPG_BizTalk Application Users" Type="1" Trusted="false" />
+        </Service>
+      </Services>
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="FI.BizTalk.Common.SchemasAndMaps" Version="1.0.0.0" Culture="neutral" PublicKeyToken="a92e39940de981cd" FullName="FI.BizTalk.Common.SchemasAndMaps, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a92e39940de981cd">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+  </ModuleRefCollection>
+  <SendPortCollection />
+  <DistributionListCollection />
+  <ReceivePortCollection />
+  <PartyCollection xsi:nil="true" />
+</BindingInfo>

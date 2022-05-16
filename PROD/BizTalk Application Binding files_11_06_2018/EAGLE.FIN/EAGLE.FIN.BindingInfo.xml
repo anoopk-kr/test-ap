@@ -1,0 +1,1889 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="NoBindings" BoundEndpoints="0" TotalEndpoints="0">
+  <Timestamp>2018-11-06T10:52:53.4746911-08:00</Timestamp>
+  <ModuleRefCollection>
+    <ModuleRef Name="[Application:EAGLE.FIN]" Version="" Culture="" PublicKeyToken="" FullName="[Application:EAGLE.FIN], Version=, Culture=, PublicKeyToken=">
+      <Services />
+      <TrackedSchemas>
+        <Schema FullName="FI.OndemandPositions.FIN_TO_PACE.Schemas.Corr_PropertySchema" AssemblyQualifiedName="FI.OndemandPositions.FIN_TO_PACE.Schemas.Corr_PropertySchema,FI.OndemandPositions.FIN_TO_PACE.Schemas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=acc91ce51b73e057" AlwaysTrackAllProperties="false" Description="">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="FI.OndemandPositions.FIN_TO_PACE.Schemas.OnDemandSQLPoll" RootName="SQLPoll" AssemblyQualifiedName="FI.OndemandPositions.FIN_TO_PACE.Schemas.OnDemandSQLPoll,FI.OndemandPositions.FIN_TO_PACE.Schemas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=acc91ce51b73e057" AlwaysTrackAllProperties="false" Description="">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="FI.OndemandPositions.FIN_TO_PACE.Schemas.Test" RootName="Test" AssemblyQualifiedName="FI.OndemandPositions.FIN_TO_PACE.Schemas.Test,FI.OndemandPositions.FIN_TO_PACE.Schemas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=acc91ce51b73e057" AlwaysTrackAllProperties="false" Description="">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="FI.OndemandPositions.FIN_TO_PACE.Schemas.FINCommandFile" RootName="FINRequest" AssemblyQualifiedName="FI.OndemandPositions.FIN_TO_PACE.Schemas.FINCommandFile,FI.OndemandPositions.FIN_TO_PACE.Schemas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=acc91ce51b73e057" AlwaysTrackAllProperties="false" Description="">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="FI.OndemandPositions.FIN_TO_PACE.Schemas.ModifyStatusSQLService" RootName="Request" AssemblyQualifiedName="FI.OndemandPositions.FIN_TO_PACE.Schemas.ModifyStatusSQLService,FI.OndemandPositions.FIN_TO_PACE.Schemas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=acc91ce51b73e057" AlwaysTrackAllProperties="false" Description="">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="FI.OndemandPositions.FIN_TO_PACE.Schemas.ModifyStatusSQLService" RootName="Response" AssemblyQualifiedName="FI.OndemandPositions.FIN_TO_PACE.Schemas.ModifyStatusSQLService,FI.OndemandPositions.FIN_TO_PACE.Schemas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=acc91ce51b73e057" AlwaysTrackAllProperties="false" Description="">
+          <TrackedPropertyNames />
+        </Schema>
+      </TrackedSchemas>
+    </ModuleRef>
+    <ModuleRef Name="FI.OndemandPositions.FIN_TO_PACE.Pipelines" Version="1.0.0.0" Culture="neutral" PublicKeyToken="acc91ce51b73e057" FullName="FI.OndemandPositions.FIN_TO_PACE.Pipelines, Version=1.0.0.0, Culture=neutral, PublicKeyToken=acc91ce51b73e057">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="FI.OndemandPositions.FIN_TO_PACE.Schemas" Version="1.0.0.0" Culture="neutral" PublicKeyToken="acc91ce51b73e057" FullName="FI.OndemandPositions.FIN_TO_PACE.Schemas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=acc91ce51b73e057">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="FI.ThomsonParser" Version="1.0.0.0" Culture="neutral" PublicKeyToken="6386d9dabe0ded44" FullName="FI.ThomsonParser, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6386d9dabe0ded44">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="FI.Capco.Pipelines" Version="1.0.2.1" Culture="neutral" PublicKeyToken="759f7d50f2e7b17f" FullName="FI.Capco.Pipelines, Version=1.0.2.1, Culture=neutral, PublicKeyToken=759f7d50f2e7b17f">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="FI.EagleEAI.FINDeltaFiles" Version="1.0.0.0" Culture="neutral" PublicKeyToken="7ba2fc4b355bbbd1" FullName="FI.EagleEAI.FINDeltaFiles, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7ba2fc4b355bbbd1">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="FI.Farm.ProcessHoldingLots" Version="1.0.0.0" Culture="neutral" PublicKeyToken="fc124323458d6d68" FullName="FI.Farm.ProcessHoldingLots, Version=1.0.0.0, Culture=neutral, PublicKeyToken=fc124323458d6d68">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+  </ModuleRefCollection>
+  <SendPortCollection>
+    <SendPort Name="SendPort_ForSSIS_SRT" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="None" Description="" />
+      <PrimaryTransport>
+        <Address>F:\krogerApplications\FI.EagleEAI.FIN\Fi.FARM\Log\%MessageID%.xml</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%MessageID%.xml&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T08:00:00</FromTime>
+        <ToTime>2000-01-01T07:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="SendHost" HostTrusted="false">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T08:00:00</FromTime>
+        <ToTime>2000-01-01T07:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="ReceivePort_FARM_SRT" /&gt;
+  &lt;/Group&gt;
+&lt;/Filter&gt;</Filter>
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+    </SendPort>
+    <SendPort Name="SendPort_FIN" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="None" Description="" />
+      <PrimaryTransport>
+        <Address>F:\Temp\SSISLogs\%MessageID%.xml</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%MessageID%.xml&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T07:00:00</FromTime>
+        <ToTime>2000-01-01T06:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="SendHost" HostTrusted="false">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T07:00:00</FromTime>
+        <ToTime>2000-01-01T06:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>204</Tracking>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="ReceivePort_FIN" /&gt;
+  &lt;/Group&gt;
+&lt;/Filter&gt;</Filter>
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+    </SendPort>
+    <SendPort Name="SendPort_FINDeltaFiles_SSIS" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="None" Description="" />
+      <PrimaryTransport>
+        <Address>F:\Temp\SSISLogs\%MessageID%.xml</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%MessageID%.xml&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T07:00:00</FromTime>
+        <ToTime>2000-01-01T06:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="SendHost" HostTrusted="false">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T07:00:00</FromTime>
+        <ToTime>2000-01-01T06:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="ReceivePort_FINDeltaFiles_SSIS" /&gt;
+  &lt;/Group&gt;
+&lt;/Filter&gt;</Filter>
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+    </SendPort>
+    <SendPort Name="TO_DELETE_FI.OndemandPositions.FIN_TO_PACE.SendFINRequest" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description>new way of on-demand processing implemented as of 06/21/2012</Description>
+      <TransmitPipeline Name="FI.OndemandPositions.FIN_TO_PACE.Pipelines.CreateFINCommanFile" FullyQualifiedName="FI.OndemandPositions.FIN_TO_PACE.Pipelines.CreateFINCommanFile, FI.OndemandPositions.FIN_TO_PACE.Pipelines, Version=1.0.0.0, Culture=neutral, PublicKeyToken=acc91ce51b73e057" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>\\finserver\work\transfer\PstnRqts\%SourceFileName%.txt</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%SourceFileName%.txt&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T07:00:00</FromTime>
+        <ToTime>2000-01-01T06:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="SendHost" HostTrusted="false">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T07:00:00</FromTime>
+        <ToTime>2000-01-01T06:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+    </SendPort>
+    <SendPort Name="TO_DELETE_FI.OndemandPositions.FIN_TO_PACE.SendSQLModify" IsStatic="true" IsTwoWay="true" BindingOption="0">
+      <Description>new way of on-demand processing implemented as of 06/21/2012</Description>
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <SendPipelineData>&lt;Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;Stages&gt;&lt;Stage CategoryId="9d0e4107-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Microsoft.BizTalk.Component.XmlAsmComp"&gt;&lt;Properties /&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;/Stages&gt;&lt;/Root&gt;</SendPipelineData>
+      <PrimaryTransport>
+        <Address>SQL://blackangel/FI_MISC/</Address>
+        <TransportType Name="SQL" Capabilities="81163" ConfigurationClsid="6e688659-1374-4f37-90dc-40cb6dd3c73d" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Send xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;connectionString&amp;gt;Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=FI_MISC;Data Source=blackangel&amp;lt;/connectionString&amp;gt;&amp;lt;outputRootElementName&amp;gt;Response&amp;lt;/outputRootElementName&amp;gt;&amp;lt;documentTargetNamespace&amp;gt;http://OnDemandSQLPoll.ModifyStatus&amp;lt;/documentTargetNamespace&amp;gt;&amp;lt;uri&amp;gt;SQL://blackangel/FI_MISC/&amp;lt;/uri&amp;gt;&amp;lt;/Send&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T07:00:00</FromTime>
+        <ToTime>2000-01-01T06:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="DefaultSqlServerAdapterHost" HostTrusted="false">
+          <TransportType Name="SQL" Capabilities="81163" ConfigurationClsid="6e688659-1374-4f37-90dc-40cb6dd3c73d" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T07:00:00</FromTime>
+        <ToTime>2000-01-01T06:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <ReceivePipelineData>&lt;Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;Stages&gt;&lt;Stage CategoryId="9d0e4105-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Microsoft.BizTalk.Component.XmlDasmComp"&gt;&lt;Properties /&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;Stage CategoryId="9d0e410e-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Microsoft.BizTalk.Component.PartyRes"&gt;&lt;Properties /&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;/Stages&gt;&lt;/Root&gt;</ReceivePipelineData>
+      <Tracking>15</Tracking>
+      <Filter />
+      <Transforms />
+      <InboundTransforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+    </SendPort>
+    <SendPort Name="SendPort_ForFARM_SRT_Downloader" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="None" Description="" />
+      <PrimaryTransport>
+        <Address>F:\krogerApplications\FI.EagleEAI.FIN\Fi.FARM\Log\%MessageID%.xml</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%MessageID%.xml&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T08:00:00</FromTime>
+        <ToTime>2000-01-01T07:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="SendHost" HostTrusted="false">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T08:00:00</FromTime>
+        <ToTime>2000-01-01T07:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="ReceiveFarmHoldingslotFile" /&gt;
+  &lt;/Group&gt;
+&lt;/Filter&gt;</Filter>
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+    </SendPort>
+    <SendPort Name="SendPort_FINDeltaFiles" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="None" Description="" />
+      <PrimaryTransport>
+        <Address>F:\krogerApplications\FI.EagleEAI.FIN\FINDeltaFiles\%MessageID%.txt</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%MessageID%.txt&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T07:00:00</FromTime>
+        <ToTime>2000-01-01T06:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="SendHost" HostTrusted="false">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T07:00:00</FromTime>
+        <ToTime>2000-01-01T06:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>204</Tracking>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="ReceivePort_FINDeltaFiles" /&gt;
+  &lt;/Group&gt;
+&lt;/Filter&gt;</Filter>
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+    </SendPort>
+    <SendPort Name="SendPort_InstHoldings_Archive" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="None" Description="" />
+      <PrimaryTransport>
+        <Address>\\finserver\work\transfer\PstnDrop\Daily Archive\%SourceFileName%</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;2&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%SourceFileName%&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T07:00:00</FromTime>
+        <ToTime>2000-01-01T06:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="SendHost" HostTrusted="false">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T07:00:00</FromTime>
+        <ToTime>2000-01-01T06:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+    </SendPort>
+    <SendPort Name="TO_DELETE_FI.OndemandPositions.FIN_TO_PACE.SendToDEVPACE" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="None" Description="" />
+      <PrimaryTransport>
+        <Address>\\PinkSkunk\Uploader\FIN\HLD\%SourceFileName%.csv</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;2&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%SourceFileName%.csv&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T08:00:00</FromTime>
+        <ToTime>2000-01-01T07:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="SendHost" HostTrusted="false">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T08:00:00</FromTime>
+        <ToTime>2000-01-01T07:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+    </SendPort>
+    <SendPort Name="SendPort_FactSet_Holdings" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description>Holdings files from Tarpon to be consumed for Factset-ready files</Description>
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="None" Description="" />
+      <PrimaryTransport>
+        <Address>\\Bream\Export\DataExtracts\FACTSET\%SourceFileName%</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;2&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%SourceFileName%&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T08:00:00</FromTime>
+        <ToTime>2000-01-01T07:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="SendHost" HostTrusted="false">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T08:00:00</FromTime>
+        <ToTime>2000-01-01T07:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+    </SendPort>
+    <SendPort Name="SendPort_Factset_Holdings_Rockfish_Archive" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description>Holdings files for Factset after it has been processed internally by kroger and to be moved to Rockfish (this archives the files that gets created)</Description>
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="None" Description="" />
+      <PrimaryTransport>
+        <Address>\\Bream\Export\DataExtracts\FACTSET\Archived\%SourceFileName%</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;2&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%SourceFileName%&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T08:00:00</FromTime>
+        <ToTime>2000-01-01T07:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="SendHost" HostTrusted="false">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T08:00:00</FromTime>
+        <ToTime>2000-01-01T07:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+    </SendPort>
+    <SendPort Name="SendPort_Factset_Holdings_Rockfish" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description>Holdings files for Factset after it has been processed internally by kroger and to be moved to Rockfish</Description>
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="None" Description="" />
+      <PrimaryTransport>
+        <Address>\\fi.com\departments\Research\!AutoProcess\Outbound\Factset\%SourceFileName%</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;2&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%SourceFileName%&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T08:00:00</FromTime>
+        <ToTime>2000-01-01T07:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="BTSCustDataHost" HostTrusted="false">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T08:00:00</FromTime>
+        <ToTime>2000-01-01T07:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+    </SendPort>
+    <SendPort Name="SendPort_FINtoEZEInstHoldings" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="None" Description="" />
+      <PrimaryTransport>
+        <Address>\\vpsSILVERSIDE\Incoming\%SourceFileName%</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;2&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%SourceFileName%&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T08:00:00</FromTime>
+        <ToTime>2000-01-01T07:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="SendHost" HostTrusted="false">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T08:00:00</FromTime>
+        <ToTime>2000-01-01T07:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" /&gt;</Filter>
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+    </SendPort>
+    <SendPort Name="SendPort_FINtoEZEInstHoldings_Archive" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="None" Description="" />
+      <PrimaryTransport>
+        <Address>\\finserver\work\transfer\PstnDrop\Daily Archive\%SourceFileName%</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;2&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%SourceFileName%&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T08:00:00</FromTime>
+        <ToTime>2000-01-01T07:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="SendHost" HostTrusted="false">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T08:00:00</FromTime>
+        <ToTime>2000-01-01T07:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+    </SendPort>
+    <SendPort Name="SendPort_FactSet_SMF-ND" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="None" Description="" />
+      <PrimaryTransport>
+        <Address>\\Bream\uploader\FactSet\ND\%SourceFileName%</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;2&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%SourceFileName%&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T08:00:00</FromTime>
+        <ToTime>2000-01-01T07:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="SendHost" HostTrusted="false">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T08:00:00</FromTime>
+        <ToTime>2000-01-01T07:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="RecvPort_FactSet_SMF" /&gt;
+  &lt;/Group&gt;
+&lt;/Filter&gt;</Filter>
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+    </SendPort>
+    <SendPort Name="SendPort_FactSet_FXR" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="None" Description="" />
+      <PrimaryTransport>
+        <Address>\\finserver\work\transfer\FX_Uploads\%SourceFileName%</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;2&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%SourceFileName%&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T08:00:00</FromTime>
+        <ToTime>2000-01-01T07:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="SendHost" HostTrusted="false">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T08:00:00</FromTime>
+        <ToTime>2000-01-01T07:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="RecvPort_FactSet_FXR" /&gt;
+  &lt;/Group&gt;
+&lt;/Filter&gt;</Filter>
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+    </SendPort>
+    <SendPort Name="SendPort_FactSet_PER-QA" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="None" Description="" />
+      <PrimaryTransport>
+        <Address>\\Bream\uploader\FactSet\QA\%SourceFileName%</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;2&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%SourceFileName%&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T08:00:00</FromTime>
+        <ToTime>2000-01-01T07:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="SendHost" HostTrusted="false">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T08:00:00</FromTime>
+        <ToTime>2000-01-01T07:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="RecvPort_FactSet_PER-QA" /&gt;
+  &lt;/Group&gt;
+&lt;/Filter&gt;</Filter>
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+    </SendPort>
+    <SendPort Name="SendPort_FactSet_PER-NON_INDEX" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="None" Description="" />
+      <PrimaryTransport>
+        <Address>\\Bream\uploader\FactSet\SMF\%SourceFileName%</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;2&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%SourceFileName%&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T08:00:00</FromTime>
+        <ToTime>2000-01-01T07:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="SendHost" HostTrusted="false">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T08:00:00</FromTime>
+        <ToTime>2000-01-01T07:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="RecvPort_FactSet_NON_INDX" /&gt;
+  &lt;/Group&gt;
+&lt;/Filter&gt;</Filter>
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+    </SendPort>
+    <SendPort Name="SendPort_FactSet_PER_CONST_EZE" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="None" Description="" />
+      <PrimaryTransport>
+        <Address>\\vpsSILVERSIDE\Incoming\%SourceFileName%</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;2&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%SourceFileName%&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T08:00:00</FromTime>
+        <ToTime>2000-01-01T07:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="SendHost" HostTrusted="false">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T08:00:00</FromTime>
+        <ToTime>2000-01-01T07:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" /&gt;</Filter>
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+    </SendPort>
+    <SendPort Name="SendPort_FactSet_CONST_Appollo" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="None" Description="" />
+      <PrimaryTransport>
+        <Address>\\fi.com\external_data\Factset\IndexData\Archive\%SourceFileName%</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;2&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%SourceFileName%&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T08:00:00</FromTime>
+        <ToTime>2000-01-01T07:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="SendHost" HostTrusted="false">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T08:00:00</FromTime>
+        <ToTime>2000-01-01T07:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>192</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+    </SendPort>
+    <SendPort Name="SendPort_EZE_Orders_To_FIN" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="None" Description="" />
+      <PrimaryTransport>
+        <Address>\\finserver\work\transfer\Eze_Orders\%SourceFileName%</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;2&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%SourceFileName%&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T08:00:00</FromTime>
+        <ToTime>2000-01-01T07:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="BTSFINDataHost" HostTrusted="false">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T08:00:00</FromTime>
+        <ToTime>2000-01-01T07:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="RecvPort_EZE_Orders_To_FIN" /&gt;
+  &lt;/Group&gt;
+&lt;/Filter&gt;</Filter>
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+    </SendPort>
+    <SendPort Name="SendPort_FactSet_PER-POS_EagleApps" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="None" Description="" />
+      <PrimaryTransport>
+        <Address>\\Bream\uploader\FactSet\POS\%SourceFileName%</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;2&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%SourceFileName%&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T07:00:00</FromTime>
+        <ToTime>2000-01-01T06:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="SendHost" HostTrusted="false">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T07:00:00</FromTime>
+        <ToTime>2000-01-01T06:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+    </SendPort>
+    <SendPort Name="SendPort_FactSet_PER-IDX_EagleApps" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="None" Description="" />
+      <PrimaryTransport>
+        <Address>\\Bream\uploader\FactSet\PRF\%SourceFileName%</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;2&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%SourceFileName%&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T07:00:00</FromTime>
+        <ToTime>2000-01-01T06:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="SendHost" HostTrusted="false">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T07:00:00</FromTime>
+        <ToTime>2000-01-01T06:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+    </SendPort>
+    <SendPort Name="SendPort_FactSet_PER-SMF_EagleApps" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="None" Description="" />
+      <PrimaryTransport>
+        <Address>\\Bream\uploader\FactSet\SMF\%SourceFileName%</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;2&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%SourceFileName%&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T07:00:00</FromTime>
+        <ToTime>2000-01-01T06:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="BizTalkServerApplication" HostTrusted="false">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T07:00:00</FromTime>
+        <ToTime>2000-01-01T06:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+    </SendPort>
+    <SendPort Name="SendPort_InstHoldings_EagleApps" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="None" Description="" />
+      <PrimaryTransport>
+        <Address>\\Bream\Uploader\FIN\HLD\%SourceFileName%</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;2&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%SourceFileName%&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T07:00:00</FromTime>
+        <ToTime>2000-01-01T06:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="SendHost" HostTrusted="false">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T07:00:00</FromTime>
+        <ToTime>2000-01-01T06:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+    </SendPort>
+    <SendPort Name="SendPort_Firm_Holdings" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description>Send Firm Holdings file for FactSet.</Description>
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="None" Description="" />
+      <PrimaryTransport>
+        <Address>\\fi.com\departments\Research\!AutoProcess\Outbound\Factset\%SourceFileName%</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;2&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%SourceFileName%&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T07:00:00</FromTime>
+        <ToTime>2000-01-01T06:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="BTSCustDataHost" HostTrusted="false">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T07:00:00</FromTime>
+        <ToTime>2000-01-01T06:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="RecvPort_Firm_Holdings" /&gt;
+  &lt;/Group&gt;
+&lt;/Filter&gt;</Filter>
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+    </SendPort>
+  </SendPortCollection>
+  <DistributionListCollection>
+    <DistributionList Name="PACE">
+      <SendPorts />
+      <Filter />
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+      <Description>new way of on-demand processing implemented as of 06/21/2012</Description>
+    </DistributionList>
+    <DistributionList Name="SendPortGroup_InstHoldings">
+      <SendPorts>
+        <SendPortRef Name="SendPort_InstHoldings_Archive" />
+        <SendPortRef Name="SendPort_FactSet_Holdings" />
+        <SendPortRef Name="SendPort_InstHoldings_EagleApps" />
+      </SendPorts>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="RxPortFINInstHoldingsFile" /&gt;
+  &lt;/Group&gt;
+&lt;/Filter&gt;</Filter>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+      <Description xsi:nil="true" />
+    </DistributionList>
+    <DistributionList Name="SendPortGroup_Factset_Holdings">
+      <SendPorts>
+        <SendPortRef Name="SendPort_Factset_Holdings_Rockfish_Archive" />
+        <SendPortRef Name="SendPort_Factset_Holdings_Rockfish" />
+      </SendPorts>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="RcvPort_Factset_Holdings" /&gt;
+  &lt;/Group&gt;
+&lt;/Filter&gt;</Filter>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+      <Description xsi:nil="true" />
+    </DistributionList>
+    <DistributionList Name="SendPortGroup_FINtoEZEHoldings">
+      <SendPorts>
+        <SendPortRef Name="SendPort_FINtoEZEInstHoldings" />
+        <SendPortRef Name="SendPort_FINtoEZEInstHoldings_Archive" />
+      </SendPorts>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="RcvPort_FINtoEZEInstHoldings" /&gt;
+  &lt;/Group&gt;
+&lt;/Filter&gt;</Filter>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+      <Description xsi:nil="true" />
+    </DistributionList>
+    <DistributionList Name="SendPortGroup_FactSet_CONST">
+      <SendPorts>
+        <SendPortRef Name="SendPort_FactSet_PER_CONST_EZE" />
+        <SendPortRef Name="SendPort_FactSet_CONST_Appollo" />
+        <SendPortRef Name="SendPort_FactSet_PER-POS_EagleApps" />
+      </SendPorts>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="RecvPort_FactSet_PER" /&gt;
+  &lt;/Group&gt;
+&lt;/Filter&gt;</Filter>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+      <Description xsi:nil="true" />
+    </DistributionList>
+    <DistributionList Name="SendPortGroup_FactSet_PRF">
+      <SendPorts>
+        <SendPortRef Name="SendPort_FactSet_PER-IDX_EagleApps" />
+      </SendPorts>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="RecvPort_FactSet_PER-IDX" /&gt;
+  &lt;/Group&gt;
+&lt;/Filter&gt;</Filter>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+      <Description xsi:nil="true" />
+    </DistributionList>
+    <DistributionList Name="SendPortGroup_FactSet_SMF">
+      <SendPorts>
+        <SendPortRef Name="SendPort_FactSet_PER-SMF_EagleApps" />
+      </SendPorts>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="RecvPort_FactSet_PER" /&gt;
+  &lt;/Group&gt;
+&lt;/Filter&gt;</Filter>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+      <Description xsi:nil="true" />
+    </DistributionList>
+  </DistributionListCollection>
+  <ReceivePortCollection>
+    <ReceivePort Name="ReceivePort_FINDeltaFiles_SSIS" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="ReceiveLoc_FINDeltaFiles_SSIS">
+          <Description xsi:nil="true" />
+          <Address>SSISBulkInsert://F:\krogerApplications\FI.EagleEAI.FIN\FINDeltaFiles\*.txt</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T07:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T06:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2007-04-03T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2007-04-04T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="SSISBulkInsert" Capabilities="6153" ConfigurationClsid="c1c6936d-66e2-474e-ada7-3fdbcbf1c15e" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;FileReceiveFolder&amp;gt;F:\krogerApplications\FI.EagleEAI.FIN\FINDeltaFiles&amp;lt;/FileReceiveFolder&amp;gt;&amp;lt;FileMask&amp;gt;*.txt&amp;lt;/FileMask&amp;gt;&amp;lt;FileBatchSize&amp;gt;100&amp;lt;/FileBatchSize&amp;gt;&amp;lt;ColumnMapping&amp;gt;0:F001,1:F002,2:F003,3:F004,4:F005,5:F006,6:F007,7:F008,8:F009,9:F010,10:F011,11:F012,12:F013,13:F014,14:F015,15:F016,16:F017,17:F018,18:F019,19:F020,20:F021,21:F022,22:F023,23:F024,24:F025,25:F026,26:F027,27:F028,28:F029,29:F030,30:F031,31:F032,32:F033,33:F034,34:F035,35:F036,36:F037,37:F038,38:F039,39:F040,40:F041,41:F042,42:F043,43:F044,44:F045,45:F046,46:F047,47:F048,48:F049,49:F050,50:F051,51:F052,52:F053,53:F054,54:F055,55:F056,56:F057,57:F058,58:F059,59:F060,60:F061,61:F062,62:F063,63:F064,64:F065,65:F066,66:F067,67:F068,68:F069,69:F070,70:F071,71:F072,72:F073,73:F074,74:F075,75:F076,76:F077,77:F078,78:F079,79:F080,80:F081,81:F082,82:F083,83:F084,84:F085,85:F086,86:F087,87:F088,88:F089,89:F090,90:F091,91:F092,92:F093,93:F094,94:F095,95:F096,96:F097,97:F098,98:F099,99:F100,100:F101,101:F102,102:F103,103:F104,104:F105,105:F106,106:F107,107:F108,108:F109,109:F110,110:F111,111:F112,112:F113,113:F114,114:F115,115:F116,116:F117,117:F118,118:F119,119:F120,120:F121,121:F122,122:F123,123:F124,124:F125,125:F126,126:F127,127:F128,128:F129,129:F130,130:F131,131:F132,132:F133,133:F134,134:F135,135:F136,136:F137,137:F138,138:F139,139:F140,140:F141,141:F142,142:F143,143:F144,144:F145,145:F146,146:F147,147:F148,148:F149,149:F150,150:F151,151:F152,152:F153,153:F154,154:F155,155:F156,156:F157,157:F158,158:F159,159:F160,160:F161,161:F162,162:F163,163:F164,164:F165,165:F166,166:F167,167:F168,168:F169,169:F170,170:F171,171:F172,172:F173,173:F174&amp;lt;/ColumnMapping&amp;gt;&amp;lt;ColumnDelimiter&amp;gt;~&amp;lt;/ColumnDelimiter&amp;gt;&amp;lt;NumCols&amp;gt;201&amp;lt;/NumCols&amp;gt;&amp;lt;NumRowsToSkip&amp;gt;0&amp;lt;/NumRowsToSkip&amp;gt;&amp;lt;LogFileFolder&amp;gt;F:\krogerApplications\FI.EagleEAI.FIN\FINDeltaFiles\Logs&amp;lt;/LogFileFolder&amp;gt;&amp;lt;SqlConnectionString&amp;gt;Provider=SQLNCLI11;Integrated Security=SSPI;Initial Catalog=fin_reporting;Data Source=FIN-REPORTING-DB;&amp;lt;/SqlConnectionString&amp;gt;&amp;lt;SqlTableName&amp;gt;[dbo].[csuEagleFINDeltaImport]&amp;lt;/SqlTableName&amp;gt;&amp;lt;PreSQL&amp;gt;select 1&amp;lt;/PreSQL&amp;gt;&amp;lt;PostSQL&amp;gt;select 1&amp;lt;/PostSQL&amp;gt;&amp;lt;ApplicationName&amp;gt;FinDeltaFiles&amp;lt;/ApplicationName&amp;gt;&amp;lt;uri&amp;gt;SSISBulkInsert://F:\krogerApplications\FI.EagleEAI.FIN\FINDeltaFiles\*.txt&amp;lt;/uri&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="SSISHost" HostTrusted="false">
+            <TransportType Name="SSISBulkInsert" Capabilities="6153" ConfigurationClsid="c1c6936d-66e2-474e-ada7-3fdbcbf1c15e" />
+          </ReceiveHandler>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>51</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+    </ReceivePort>
+    <ReceivePort Name="ReceivePort_FIN" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="ReceiveLoc_FIN">
+          <Description xsi:nil="true" />
+          <Address>SSISOleDbToFlatFile://F:\krogerApplications\SSISBulkExportAdapter\In\*.xml</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T07:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T06:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2007-07-25T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2007-07-26T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="SSISBulkExportAdapter" Capabilities="6153" ConfigurationClsid="96aa42cb-fd67-4399-aa2d-b138f8a3dd2b" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;FileReceiveFolder&amp;gt;F:\krogerApplications\SSISBulkExportAdapter\In&amp;lt;/FileReceiveFolder&amp;gt;&amp;lt;FileMask&amp;gt;*.xml&amp;lt;/FileMask&amp;gt;&amp;lt;FileBatchSize&amp;gt;1&amp;lt;/FileBatchSize&amp;gt;&amp;lt;LogFileFolder&amp;gt;F:\krogerApplications\SSISBulkExportAdapter\Log&amp;lt;/LogFileFolder&amp;gt;&amp;lt;ApplicationName&amp;gt;FINLOADER&amp;lt;/ApplicationName&amp;gt;&amp;lt;uri&amp;gt;SSISOleDbToFlatFile://F:\krogerApplications\SSISBulkExportAdapter\In\*.xml&amp;lt;/uri&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="SSISHost" HostTrusted="false">
+            <TransportType Name="SSISBulkExportAdapter" Capabilities="6153" ConfigurationClsid="96aa42cb-fd67-4399-aa2d-b138f8a3dd2b" />
+          </ReceiveHandler>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>51</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+    </ReceivePort>
+    <ReceivePort Name="ReceivePort_FARM_SRT" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="SSIS_FARM_SRT_BulkInsert">
+          <Description xsi:nil="true" />
+          <Address>SSISBulkInsert://F:\krogerApplications\FI.EagleEAI.FIN\Fi.FARM\In\SRT.txt</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T08:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T07:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2007-11-29T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2007-11-30T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="SSISBulkInsert" Capabilities="6153" ConfigurationClsid="c1c6936d-66e2-474e-ada7-3fdbcbf1c15e" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;FileReceiveFolder&amp;gt;F:\krogerApplications\FI.EagleEAI.FIN\Fi.FARM\In&amp;lt;/FileReceiveFolder&amp;gt;&amp;lt;FileMask&amp;gt;SRT.txt&amp;lt;/FileMask&amp;gt;&amp;lt;FileBatchSize&amp;gt;1&amp;lt;/FileBatchSize&amp;gt;&amp;lt;ColumnMapping&amp;gt;0:vchCusip,1:vchAcctKey,2:vchFINAcctNumber,3:vchOrigSymbol,4:vchRefNumber,5:vchAssetName,6:vchAssetDescr,7:vchPurchaseDt,8:vchAcctName,9:vchPM,10:vchCat,11:vchCustodianCode,12:vchTradeBroker,13:vchBrokerCode,14:vchNumShares,15:vchTotalCost,16:vchCost,17:vchMktValue,18:vchGainLossPercent,19:vchPercentAccount,20:vchPercentSector,21:vchALTBroker,22:vchAcctType,23:vchSecurityType,24:chCurrencyCode,36:vchLotSequenceNumber,37:vchFinAcctNo,38:vchTotalCostUSD,39:vchCostUSD,40:vchMarketValueUSD,41:vchGainLossUSD&amp;lt;/ColumnMapping&amp;gt;&amp;lt;ColumnDelimiter&amp;gt;~&amp;lt;/ColumnDelimiter&amp;gt;&amp;lt;NumCols&amp;gt;42&amp;lt;/NumCols&amp;gt;&amp;lt;NumRowsToSkip&amp;gt;0&amp;lt;/NumRowsToSkip&amp;gt;&amp;lt;LogFileFolder&amp;gt;F:\krogerApplications\FI.EagleEAI.FIN\Fi.FARM\Log&amp;lt;/LogFileFolder&amp;gt;&amp;lt;SqlConnectionString&amp;gt;Provider=SQLNCLI11;Integrated Security=SSPI;Initial Catalog=FINDATA;Data Source=javelin\inst2;&amp;lt;/SqlConnectionString&amp;gt;&amp;lt;SqlTableName&amp;gt;csuFINHoldingsLot&amp;lt;/SqlTableName&amp;gt;&amp;lt;PreSQL&amp;gt;truncate table csuFINHoldingsLot&amp;lt;/PreSQL&amp;gt;&amp;lt;PostSQL&amp;gt;Select 1&amp;lt;/PostSQL&amp;gt;&amp;lt;ApplicationName&amp;gt;FI.Farm&amp;lt;/ApplicationName&amp;gt;&amp;lt;uri&amp;gt;SSISBulkInsert://F:\krogerApplications\FI.EagleEAI.FIN\Fi.FARM\In\SRT.txt&amp;lt;/uri&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="SSISHost" HostTrusted="false">
+            <TransportType Name="SSISBulkInsert" Capabilities="6153" ConfigurationClsid="c1c6936d-66e2-474e-ada7-3fdbcbf1c15e" />
+          </ReceiveHandler>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>51</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+    </ReceivePort>
+    <ReceivePort Name="ReceiveFarmHoldingslotFile" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="ReceiveFarmHoldingsLotFile">
+          <Description xsi:nil="true" />
+          <Address>\\fi.com\external_data\findata\Hold\FARM FILES\SRT.TXT</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T02:30:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T05:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2006-11-14T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2006-11-15T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;RenameReceivedFiles vt="11"&gt;0&lt;/RenameReceivedFiles&gt;&lt;RemoveReceivedFileDelay vt="19"&gt;10&lt;/RemoveReceivedFileDelay&gt;&lt;RemoveReceivedFileMaxInterval vt="19"&gt;300000&lt;/RemoveReceivedFileMaxInterval&gt;&lt;FileMask vt="8"&gt;SRT.TXT&lt;/FileMask&gt;&lt;FileNetFailRetryInt vt="19"&gt;10&lt;/FileNetFailRetryInt&gt;&lt;RemoveReceivedFileRetryCount vt="19"&gt;5&lt;/RemoveReceivedFileRetryCount&gt;&lt;BatchSizeInBytes vt="19"&gt;102400&lt;/BatchSizeInBytes&gt;&lt;PollingInterval vt="19"&gt;600000&lt;/PollingInterval&gt;&lt;FileNetFailRetryCount vt="19"&gt;500&lt;/FileNetFailRetryCount&gt;&lt;BatchSize vt="19"&gt;20&lt;/BatchSize&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="FI.Farm.ProcessHoldingLots.FI_Farm_ProcessHoldingLots_ReceivePipeline" FullyQualifiedName="FI.Farm.ProcessHoldingLots.FI_Farm_ProcessHoldingLots_ReceivePipeline, FI.Farm.ProcessHoldingLots, Version=1.0.0.0, Culture=neutral, PublicKeyToken=fc124323458d6d68" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData>&lt;Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;Stages&gt;&lt;Stage CategoryId="9d0e4103-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="FI.CustodianDownloads.CustomPipelineComponents.PreFFDASM.FI.CustodianDownloads.CustomPipelineComponents.ACDFileDownloader.ACDFileDownloader"&gt;&lt;Properties&gt;&lt;FileArchiveFolder vt="8"&gt;\\fi.com\external_data\findata\Hold\FARM FILES\History&lt;/FileArchiveFolder&gt;&lt;FileBizTalkFolder vt="8"&gt;F:\krogerApplications\FI.EagleEAI.FIN\Fi.FARM\In&lt;/FileBizTalkFolder&gt;&lt;FileWorkingFolder vt="8"&gt;F:\krogerApplications\FI.EagleEAI.FIN\Fi.FARM\WorkingFolder&lt;/FileWorkingFolder&gt;&lt;/Properties&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;/Stages&gt;&lt;/Root&gt;</ReceivePipelineData>
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="ReceiveHost" HostTrusted="false">
+            <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          </ReceiveHandler>
+        </ReceiveLocation>
+        <ReceiveLocation Name="ReceiveFarmHoldingsLotFile.test">
+          <Description xsi:nil="true" />
+          <Address>F:\krogerApplications\FI.EagleEAI.FIN\Fi.FARM\TestIn\*SRT.txt</Address>
+          <PublicAddress />
+          <Primary>false</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2016-02-18T08:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2016-02-19T07:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2016-02-18T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2016-02-19T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;RenameReceivedFiles vt="11"&gt;0&lt;/RenameReceivedFiles&gt;&lt;RemoveReceivedFileDelay vt="19"&gt;10&lt;/RemoveReceivedFileDelay&gt;&lt;RemoveReceivedFileMaxInterval vt="19"&gt;300000&lt;/RemoveReceivedFileMaxInterval&gt;&lt;FileMask vt="8"&gt;*SRT.txt&lt;/FileMask&gt;&lt;FileNetFailRetryInt vt="19"&gt;5&lt;/FileNetFailRetryInt&gt;&lt;RemoveReceivedFileRetryCount vt="19"&gt;5&lt;/RemoveReceivedFileRetryCount&gt;&lt;BatchSizeInBytes vt="19"&gt;102400&lt;/BatchSizeInBytes&gt;&lt;PollingInterval vt="19"&gt;60000&lt;/PollingInterval&gt;&lt;FileNetFailRetryCount vt="19"&gt;5&lt;/FileNetFailRetryCount&gt;&lt;BatchSize vt="19"&gt;20&lt;/BatchSize&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="FI.Farm.ProcessHoldingLots.FI_Farm_ProcessHoldingLots_ReceivePipeline" FullyQualifiedName="FI.Farm.ProcessHoldingLots.FI_Farm_ProcessHoldingLots_ReceivePipeline, FI.Farm.ProcessHoldingLots, Version=1.0.0.0, Culture=neutral, PublicKeyToken=fc124323458d6d68" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData>&lt;Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;Stages&gt;&lt;Stage CategoryId="9d0e4103-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="FI.CustodianDownloads.CustomPipelineComponents.PreFFDASM.FI.CustodianDownloads.CustomPipelineComponents.ACDFileDownloader.ACDFileDownloader"&gt;&lt;Properties&gt;&lt;FileArchiveFolder vt="8"&gt;F:\krogerApplications\FI.EagleEAI.FIN\FarmHoldingsLotFile\Archive&lt;/FileArchiveFolder&gt;&lt;FileBizTalkFolder vt="8"&gt;F:\krogerApplications\FI.EagleEAI.FIN\Fi.FARM\In&lt;/FileBizTalkFolder&gt;&lt;FileWorkingFolder vt="8"&gt;F:\krogerApplications\FI.EagleEAI.FIN\Fi.FARM\WorkingFolder&lt;/FileWorkingFolder&gt;&lt;/Properties&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;/Stages&gt;&lt;/Root&gt;</ReceivePipelineData>
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="ReceiveHost" HostTrusted="false">
+            <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          </ReceiveHandler>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>0</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+    </ReceivePort>
+    <ReceivePort Name="ReceivePort_FINDeltaFiles" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="ReceiveLocation_FINDeltaFiles">
+          <Description xsi:nil="true" />
+          <Address>\\fi.com\external_data\findata\hold\DeltaFiles\*.csi</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T05:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T18:00:00</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2007-04-03T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2007-04-04T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;RenameReceivedFiles vt="11"&gt;0&lt;/RenameReceivedFiles&gt;&lt;RemoveReceivedFileDelay vt="19"&gt;10&lt;/RemoveReceivedFileDelay&gt;&lt;RemoveReceivedFileMaxInterval vt="19"&gt;300000&lt;/RemoveReceivedFileMaxInterval&gt;&lt;FileMask vt="8"&gt;*.csi&lt;/FileMask&gt;&lt;FileNetFailRetryInt vt="19"&gt;5&lt;/FileNetFailRetryInt&gt;&lt;RemoveReceivedFileRetryCount vt="19"&gt;5&lt;/RemoveReceivedFileRetryCount&gt;&lt;BatchSizeInBytes vt="19"&gt;1024000&lt;/BatchSizeInBytes&gt;&lt;PollingInterval vt="19"&gt;60000&lt;/PollingInterval&gt;&lt;FileNetFailRetryCount vt="19"&gt;500&lt;/FileNetFailRetryCount&gt;&lt;BatchSize vt="19"&gt;1&lt;/BatchSize&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="FI.EagleEAI.FINDeltaFiles.ReceivePipeline" FullyQualifiedName="FI.EagleEAI.FINDeltaFiles.ReceivePipeline, FI.EagleEAI.FINDeltaFiles, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7ba2fc4b355bbbd1" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData>&lt;Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;Stages&gt;&lt;Stage CategoryId="9d0e4103-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="FI.EagleEAI.FIN.CustomParserPipeline.DeltaFileParser"&gt;&lt;Properties&gt;&lt;PickList vt="8"&gt;AI01A&lt;/PickList&gt;&lt;/Properties&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;/Stages&gt;&lt;/Root&gt;</ReceivePipelineData>
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="ReceiveHost" HostTrusted="false">
+            <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          </ReceiveHandler>
+        </ReceiveLocation>
+        <ReceiveLocation Name="ReceiveLocation_FINDeltaFiles.Test">
+          <Description xsi:nil="true" />
+          <Address>F:\krogerApplications\FI.EagleEAI.FIN\FINDeltaFiles\In\*.csi</Address>
+          <PublicAddress />
+          <Primary>false</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2016-02-18T08:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2016-02-19T07:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2016-02-18T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2016-02-19T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;RenameReceivedFiles vt="11"&gt;0&lt;/RenameReceivedFiles&gt;&lt;RemoveReceivedFileDelay vt="19"&gt;10&lt;/RemoveReceivedFileDelay&gt;&lt;RemoveReceivedFileMaxInterval vt="19"&gt;300000&lt;/RemoveReceivedFileMaxInterval&gt;&lt;FileMask vt="8"&gt;*.csi&lt;/FileMask&gt;&lt;FileNetFailRetryInt vt="19"&gt;5&lt;/FileNetFailRetryInt&gt;&lt;RemoveReceivedFileRetryCount vt="19"&gt;5&lt;/RemoveReceivedFileRetryCount&gt;&lt;BatchSizeInBytes vt="19"&gt;102400&lt;/BatchSizeInBytes&gt;&lt;PollingInterval vt="19"&gt;60000&lt;/PollingInterval&gt;&lt;FileNetFailRetryCount vt="19"&gt;5&lt;/FileNetFailRetryCount&gt;&lt;BatchSize vt="19"&gt;20&lt;/BatchSize&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="FI.EagleEAI.FINDeltaFiles.ReceivePipeline" FullyQualifiedName="FI.EagleEAI.FINDeltaFiles.ReceivePipeline, FI.EagleEAI.FINDeltaFiles, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7ba2fc4b355bbbd1" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="ReceiveHost" HostTrusted="false">
+            <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          </ReceiveHandler>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>51</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+    </ReceivePort>
+    <ReceivePort Name="RcvPort_Factset_Holdings" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="RecvLoc_Factset_Holdings">
+          <Description>Gets Holdings files from Queenangel's FactSet folder</Description>
+          <Address>\\Bream\Export\DataExtracts\FACTSET\Outbond\Daily_*.csv</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T08:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T07:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2013-11-14T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2013-11-15T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;RenameReceivedFiles vt="11"&gt;0&lt;/RenameReceivedFiles&gt;&lt;RemoveReceivedFileDelay vt="19"&gt;10&lt;/RemoveReceivedFileDelay&gt;&lt;RemoveReceivedFileMaxInterval vt="19"&gt;300000&lt;/RemoveReceivedFileMaxInterval&gt;&lt;FileMask vt="8"&gt;Daily_*.csv&lt;/FileMask&gt;&lt;FileNetFailRetryInt vt="19"&gt;5&lt;/FileNetFailRetryInt&gt;&lt;RemoveReceivedFileRetryCount vt="19"&gt;5&lt;/RemoveReceivedFileRetryCount&gt;&lt;BatchSizeInBytes vt="19"&gt;102400&lt;/BatchSizeInBytes&gt;&lt;PollingInterval vt="19"&gt;60000&lt;/PollingInterval&gt;&lt;FileNetFailRetryCount vt="19"&gt;5&lt;/FileNetFailRetryCount&gt;&lt;BatchSize vt="19"&gt;20&lt;/BatchSize&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="ReceiveHost" HostTrusted="false">
+            <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          </ReceiveHandler>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>48</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+    </ReceivePort>
+    <ReceivePort Name="RecvPort_FactSet_PER" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="RecvLoc_FactSet_PER-CONST">
+          <Description />
+          <Address>SFTP://svc_bt_mktdata@st.fi.com:22/AppDev/Factset/PER/*_const_*.*</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T08:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T07:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2013-11-26T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2013-11-27T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="nsoftware.SFTP 2016" Capabilities="15627" ConfigurationClsid="7571227c-f326-4248-a478-8748270376f7" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;AfterConnect /&amp;gt;&amp;lt;AfterGet /&amp;gt;&amp;lt;BeforeGet /&amp;gt;&amp;lt;DeleteMode&amp;gt;1&amp;lt;/DeleteMode&amp;gt;&amp;lt;ErrorThreshold&amp;gt;30&amp;lt;/ErrorThreshold&amp;gt;&amp;lt;FileMask&amp;gt;*_const_*.*&amp;lt;/FileMask&amp;gt;&amp;lt;Firewall&amp;gt;&amp;lt;AutoDetect&amp;gt;False&amp;lt;/AutoDetect&amp;gt;&amp;lt;FirewallType&amp;gt;0&amp;lt;/FirewallType&amp;gt;&amp;lt;Host /&amp;gt;&amp;lt;Password&amp;gt;******&amp;lt;/Password&amp;gt;&amp;lt;Port&amp;gt;0&amp;lt;/Port&amp;gt;&amp;lt;User /&amp;gt;&amp;lt;/Firewall&amp;gt;&amp;lt;MaxBatchSize&amp;gt;0&amp;lt;/MaxBatchSize&amp;gt;&amp;lt;MaxFileCount&amp;gt;10&amp;lt;/MaxFileCount&amp;gt;&amp;lt;MaxFileSize&amp;gt;0&amp;lt;/MaxFileSize&amp;gt;&amp;lt;Other /&amp;gt;&amp;lt;PersistentConnection&amp;gt;False&amp;lt;/PersistentConnection&amp;gt;&amp;lt;PollingInterval&amp;gt;600&amp;lt;/PollingInterval&amp;gt;&amp;lt;RemotePath&amp;gt;/AppDev/Factset/PER/&amp;lt;/RemotePath&amp;gt;&amp;lt;RuntimeLicense /&amp;gt;&amp;lt;SSHAcceptServerHostKey&amp;gt;&amp;lt;Store&amp;gt;MY&amp;lt;/Store&amp;gt;&amp;lt;StorePassword&amp;gt;******&amp;lt;/StorePassword&amp;gt;&amp;lt;StoreType&amp;gt;0&amp;lt;/StoreType&amp;gt;&amp;lt;Subject /&amp;gt;&amp;lt;AcceptAny&amp;gt;True&amp;lt;/AcceptAny&amp;gt;&amp;lt;/SSHAcceptServerHostKey&amp;gt;&amp;lt;SSHAuthMode&amp;gt;0&amp;lt;/SSHAuthMode&amp;gt;&amp;lt;SSHCert&amp;gt;&amp;lt;Store&amp;gt;MY&amp;lt;/Store&amp;gt;&amp;lt;StorePassword&amp;gt;******&amp;lt;/StorePassword&amp;gt;&amp;lt;StoreType&amp;gt;0&amp;lt;/StoreType&amp;gt;&amp;lt;Subject /&amp;gt;&amp;lt;/SSHCert&amp;gt;&amp;lt;SSHCompressionAlgorithms&amp;gt;none&amp;lt;/SSHCompressionAlgorithms&amp;gt;&amp;lt;SSHHost&amp;gt;st.fi.com&amp;lt;/SSHHost&amp;gt;&amp;lt;SSHPassword&amp;gt;******&amp;lt;/SSHPassword&amp;gt;&amp;lt;SSHPort&amp;gt;22&amp;lt;/SSHPort&amp;gt;&amp;lt;SSHUser&amp;gt;svc_bt_mktdata&amp;lt;/SSHUser&amp;gt;&amp;lt;SSOAffiliate /&amp;gt;&amp;lt;TempPath /&amp;gt;&amp;lt;Timeout&amp;gt;600&amp;lt;/Timeout&amp;gt;&amp;lt;TransportLog&amp;gt;&amp;lt;Location&amp;gt;Application&amp;lt;/Location&amp;gt;&amp;lt;LogMode&amp;gt;2&amp;lt;/LogMode&amp;gt;&amp;lt;LogType&amp;gt;1&amp;lt;/LogType&amp;gt;&amp;lt;/TransportLog&amp;gt;&amp;lt;URIIdentity&amp;gt;SFTP://&amp;lt;/URIIdentity&amp;gt;&amp;lt;uri&amp;gt;SFTP://svc_bt_mktdata@st.fi.com:22/AppDev/Factset/PER/*_const_*.*&amp;lt;/uri&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="ReceiveHost_32" HostTrusted="false">
+            <TransportType Name="nsoftware.SFTP 2016" Capabilities="15627" ConfigurationClsid="7571227c-f326-4248-a478-8748270376f7" />
+          </ReceiveHandler>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>48</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+    </ReceivePort>
+    <ReceivePort Name="RecvPort_FactSet_SMF" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="RecvLoc_FactSet_SMF">
+          <Description />
+          <Address>SFTP://svc_bt_mktdata@st.fi.com:22/AppDev/Factset/SMF/*.*</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T08:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T07:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2013-11-26T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2013-11-27T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="nsoftware.SFTP 2016" Capabilities="15627" ConfigurationClsid="7571227c-f326-4248-a478-8748270376f7" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;AfterConnect /&amp;gt;&amp;lt;AfterGet /&amp;gt;&amp;lt;BeforeGet /&amp;gt;&amp;lt;DeleteMode&amp;gt;1&amp;lt;/DeleteMode&amp;gt;&amp;lt;ErrorThreshold&amp;gt;10&amp;lt;/ErrorThreshold&amp;gt;&amp;lt;FileMask&amp;gt;*.*&amp;lt;/FileMask&amp;gt;&amp;lt;Firewall&amp;gt;&amp;lt;AutoDetect&amp;gt;False&amp;lt;/AutoDetect&amp;gt;&amp;lt;FirewallType&amp;gt;0&amp;lt;/FirewallType&amp;gt;&amp;lt;Host /&amp;gt;&amp;lt;Password&amp;gt;******&amp;lt;/Password&amp;gt;&amp;lt;Port&amp;gt;0&amp;lt;/Port&amp;gt;&amp;lt;User /&amp;gt;&amp;lt;/Firewall&amp;gt;&amp;lt;MaxBatchSize&amp;gt;0&amp;lt;/MaxBatchSize&amp;gt;&amp;lt;MaxFileCount&amp;gt;10&amp;lt;/MaxFileCount&amp;gt;&amp;lt;MaxFileSize&amp;gt;0&amp;lt;/MaxFileSize&amp;gt;&amp;lt;Other /&amp;gt;&amp;lt;PersistentConnection&amp;gt;False&amp;lt;/PersistentConnection&amp;gt;&amp;lt;PollingInterval&amp;gt;300&amp;lt;/PollingInterval&amp;gt;&amp;lt;RemotePath&amp;gt;/AppDev/Factset/SMF/&amp;lt;/RemotePath&amp;gt;&amp;lt;RuntimeLicense /&amp;gt;&amp;lt;SSHAcceptServerHostKey&amp;gt;&amp;lt;Store&amp;gt;MY&amp;lt;/Store&amp;gt;&amp;lt;StorePassword&amp;gt;******&amp;lt;/StorePassword&amp;gt;&amp;lt;StoreType&amp;gt;0&amp;lt;/StoreType&amp;gt;&amp;lt;Subject /&amp;gt;&amp;lt;AcceptAny&amp;gt;True&amp;lt;/AcceptAny&amp;gt;&amp;lt;/SSHAcceptServerHostKey&amp;gt;&amp;lt;SSHAuthMode&amp;gt;0&amp;lt;/SSHAuthMode&amp;gt;&amp;lt;SSHCert&amp;gt;&amp;lt;Store&amp;gt;MY&amp;lt;/Store&amp;gt;&amp;lt;StorePassword&amp;gt;******&amp;lt;/StorePassword&amp;gt;&amp;lt;StoreType&amp;gt;0&amp;lt;/StoreType&amp;gt;&amp;lt;Subject /&amp;gt;&amp;lt;/SSHCert&amp;gt;&amp;lt;SSHCompressionAlgorithms&amp;gt;none&amp;lt;/SSHCompressionAlgorithms&amp;gt;&amp;lt;SSHHost&amp;gt;st.fi.com&amp;lt;/SSHHost&amp;gt;&amp;lt;SSHPassword&amp;gt;******&amp;lt;/SSHPassword&amp;gt;&amp;lt;SSHPort&amp;gt;22&amp;lt;/SSHPort&amp;gt;&amp;lt;SSHUser&amp;gt;svc_bt_mktdata&amp;lt;/SSHUser&amp;gt;&amp;lt;SSOAffiliate /&amp;gt;&amp;lt;TempPath /&amp;gt;&amp;lt;Timeout&amp;gt;60&amp;lt;/Timeout&amp;gt;&amp;lt;TransportLog&amp;gt;&amp;lt;Location&amp;gt;Application&amp;lt;/Location&amp;gt;&amp;lt;LogMode&amp;gt;3&amp;lt;/LogMode&amp;gt;&amp;lt;LogType&amp;gt;1&amp;lt;/LogType&amp;gt;&amp;lt;/TransportLog&amp;gt;&amp;lt;URIIdentity&amp;gt;SFTP://&amp;lt;/URIIdentity&amp;gt;&amp;lt;uri&amp;gt;SFTP://svc_bt_mktdata@st.fi.com:22/AppDev/Factset/SMF/*.*&amp;lt;/uri&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="ReceiveHost_32" HostTrusted="false">
+            <TransportType Name="nsoftware.SFTP 2016" Capabilities="15627" ConfigurationClsid="7571227c-f326-4248-a478-8748270376f7" />
+          </ReceiveHandler>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>48</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+    </ReceivePort>
+    <ReceivePort Name="RecvPort_FactSet_FXR" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="RecvLoc_FactSet_FXR">
+          <Description />
+          <Address>SFTP://svc_bt_mktdata@st.fi.com:22/AppDev/Factset/FXR/*.*</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T08:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T07:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2013-11-26T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2013-11-27T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="nsoftware.SFTP 2016" Capabilities="15627" ConfigurationClsid="7571227c-f326-4248-a478-8748270376f7" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;AfterConnect /&amp;gt;&amp;lt;AfterGet /&amp;gt;&amp;lt;BeforeGet /&amp;gt;&amp;lt;DeleteMode&amp;gt;1&amp;lt;/DeleteMode&amp;gt;&amp;lt;ErrorThreshold&amp;gt;10&amp;lt;/ErrorThreshold&amp;gt;&amp;lt;FileMask&amp;gt;*.*&amp;lt;/FileMask&amp;gt;&amp;lt;Firewall&amp;gt;&amp;lt;AutoDetect&amp;gt;False&amp;lt;/AutoDetect&amp;gt;&amp;lt;FirewallType&amp;gt;0&amp;lt;/FirewallType&amp;gt;&amp;lt;Host /&amp;gt;&amp;lt;Password&amp;gt;******&amp;lt;/Password&amp;gt;&amp;lt;Port&amp;gt;0&amp;lt;/Port&amp;gt;&amp;lt;User /&amp;gt;&amp;lt;/Firewall&amp;gt;&amp;lt;MaxBatchSize&amp;gt;0&amp;lt;/MaxBatchSize&amp;gt;&amp;lt;MaxFileCount&amp;gt;10&amp;lt;/MaxFileCount&amp;gt;&amp;lt;MaxFileSize&amp;gt;0&amp;lt;/MaxFileSize&amp;gt;&amp;lt;Other /&amp;gt;&amp;lt;PersistentConnection&amp;gt;False&amp;lt;/PersistentConnection&amp;gt;&amp;lt;PollingInterval&amp;gt;500&amp;lt;/PollingInterval&amp;gt;&amp;lt;RemotePath&amp;gt;/AppDev/Factset/FXR/&amp;lt;/RemotePath&amp;gt;&amp;lt;RuntimeLicense /&amp;gt;&amp;lt;SSHAcceptServerHostKey&amp;gt;&amp;lt;Store&amp;gt;MY&amp;lt;/Store&amp;gt;&amp;lt;StorePassword&amp;gt;******&amp;lt;/StorePassword&amp;gt;&amp;lt;StoreType&amp;gt;0&amp;lt;/StoreType&amp;gt;&amp;lt;Subject /&amp;gt;&amp;lt;AcceptAny&amp;gt;True&amp;lt;/AcceptAny&amp;gt;&amp;lt;/SSHAcceptServerHostKey&amp;gt;&amp;lt;SSHAuthMode&amp;gt;0&amp;lt;/SSHAuthMode&amp;gt;&amp;lt;SSHCert&amp;gt;&amp;lt;Store&amp;gt;MY&amp;lt;/Store&amp;gt;&amp;lt;StorePassword&amp;gt;******&amp;lt;/StorePassword&amp;gt;&amp;lt;StoreType&amp;gt;0&amp;lt;/StoreType&amp;gt;&amp;lt;Subject /&amp;gt;&amp;lt;/SSHCert&amp;gt;&amp;lt;SSHCompressionAlgorithms&amp;gt;none&amp;lt;/SSHCompressionAlgorithms&amp;gt;&amp;lt;SSHHost&amp;gt;st.fi.com&amp;lt;/SSHHost&amp;gt;&amp;lt;SSHPassword&amp;gt;******&amp;lt;/SSHPassword&amp;gt;&amp;lt;SSHPort&amp;gt;22&amp;lt;/SSHPort&amp;gt;&amp;lt;SSHUser&amp;gt;svc_bt_mktdata&amp;lt;/SSHUser&amp;gt;&amp;lt;SSOAffiliate /&amp;gt;&amp;lt;TempPath /&amp;gt;&amp;lt;Timeout&amp;gt;60&amp;lt;/Timeout&amp;gt;&amp;lt;TransportLog&amp;gt;&amp;lt;Location&amp;gt;Application&amp;lt;/Location&amp;gt;&amp;lt;LogMode&amp;gt;2&amp;lt;/LogMode&amp;gt;&amp;lt;LogType&amp;gt;1&amp;lt;/LogType&amp;gt;&amp;lt;/TransportLog&amp;gt;&amp;lt;URIIdentity&amp;gt;SFTP://&amp;lt;/URIIdentity&amp;gt;&amp;lt;uri&amp;gt;SFTP://svc_bt_mktdata@st.fi.com:22/AppDev/Factset/FXR/*.*&amp;lt;/uri&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="ReceiveHost_32" HostTrusted="false">
+            <TransportType Name="nsoftware.SFTP 2016" Capabilities="15627" ConfigurationClsid="7571227c-f326-4248-a478-8748270376f7" />
+          </ReceiveHandler>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>48</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+    </ReceivePort>
+    <ReceivePort Name="RecvPort_FactSet_PER-QA" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="RecvLoc_FactSet_PER-QA">
+          <Description />
+          <Address>SFTP://svc_bt_mktdata@st.fi.com:22/AppDev/Factset/PER/*_qa_*.*</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T08:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T07:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2013-12-03T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2013-12-04T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="nsoftware.SFTP 2016" Capabilities="15627" ConfigurationClsid="7571227c-f326-4248-a478-8748270376f7" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;AfterConnect /&amp;gt;&amp;lt;AfterGet /&amp;gt;&amp;lt;BeforeGet /&amp;gt;&amp;lt;DeleteMode&amp;gt;1&amp;lt;/DeleteMode&amp;gt;&amp;lt;ErrorThreshold&amp;gt;10&amp;lt;/ErrorThreshold&amp;gt;&amp;lt;FileMask&amp;gt;*_qa_*.*&amp;lt;/FileMask&amp;gt;&amp;lt;Firewall&amp;gt;&amp;lt;AutoDetect&amp;gt;False&amp;lt;/AutoDetect&amp;gt;&amp;lt;FirewallType&amp;gt;0&amp;lt;/FirewallType&amp;gt;&amp;lt;Host /&amp;gt;&amp;lt;Password&amp;gt;******&amp;lt;/Password&amp;gt;&amp;lt;Port&amp;gt;0&amp;lt;/Port&amp;gt;&amp;lt;User /&amp;gt;&amp;lt;/Firewall&amp;gt;&amp;lt;MaxBatchSize&amp;gt;0&amp;lt;/MaxBatchSize&amp;gt;&amp;lt;MaxFileCount&amp;gt;10&amp;lt;/MaxFileCount&amp;gt;&amp;lt;MaxFileSize&amp;gt;0&amp;lt;/MaxFileSize&amp;gt;&amp;lt;Other /&amp;gt;&amp;lt;PersistentConnection&amp;gt;False&amp;lt;/PersistentConnection&amp;gt;&amp;lt;PollingInterval&amp;gt;500&amp;lt;/PollingInterval&amp;gt;&amp;lt;RemotePath&amp;gt;/AppDev/Factset/PER/&amp;lt;/RemotePath&amp;gt;&amp;lt;RuntimeLicense /&amp;gt;&amp;lt;SSHAcceptServerHostKey&amp;gt;&amp;lt;Store&amp;gt;MY&amp;lt;/Store&amp;gt;&amp;lt;StorePassword&amp;gt;******&amp;lt;/StorePassword&amp;gt;&amp;lt;StoreType&amp;gt;0&amp;lt;/StoreType&amp;gt;&amp;lt;Subject /&amp;gt;&amp;lt;AcceptAny&amp;gt;True&amp;lt;/AcceptAny&amp;gt;&amp;lt;/SSHAcceptServerHostKey&amp;gt;&amp;lt;SSHAuthMode&amp;gt;0&amp;lt;/SSHAuthMode&amp;gt;&amp;lt;SSHCert&amp;gt;&amp;lt;Store&amp;gt;MY&amp;lt;/Store&amp;gt;&amp;lt;StorePassword&amp;gt;******&amp;lt;/StorePassword&amp;gt;&amp;lt;StoreType&amp;gt;0&amp;lt;/StoreType&amp;gt;&amp;lt;Subject /&amp;gt;&amp;lt;/SSHCert&amp;gt;&amp;lt;SSHCompressionAlgorithms&amp;gt;none&amp;lt;/SSHCompressionAlgorithms&amp;gt;&amp;lt;SSHHost&amp;gt;st.fi.com&amp;lt;/SSHHost&amp;gt;&amp;lt;SSHPassword&amp;gt;******&amp;lt;/SSHPassword&amp;gt;&amp;lt;SSHPort&amp;gt;22&amp;lt;/SSHPort&amp;gt;&amp;lt;SSHUser&amp;gt;svc_bt_mktdata&amp;lt;/SSHUser&amp;gt;&amp;lt;SSOAffiliate /&amp;gt;&amp;lt;TempPath /&amp;gt;&amp;lt;Timeout&amp;gt;60&amp;lt;/Timeout&amp;gt;&amp;lt;TransportLog&amp;gt;&amp;lt;Location&amp;gt;Application&amp;lt;/Location&amp;gt;&amp;lt;LogMode&amp;gt;3&amp;lt;/LogMode&amp;gt;&amp;lt;LogType&amp;gt;1&amp;lt;/LogType&amp;gt;&amp;lt;/TransportLog&amp;gt;&amp;lt;URIIdentity&amp;gt;SFTP://&amp;lt;/URIIdentity&amp;gt;&amp;lt;uri&amp;gt;SFTP://svc_bt_mktdata@st.fi.com:22/AppDev/Factset/PER/*_qa_*.*&amp;lt;/uri&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="ReceiveHost_32" HostTrusted="false">
+            <TransportType Name="nsoftware.SFTP 2016" Capabilities="15627" ConfigurationClsid="7571227c-f326-4248-a478-8748270376f7" />
+          </ReceiveHandler>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>48</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+    </ReceivePort>
+    <ReceivePort Name="RecvPort_FactSet_PER-IDX" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="RecvLoc_FactSet_PER-IDX">
+          <Description />
+          <Address>SFTP://svc_bt_mktdata@st.fi.com:22/AppDev/Factset/PER/*_idx_*.*</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T08:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T07:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2013-12-03T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2013-12-04T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="nsoftware.SFTP 2016" Capabilities="15627" ConfigurationClsid="7571227c-f326-4248-a478-8748270376f7" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;AfterConnect /&amp;gt;&amp;lt;AfterGet /&amp;gt;&amp;lt;BeforeGet /&amp;gt;&amp;lt;DeleteMode&amp;gt;1&amp;lt;/DeleteMode&amp;gt;&amp;lt;ErrorThreshold&amp;gt;10&amp;lt;/ErrorThreshold&amp;gt;&amp;lt;FileMask&amp;gt;*_idx_*.*&amp;lt;/FileMask&amp;gt;&amp;lt;Firewall&amp;gt;&amp;lt;AutoDetect&amp;gt;False&amp;lt;/AutoDetect&amp;gt;&amp;lt;FirewallType&amp;gt;0&amp;lt;/FirewallType&amp;gt;&amp;lt;Host /&amp;gt;&amp;lt;Password&amp;gt;******&amp;lt;/Password&amp;gt;&amp;lt;Port&amp;gt;0&amp;lt;/Port&amp;gt;&amp;lt;User /&amp;gt;&amp;lt;/Firewall&amp;gt;&amp;lt;MaxBatchSize&amp;gt;0&amp;lt;/MaxBatchSize&amp;gt;&amp;lt;MaxFileCount&amp;gt;10&amp;lt;/MaxFileCount&amp;gt;&amp;lt;MaxFileSize&amp;gt;0&amp;lt;/MaxFileSize&amp;gt;&amp;lt;Other /&amp;gt;&amp;lt;PersistentConnection&amp;gt;False&amp;lt;/PersistentConnection&amp;gt;&amp;lt;PollingInterval&amp;gt;500&amp;lt;/PollingInterval&amp;gt;&amp;lt;RemotePath&amp;gt;/AppDev/Factset/PER/&amp;lt;/RemotePath&amp;gt;&amp;lt;RuntimeLicense /&amp;gt;&amp;lt;SSHAcceptServerHostKey&amp;gt;&amp;lt;Store&amp;gt;MY&amp;lt;/Store&amp;gt;&amp;lt;StorePassword&amp;gt;******&amp;lt;/StorePassword&amp;gt;&amp;lt;StoreType&amp;gt;0&amp;lt;/StoreType&amp;gt;&amp;lt;Subject /&amp;gt;&amp;lt;AcceptAny&amp;gt;True&amp;lt;/AcceptAny&amp;gt;&amp;lt;/SSHAcceptServerHostKey&amp;gt;&amp;lt;SSHAuthMode&amp;gt;0&amp;lt;/SSHAuthMode&amp;gt;&amp;lt;SSHCert&amp;gt;&amp;lt;Store&amp;gt;MY&amp;lt;/Store&amp;gt;&amp;lt;StorePassword&amp;gt;******&amp;lt;/StorePassword&amp;gt;&amp;lt;StoreType&amp;gt;0&amp;lt;/StoreType&amp;gt;&amp;lt;Subject /&amp;gt;&amp;lt;/SSHCert&amp;gt;&amp;lt;SSHCompressionAlgorithms&amp;gt;none&amp;lt;/SSHCompressionAlgorithms&amp;gt;&amp;lt;SSHHost&amp;gt;st.fi.com&amp;lt;/SSHHost&amp;gt;&amp;lt;SSHPassword&amp;gt;******&amp;lt;/SSHPassword&amp;gt;&amp;lt;SSHPort&amp;gt;22&amp;lt;/SSHPort&amp;gt;&amp;lt;SSHUser&amp;gt;svc_bt_mktdata&amp;lt;/SSHUser&amp;gt;&amp;lt;SSOAffiliate /&amp;gt;&amp;lt;TempPath /&amp;gt;&amp;lt;Timeout&amp;gt;60&amp;lt;/Timeout&amp;gt;&amp;lt;TransportLog&amp;gt;&amp;lt;Location&amp;gt;Application&amp;lt;/Location&amp;gt;&amp;lt;LogMode&amp;gt;2&amp;lt;/LogMode&amp;gt;&amp;lt;LogType&amp;gt;1&amp;lt;/LogType&amp;gt;&amp;lt;/TransportLog&amp;gt;&amp;lt;URIIdentity&amp;gt;SFTP://&amp;lt;/URIIdentity&amp;gt;&amp;lt;uri&amp;gt;SFTP://svc_bt_mktdata@st.fi.com:22/AppDev/Factset/PER/*_idx_*.*&amp;lt;/uri&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="ReceiveHost_32" HostTrusted="false">
+            <TransportType Name="nsoftware.SFTP 2016" Capabilities="15627" ConfigurationClsid="7571227c-f326-4248-a478-8748270376f7" />
+          </ReceiveHandler>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>48</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+    </ReceivePort>
+    <ReceivePort Name="RecvPort_FactSet_NON_INDX" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="RecvLoc_FactSet_NON_INDEX">
+          <Description />
+          <Address>SFTP://svc_bt_mktdata@st.fi.com:22/AppDev/Factset/PER/NON_INDEX_*.*</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T08:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T07:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2013-12-10T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2013-12-11T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="nsoftware.SFTP 2016" Capabilities="15627" ConfigurationClsid="7571227c-f326-4248-a478-8748270376f7" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;AfterConnect /&amp;gt;&amp;lt;AfterGet /&amp;gt;&amp;lt;BeforeGet /&amp;gt;&amp;lt;DeleteMode&amp;gt;1&amp;lt;/DeleteMode&amp;gt;&amp;lt;ErrorThreshold&amp;gt;20&amp;lt;/ErrorThreshold&amp;gt;&amp;lt;FileMask&amp;gt;NON_INDEX_*.*&amp;lt;/FileMask&amp;gt;&amp;lt;Firewall&amp;gt;&amp;lt;AutoDetect&amp;gt;False&amp;lt;/AutoDetect&amp;gt;&amp;lt;FirewallType&amp;gt;0&amp;lt;/FirewallType&amp;gt;&amp;lt;Host /&amp;gt;&amp;lt;Password&amp;gt;******&amp;lt;/Password&amp;gt;&amp;lt;Port&amp;gt;0&amp;lt;/Port&amp;gt;&amp;lt;User /&amp;gt;&amp;lt;/Firewall&amp;gt;&amp;lt;MaxBatchSize&amp;gt;0&amp;lt;/MaxBatchSize&amp;gt;&amp;lt;MaxFileCount&amp;gt;10&amp;lt;/MaxFileCount&amp;gt;&amp;lt;MaxFileSize&amp;gt;0&amp;lt;/MaxFileSize&amp;gt;&amp;lt;Other /&amp;gt;&amp;lt;PersistentConnection&amp;gt;False&amp;lt;/PersistentConnection&amp;gt;&amp;lt;PollingInterval&amp;gt;600&amp;lt;/PollingInterval&amp;gt;&amp;lt;RemotePath&amp;gt;/AppDev/Factset/PER/&amp;lt;/RemotePath&amp;gt;&amp;lt;RuntimeLicense /&amp;gt;&amp;lt;SSHAcceptServerHostKey&amp;gt;&amp;lt;Store&amp;gt;MY&amp;lt;/Store&amp;gt;&amp;lt;StorePassword&amp;gt;******&amp;lt;/StorePassword&amp;gt;&amp;lt;StoreType&amp;gt;0&amp;lt;/StoreType&amp;gt;&amp;lt;Subject /&amp;gt;&amp;lt;AcceptAny&amp;gt;True&amp;lt;/AcceptAny&amp;gt;&amp;lt;/SSHAcceptServerHostKey&amp;gt;&amp;lt;SSHAuthMode&amp;gt;0&amp;lt;/SSHAuthMode&amp;gt;&amp;lt;SSHCert&amp;gt;&amp;lt;Store&amp;gt;MY&amp;lt;/Store&amp;gt;&amp;lt;StorePassword&amp;gt;******&amp;lt;/StorePassword&amp;gt;&amp;lt;StoreType&amp;gt;0&amp;lt;/StoreType&amp;gt;&amp;lt;Subject /&amp;gt;&amp;lt;/SSHCert&amp;gt;&amp;lt;SSHCompressionAlgorithms&amp;gt;none&amp;lt;/SSHCompressionAlgorithms&amp;gt;&amp;lt;SSHHost&amp;gt;st.fi.com&amp;lt;/SSHHost&amp;gt;&amp;lt;SSHPassword&amp;gt;******&amp;lt;/SSHPassword&amp;gt;&amp;lt;SSHPort&amp;gt;22&amp;lt;/SSHPort&amp;gt;&amp;lt;SSHUser&amp;gt;svc_bt_mktdata&amp;lt;/SSHUser&amp;gt;&amp;lt;SSOAffiliate /&amp;gt;&amp;lt;TempPath /&amp;gt;&amp;lt;Timeout&amp;gt;60&amp;lt;/Timeout&amp;gt;&amp;lt;TransportLog&amp;gt;&amp;lt;Location&amp;gt;Application&amp;lt;/Location&amp;gt;&amp;lt;LogMode&amp;gt;2&amp;lt;/LogMode&amp;gt;&amp;lt;LogType&amp;gt;1&amp;lt;/LogType&amp;gt;&amp;lt;/TransportLog&amp;gt;&amp;lt;URIIdentity&amp;gt;SFTP://&amp;lt;/URIIdentity&amp;gt;&amp;lt;uri&amp;gt;SFTP://svc_bt_mktdata@st.fi.com:22/AppDev/Factset/PER/NON_INDEX_*.*&amp;lt;/uri&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="ReceiveHost_32" HostTrusted="false">
+            <TransportType Name="nsoftware.SFTP 2016" Capabilities="15627" ConfigurationClsid="7571227c-f326-4248-a478-8748270376f7" />
+          </ReceiveHandler>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>48</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+    </ReceivePort>
+    <ReceivePort Name="RcvPort_FINtoEZEInstHoldings" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="RcvLoc_FINtoEZEInstHoldings">
+          <Description xsi:nil="true" />
+          <Address>\\finserver\PstnDrop\EZE_*</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T08:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T07:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2013-12-23T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2013-12-24T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;RenameReceivedFiles vt="11"&gt;0&lt;/RenameReceivedFiles&gt;&lt;RemoveReceivedFileDelay vt="19"&gt;10&lt;/RemoveReceivedFileDelay&gt;&lt;RemoveReceivedFileMaxInterval vt="19"&gt;300000&lt;/RemoveReceivedFileMaxInterval&gt;&lt;FileMask vt="8"&gt;EZE_*&lt;/FileMask&gt;&lt;FileNetFailRetryInt vt="19"&gt;5&lt;/FileNetFailRetryInt&gt;&lt;RemoveReceivedFileRetryCount vt="19"&gt;5&lt;/RemoveReceivedFileRetryCount&gt;&lt;BatchSizeInBytes vt="19"&gt;102400&lt;/BatchSizeInBytes&gt;&lt;PollingInterval vt="19"&gt;60000&lt;/PollingInterval&gt;&lt;FileNetFailRetryCount vt="19"&gt;5&lt;/FileNetFailRetryCount&gt;&lt;BatchSize vt="19"&gt;20&lt;/BatchSize&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="BTSFINDataHost" HostTrusted="false">
+            <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          </ReceiveHandler>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>51</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+    </ReceivePort>
+    <ReceivePort Name="RxPortFINInstHoldingsFile" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="RxLocFINInstHoldings">
+          <Description xsi:nil="true" />
+          <Address>\\finserver\PstnDrop\ESP*.csv</Address>
+          <PublicAddress />
+          <Primary>false</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T08:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T07:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2013-12-23T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2013-12-24T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;RenameReceivedFiles vt="11"&gt;0&lt;/RenameReceivedFiles&gt;&lt;RemoveReceivedFileDelay vt="19"&gt;10&lt;/RemoveReceivedFileDelay&gt;&lt;RemoveReceivedFileMaxInterval vt="19"&gt;300000&lt;/RemoveReceivedFileMaxInterval&gt;&lt;FileMask vt="8"&gt;ESP*.csv&lt;/FileMask&gt;&lt;FileNetFailRetryInt vt="19"&gt;5&lt;/FileNetFailRetryInt&gt;&lt;RemoveReceivedFileRetryCount vt="19"&gt;5&lt;/RemoveReceivedFileRetryCount&gt;&lt;BatchSizeInBytes vt="19"&gt;102400&lt;/BatchSizeInBytes&gt;&lt;PollingInterval vt="19"&gt;60000&lt;/PollingInterval&gt;&lt;FileNetFailRetryCount vt="19"&gt;5&lt;/FileNetFailRetryCount&gt;&lt;BatchSize vt="19"&gt;20&lt;/BatchSize&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="BTSFINDataHost" HostTrusted="false">
+            <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          </ReceiveHandler>
+        </ReceiveLocation>
+        <ReceiveLocation Name="RxLocFINInstDeltaHoldings">
+          <Description xsi:nil="true" />
+          <Address>\\finserver\PstnDrop\DELTA*.csv</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T08:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T07:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2013-12-23T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2013-12-24T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;RenameReceivedFiles vt="11"&gt;0&lt;/RenameReceivedFiles&gt;&lt;RemoveReceivedFileDelay vt="19"&gt;10&lt;/RemoveReceivedFileDelay&gt;&lt;RemoveReceivedFileMaxInterval vt="19"&gt;300000&lt;/RemoveReceivedFileMaxInterval&gt;&lt;FileMask vt="8"&gt;DELTA*.csv&lt;/FileMask&gt;&lt;FileNetFailRetryInt vt="19"&gt;5&lt;/FileNetFailRetryInt&gt;&lt;RemoveReceivedFileRetryCount vt="19"&gt;5&lt;/RemoveReceivedFileRetryCount&gt;&lt;BatchSizeInBytes vt="19"&gt;102400&lt;/BatchSizeInBytes&gt;&lt;PollingInterval vt="19"&gt;60000&lt;/PollingInterval&gt;&lt;FileNetFailRetryCount vt="19"&gt;5&lt;/FileNetFailRetryCount&gt;&lt;BatchSize vt="19"&gt;20&lt;/BatchSize&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="BTSFINDataHost" HostTrusted="false">
+            <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          </ReceiveHandler>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>16</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+    </ReceivePort>
+    <ReceivePort Name="RecvPort_EZE_Orders_To_FIN" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="Recv_Loc_EZE_Orders_To_FIN">
+          <Description xsi:nil="true" />
+          <Address>\\vpsSilverSide\Outgoing\*.csv</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T08:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T07:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2014-01-09T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2014-01-10T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;RenameReceivedFiles vt="11"&gt;0&lt;/RenameReceivedFiles&gt;&lt;RemoveReceivedFileDelay vt="19"&gt;10&lt;/RemoveReceivedFileDelay&gt;&lt;RemoveReceivedFileMaxInterval vt="19"&gt;300000&lt;/RemoveReceivedFileMaxInterval&gt;&lt;FileMask vt="8"&gt;*.csv&lt;/FileMask&gt;&lt;FileNetFailRetryInt vt="19"&gt;5&lt;/FileNetFailRetryInt&gt;&lt;RemoveReceivedFileRetryCount vt="19"&gt;5&lt;/RemoveReceivedFileRetryCount&gt;&lt;BatchSizeInBytes vt="19"&gt;102400&lt;/BatchSizeInBytes&gt;&lt;PollingInterval vt="19"&gt;60000&lt;/PollingInterval&gt;&lt;FileNetFailRetryCount vt="19"&gt;5&lt;/FileNetFailRetryCount&gt;&lt;BatchSize vt="19"&gt;20&lt;/BatchSize&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="BTSFINDataHost" HostTrusted="false">
+            <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          </ReceiveHandler>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>51</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+    </ReceivePort>
+    <ReceivePort Name="RecvPort_Firm_Holdings" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="RecvLoc_Firm_Holdings">
+          <Description xsi:nil="true" />
+          <Address>\\Bream\Export\DataExtracts\FACTSET\Outbond\FirmHoldings_*.*</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>true</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T04:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T09:00:00</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2015-10-29T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2015-10-30T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;RenameReceivedFiles vt="11"&gt;0&lt;/RenameReceivedFiles&gt;&lt;RemoveReceivedFileDelay vt="19"&gt;10&lt;/RemoveReceivedFileDelay&gt;&lt;RemoveReceivedFileMaxInterval vt="19"&gt;300000&lt;/RemoveReceivedFileMaxInterval&gt;&lt;FileMask vt="8"&gt;FirmHoldings_*.*&lt;/FileMask&gt;&lt;FileNetFailRetryInt vt="19"&gt;5&lt;/FileNetFailRetryInt&gt;&lt;RemoveReceivedFileRetryCount vt="19"&gt;5&lt;/RemoveReceivedFileRetryCount&gt;&lt;BatchSizeInBytes vt="19"&gt;102400&lt;/BatchSizeInBytes&gt;&lt;PollingInterval vt="19"&gt;60000&lt;/PollingInterval&gt;&lt;FileNetFailRetryCount vt="19"&gt;5&lt;/FileNetFailRetryCount&gt;&lt;BatchSize vt="19"&gt;20&lt;/BatchSize&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="ReceiveHost" HostTrusted="false">
+            <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          </ReceiveHandler>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>51</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EAGLE.FIN</ApplicationName>
+    </ReceivePort>
+  </ReceivePortCollection>
+  <PartyCollection xsi:nil="true" />
+</BindingInfo>

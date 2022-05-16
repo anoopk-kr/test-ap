@@ -1,0 +1,1039 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="NoBindings" BoundEndpoints="0" TotalEndpoints="0">
+  <Timestamp>2018-03-22T09:08:26.6364369-07:00</Timestamp>
+  <ModuleRefCollection>
+    <ModuleRef Name="[Application:BizTalk Application 1]" Version="" Culture="" PublicKeyToken="" FullName="[Application:BizTalk Application 1], Version=, Culture=, PublicKeyToken=">
+      <Services />
+      <TrackedSchemas>
+        <Schema FullName="nsoftware.BizTalk.ACH.ACHSchema" AssemblyQualifiedName="nsoftware.BizTalk.ACH.ACHSchema,nsoftware.BizTalk.ACHPipeline, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.ACH.ACHFileSchema" RootName="ACHFile" AssemblyQualifiedName="nsoftware.BizTalk.ACH.ACHFileSchema,nsoftware.BizTalk.ACHPipeline, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.AES.AESSchema" AssemblyQualifiedName="nsoftware.BizTalk.AES.AESSchema,nsoftware.BizTalk.AESPipeline, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.AS1.AS1Schema" AssemblyQualifiedName="nsoftware.BizTalk.AS1.AS1Schema,nsoftware.BizTalk.AS1Adapter, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.AS2.AS2Schema" AssemblyQualifiedName="nsoftware.BizTalk.AS2.AS2Schema,nsoftware.BizTalk.AS2Adapter, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.AS3.AS3Schema" AssemblyQualifiedName="nsoftware.BizTalk.AS3.AS3Schema,nsoftware.BizTalk.AS3Adapter, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.Bzip2.Bzip2Schema" AssemblyQualifiedName="nsoftware.BizTalk.Bzip2.Bzip2Schema,nsoftware.BizTalk.Bzip2Pipeline, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.CreditCard.CreditCardSchema" AssemblyQualifiedName="nsoftware.BizTalk.CreditCard.CreditCardSchema,nsoftware.BizTalk.CreditCardAdapter, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.Email.EmailSchema" AssemblyQualifiedName="nsoftware.BizTalk.Email.EmailSchema,nsoftware.BizTalk.EmailAdapter, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.EzCrypt.EzCryptSchema" AssemblyQualifiedName="nsoftware.BizTalk.EzCrypt.EzCryptSchema,nsoftware.BizTalk.EzCryptPipeline, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.FTP.FTPSchema" AssemblyQualifiedName="nsoftware.BizTalk.FTP.FTPSchema,nsoftware.BizTalk.FTPAdapter, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false" Description="">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.GISB.GISBSchema" AssemblyQualifiedName="nsoftware.BizTalk.GISB.GISBSchema,nsoftware.BizTalk.GISBAdapter, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.Gzip.GzipSchema" AssemblyQualifiedName="nsoftware.BizTalk.Gzip.GzipSchema,nsoftware.BizTalk.GzipPipeline, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.Hash.HashSchema" AssemblyQualifiedName="nsoftware.BizTalk.Hash.HashSchema,nsoftware.BizTalk.HashPipeline, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.LDAP.LDAPSchema" AssemblyQualifiedName="nsoftware.BizTalk.LDAP.LDAPSchema,nsoftware.BizTalk.LDAPAdapter, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.OFTP.OFTPSchema" AssemblyQualifiedName="nsoftware.BizTalk.OFTP.OFTPSchema,nsoftware.BizTalk.OFTPAdapter, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.OpenPGP.OpenPGPSchema" AssemblyQualifiedName="nsoftware.BizTalk.OpenPGP.OpenPGPSchema,nsoftware.BizTalk.OpenPGPPipeline, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false" Description="">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.PowerShell.PowerShellSchema" AssemblyQualifiedName="nsoftware.BizTalk.PowerShell.PowerShellSchema,nsoftware.BizTalk.PowerShellAdapter, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.RSS.RSSSchema" AssemblyQualifiedName="nsoftware.BizTalk.RSS.RSSSchema,nsoftware.BizTalk.RSSAdapter, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.S3.S3Schema" AssemblyQualifiedName="nsoftware.BizTalk.S3.S3Schema,nsoftware.BizTalk.S3Adapter, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.SCP.SCPSchema" AssemblyQualifiedName="nsoftware.BizTalk.SCP.SCPSchema,nsoftware.BizTalk.SCPAdapter, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.SevenZip.SevenZipSchema" AssemblyQualifiedName="nsoftware.BizTalk.SevenZip.SevenZipSchema,nsoftware.BizTalk.SevenZipPipeline, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.SExec.SExecSchema" AssemblyQualifiedName="nsoftware.BizTalk.SExec.SExecSchema,nsoftware.BizTalk.SExecAdapter, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.SFTP.SFTPSchema" AssemblyQualifiedName="nsoftware.BizTalk.SFTP.SFTPSchema,nsoftware.BizTalk.SFTPAdapter, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false" Description="">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.SMPP.SMPPSchema" AssemblyQualifiedName="nsoftware.BizTalk.SMPP.SMPPSchema,nsoftware.BizTalk.SMPPAdapter, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.SNPP.SNPPSchema" AssemblyQualifiedName="nsoftware.BizTalk.SNPP.SNPPSchema,nsoftware.BizTalk.SNPPAdapter, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.Tar.TarSchema" AssemblyQualifiedName="nsoftware.BizTalk.Tar.TarSchema,nsoftware.BizTalk.TarPipeline, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.TCP.TCPSchema" AssemblyQualifiedName="nsoftware.BizTalk.TCP.TCPSchema,nsoftware.BizTalk.TCPAdapter, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.Telnet.TelnetSchema" AssemblyQualifiedName="nsoftware.BizTalk.Telnet.TelnetSchema,nsoftware.BizTalk.TelnetAdapter, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.XMPP.XMPPSchema" AssemblyQualifiedName="nsoftware.BizTalk.XMPP.XMPPSchema,nsoftware.BizTalk.XMPPAdapter, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.ZCompress.ZCompressSchema" AssemblyQualifiedName="nsoftware.BizTalk.ZCompress.ZCompressSchema,nsoftware.BizTalk.ZCompressPipeline, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.Zip.ZipSchema" AssemblyQualifiedName="nsoftware.BizTalk.Zip.ZipSchema,nsoftware.BizTalk.ZipPipeline, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false" Description="">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Microsoft.Solutions.A4SWIFT.Property.PropertySchema" AssemblyQualifiedName="Microsoft.Solutions.A4SWIFT.Property.PropertySchema,Microsoft.Solutions.FinancialServices.SWIFT.RuntimeSchemas, Version=3.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" AlwaysTrackAllProperties="false" Description="">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Microsoft.Solutions.A4SWIFT.MRSRProperty.PropertySchema" AssemblyQualifiedName="Microsoft.Solutions.A4SWIFT.MRSRProperty.PropertySchema,Microsoft.Solutions.FinancialServices.SWIFT.RuntimeSchemas, Version=3.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" AlwaysTrackAllProperties="false" Description="">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="SWIFTSchemas.SWIFTHeader" RootName="SWIFTHeader" AssemblyQualifiedName="SWIFTSchemas.SWIFTHeader,Microsoft.Solutions.FinancialServices.SWIFT.RuntimeSchemas, Version=3.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Microsoft.Solutions.MX_A4SWIFT.Property.PropertySchema" AssemblyQualifiedName="Microsoft.Solutions.MX_A4SWIFT.Property.PropertySchema,Microsoft.Solutions.FinancialServices.SWIFT.MX.RuntimeSchemas, Version=3.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" AlwaysTrackAllProperties="false" Description="">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="SWIFTMXSchemas.AppHdr" RootName="AppHdr" AssemblyQualifiedName="SWIFTMXSchemas.AppHdr,Microsoft.Solutions.FinancialServices.SWIFT.MX.RuntimeSchemas, Version=3.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" AlwaysTrackAllProperties="false" Description="">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Microsoft.Solutions.FinancialServices.SWIFT.MX.RuntimeSchemas.SAA_XML_v2_0_4" RootName="DataPDU" AssemblyQualifiedName="Microsoft.Solutions.FinancialServices.SWIFT.MX.RuntimeSchemas.SAA_XML_v2_0_4,Microsoft.Solutions.FinancialServices.SWIFT.MX.RuntimeSchemas, Version=3.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.ACH.ACHSchema" AssemblyQualifiedName="nsoftware.BizTalk.ACH.ACHSchema,nsoftware.BizTalk.ACHPipeline, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.ACH.ACHFileSchema" RootName="ACHFile" AssemblyQualifiedName="nsoftware.BizTalk.ACH.ACHFileSchema,nsoftware.BizTalk.ACHPipeline, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.AES.AESSchema" AssemblyQualifiedName="nsoftware.BizTalk.AES.AESSchema,nsoftware.BizTalk.AESPipeline, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.AS1.AS1Schema" AssemblyQualifiedName="nsoftware.BizTalk.AS1.AS1Schema,nsoftware.BizTalk.AS1Adapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.AS2.AS2Schema" AssemblyQualifiedName="nsoftware.BizTalk.AS2.AS2Schema,nsoftware.BizTalk.AS2Adapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.AS3.AS3Schema" AssemblyQualifiedName="nsoftware.BizTalk.AS3.AS3Schema,nsoftware.BizTalk.AS3Adapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.AS4.AS4Schema" AssemblyQualifiedName="nsoftware.BizTalk.AS4.AS4Schema,nsoftware.BizTalk.AS4Adapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.AS4Web.AS4WebSchema" AssemblyQualifiedName="nsoftware.BizTalk.AS4Web.AS4WebSchema,nsoftware.BizTalk.AS4WebAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.AzureBlob.AzureBlobSchema" AssemblyQualifiedName="nsoftware.BizTalk.AzureBlob.AzureBlobSchema,nsoftware.BizTalk.AzureBlobAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.Box.BoxSchema" AssemblyQualifiedName="nsoftware.BizTalk.Box.BoxSchema,nsoftware.BizTalk.BoxAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.Bzip2.Bzip2Schema" AssemblyQualifiedName="nsoftware.BizTalk.Bzip2.Bzip2Schema,nsoftware.BizTalk.Bzip2Pipeline, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.CloudStorage.CloudStorageSchema" AssemblyQualifiedName="nsoftware.BizTalk.CloudStorage.CloudStorageSchema,nsoftware.BizTalk.CloudStorageAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.Dropbox.DropboxSchema" AssemblyQualifiedName="nsoftware.BizTalk.Dropbox.DropboxSchema,nsoftware.BizTalk.DropboxAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.Email.EmailSchema" AssemblyQualifiedName="nsoftware.BizTalk.Email.EmailSchema,nsoftware.BizTalk.EmailAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.EzCrypt.EzCryptSchema" AssemblyQualifiedName="nsoftware.BizTalk.EzCrypt.EzCryptSchema,nsoftware.BizTalk.EzCryptPipeline, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.FTP.FTPSchema" AssemblyQualifiedName="nsoftware.BizTalk.FTP.FTPSchema,nsoftware.BizTalk.FTPAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.GISB.GISBSchema" AssemblyQualifiedName="nsoftware.BizTalk.GISB.GISBSchema,nsoftware.BizTalk.GISBAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.GoogleDrive.GoogleDriveSchema" AssemblyQualifiedName="nsoftware.BizTalk.GoogleDrive.GoogleDriveSchema,nsoftware.BizTalk.GoogleDriveAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.Gzip.GzipSchema" AssemblyQualifiedName="nsoftware.BizTalk.Gzip.GzipSchema,nsoftware.BizTalk.GzipPipeline, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.Hash.HashSchema" AssemblyQualifiedName="nsoftware.BizTalk.Hash.HashSchema,nsoftware.BizTalk.HashPipeline, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.HTTP.HTTPSchema" AssemblyQualifiedName="nsoftware.BizTalk.HTTP.HTTPSchema,nsoftware.BizTalk.HTTPAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.LDAP.LDAPSchema" AssemblyQualifiedName="nsoftware.BizTalk.LDAP.LDAPSchema,nsoftware.BizTalk.LDAPAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.OFTP.OFTPSchema" AssemblyQualifiedName="nsoftware.BizTalk.OFTP.OFTPSchema,nsoftware.BizTalk.OFTPAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.OneDrive.OneDriveSchema" AssemblyQualifiedName="nsoftware.BizTalk.OneDrive.OneDriveSchema,nsoftware.BizTalk.OneDriveAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.OpenPGP.OpenPGPSchema" AssemblyQualifiedName="nsoftware.BizTalk.OpenPGP.OpenPGPSchema,nsoftware.BizTalk.OpenPGPPipeline, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.PDF.PDFSchema" AssemblyQualifiedName="nsoftware.BizTalk.PDF.PDFSchema,nsoftware.BizTalk.PDFPipeline, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.RNIF.RNIFSchema" AssemblyQualifiedName="nsoftware.BizTalk.RNIF.RNIFSchema,nsoftware.BizTalk.RNIFAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.RSS.RSSSchema" AssemblyQualifiedName="nsoftware.BizTalk.RSS.RSSSchema,nsoftware.BizTalk.RSSAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.S3.S3Schema" AssemblyQualifiedName="nsoftware.BizTalk.S3.S3Schema,nsoftware.BizTalk.S3Adapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.SCP.SCPSchema" AssemblyQualifiedName="nsoftware.BizTalk.SCP.SCPSchema,nsoftware.BizTalk.SCPAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.SevenZip.SevenZipSchema" AssemblyQualifiedName="nsoftware.BizTalk.SevenZip.SevenZipSchema,nsoftware.BizTalk.SevenZipPipeline, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.SExec.SExecSchema" AssemblyQualifiedName="nsoftware.BizTalk.SExec.SExecSchema,nsoftware.BizTalk.SExecAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.SFTP.SFTPSchema" AssemblyQualifiedName="nsoftware.BizTalk.SFTP.SFTPSchema,nsoftware.BizTalk.SFTPAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.SMPP.SMPPSchema" AssemblyQualifiedName="nsoftware.BizTalk.SMPP.SMPPSchema,nsoftware.BizTalk.SMPPAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.SNPP.SNPPSchema" AssemblyQualifiedName="nsoftware.BizTalk.SNPP.SNPPSchema,nsoftware.BizTalk.SNPPAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.SPOnline.SPOnlineSchema" AssemblyQualifiedName="nsoftware.BizTalk.SPOnline.SPOnlineSchema,nsoftware.BizTalk.SPOnlineAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.SSH.SSHSchema" AssemblyQualifiedName="nsoftware.BizTalk.SSH.SSHSchema,nsoftware.BizTalk.SSHAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.Tar.TarSchema" AssemblyQualifiedName="nsoftware.BizTalk.Tar.TarSchema,nsoftware.BizTalk.TarPipeline, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.TCP.TCPSchema" AssemblyQualifiedName="nsoftware.BizTalk.TCP.TCPSchema,nsoftware.BizTalk.TCPAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.Telnet.TelnetSchema" AssemblyQualifiedName="nsoftware.BizTalk.Telnet.TelnetSchema,nsoftware.BizTalk.TelnetAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.Wasabi.WasabiSchema" AssemblyQualifiedName="nsoftware.BizTalk.Wasabi.WasabiSchema,nsoftware.BizTalk.WasabiAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.WebDAV.WebDAVSchema" AssemblyQualifiedName="nsoftware.BizTalk.WebDAV.WebDAVSchema,nsoftware.BizTalk.WebDAVAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.XMPP.XMPPSchema" AssemblyQualifiedName="nsoftware.BizTalk.XMPP.XMPPSchema,nsoftware.BizTalk.XMPPAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.ZCompress.ZCompressSchema" AssemblyQualifiedName="nsoftware.BizTalk.ZCompress.ZCompressSchema,nsoftware.BizTalk.ZCompressPipeline, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="nsoftware.BizTalk.Zip.ZipSchema" AssemblyQualifiedName="nsoftware.BizTalk.Zip.ZipSchema,nsoftware.BizTalk.ZipPipeline, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+      </TrackedSchemas>
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.ACHPipeline" Version="4.0.5512.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.ACHPipeline, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.AESPipeline" Version="4.0.5512.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.AESPipeline, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.AS1Adapter" Version="4.0.5512.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.AS1Adapter, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.AS2Adapter" Version="4.0.5512.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.AS2Adapter, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.AS3Adapter" Version="4.0.5512.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.AS3Adapter, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.Bzip2Pipeline" Version="4.0.5512.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.Bzip2Pipeline, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.CreditCardAdapter" Version="4.0.5512.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.CreditCardAdapter, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.EmailAdapter" Version="4.0.5512.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.EmailAdapter, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.EzCryptPipeline" Version="4.0.5512.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.EzCryptPipeline, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.FTPAdapter" Version="4.0.5512.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.FTPAdapter, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.GISBAdapter" Version="4.0.5512.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.GISBAdapter, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.GzipPipeline" Version="4.0.5512.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.GzipPipeline, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.HashPipeline" Version="4.0.5512.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.HashPipeline, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.LDAPAdapter" Version="4.0.5512.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.LDAPAdapter, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.OFTPAdapter" Version="4.0.5512.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.OFTPAdapter, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.OpenPGPPipeline" Version="4.0.5512.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.OpenPGPPipeline, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.PowerShellAdapter" Version="4.0.5512.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.PowerShellAdapter, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.RSSAdapter" Version="4.0.5512.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.RSSAdapter, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.S3Adapter" Version="4.0.5512.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.S3Adapter, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.SCPAdapter" Version="4.0.5512.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.SCPAdapter, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.SevenZipPipeline" Version="4.0.5512.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.SevenZipPipeline, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.SExecAdapter" Version="4.0.5512.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.SExecAdapter, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.SFTPAdapter" Version="4.0.5512.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.SFTPAdapter, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.SMPPAdapter" Version="4.0.5512.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.SMPPAdapter, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.SNPPAdapter" Version="4.0.5512.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.SNPPAdapter, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.TarPipeline" Version="4.0.5512.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.TarPipeline, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.TCPAdapter" Version="4.0.5512.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.TCPAdapter, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.TelnetAdapter" Version="4.0.5512.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.TelnetAdapter, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.XMPPAdapter" Version="4.0.5512.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.XMPPAdapter, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.ZCompressPipeline" Version="4.0.5512.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.ZCompressPipeline, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.ZipPipeline" Version="4.0.5512.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.ZipPipeline, Version=4.0.5512.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="Microsoft.Solutions.FinancialServices.SWIFT.RuntimeSchemas" Version="3.2.0.0" Culture="neutral" PublicKeyToken="31bf3856ad364e35" FullName="Microsoft.Solutions.FinancialServices.SWIFT.RuntimeSchemas, Version=3.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="Microsoft.Solutions.FinancialServices.SWIFT.MX.RuntimeSchemas" Version="3.2.0.0" Culture="neutral" PublicKeyToken="31bf3856ad364e35" FullName="Microsoft.Solutions.FinancialServices.SWIFT.MX.RuntimeSchemas, Version=3.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.ACHPipeline" Version="16.0.6589.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.ACHPipeline, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.AESPipeline" Version="16.0.6589.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.AESPipeline, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.AS1Adapter" Version="16.0.6589.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.AS1Adapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.AS2Adapter" Version="16.0.6589.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.AS2Adapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.AS3Adapter" Version="16.0.6589.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.AS3Adapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.AS4Adapter" Version="16.0.6589.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.AS4Adapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.AS4WebAdapter" Version="16.0.6589.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.AS4WebAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.AzureBlobAdapter" Version="16.0.6589.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.AzureBlobAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.BoxAdapter" Version="16.0.6589.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.BoxAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.Bzip2Pipeline" Version="16.0.6589.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.Bzip2Pipeline, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.CloudStorageAdapter" Version="16.0.6589.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.CloudStorageAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.DropboxAdapter" Version="16.0.6589.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.DropboxAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.EmailAdapter" Version="16.0.6589.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.EmailAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.EzCryptPipeline" Version="16.0.6589.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.EzCryptPipeline, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.FTPAdapter" Version="16.0.6589.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.FTPAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.GISBAdapter" Version="16.0.6589.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.GISBAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.GoogleDriveAdapter" Version="16.0.6589.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.GoogleDriveAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.GzipPipeline" Version="16.0.6589.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.GzipPipeline, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.HashPipeline" Version="16.0.6589.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.HashPipeline, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.HTTPAdapter" Version="16.0.6589.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.HTTPAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.LDAPAdapter" Version="16.0.6589.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.LDAPAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.OFTPAdapter" Version="16.0.6589.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.OFTPAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.OneDriveAdapter" Version="16.0.6589.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.OneDriveAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.OpenPGPPipeline" Version="16.0.6589.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.OpenPGPPipeline, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.PDFPipeline" Version="16.0.6589.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.PDFPipeline, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.RNIFAdapter" Version="16.0.6589.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.RNIFAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.RSSAdapter" Version="16.0.6589.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.RSSAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.S3Adapter" Version="16.0.6589.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.S3Adapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.SCPAdapter" Version="16.0.6589.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.SCPAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.SevenZipPipeline" Version="16.0.6589.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.SevenZipPipeline, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.SExecAdapter" Version="16.0.6589.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.SExecAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.SFTPAdapter" Version="16.0.6589.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.SFTPAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.SMPPAdapter" Version="16.0.6589.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.SMPPAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.SNPPAdapter" Version="16.0.6589.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.SNPPAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.SPOnlineAdapter" Version="16.0.6589.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.SPOnlineAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.SSHAdapter" Version="16.0.6589.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.SSHAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.TarPipeline" Version="16.0.6589.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.TarPipeline, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.TCPAdapter" Version="16.0.6589.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.TCPAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.TelnetAdapter" Version="16.0.6589.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.TelnetAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.WasabiAdapter" Version="16.0.6589.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.WasabiAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.WebDAVAdapter" Version="16.0.6589.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.WebDAVAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.XMPPAdapter" Version="16.0.6589.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.XMPPAdapter, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.ZCompressPipeline" Version="16.0.6589.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.ZCompressPipeline, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="nsoftware.BizTalk.ZipPipeline" Version="16.0.6589.0" Culture="neutral" PublicKeyToken="cdc168f89cffe9cf" FullName="nsoftware.BizTalk.ZipPipeline, Version=16.0.6589.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+  </ModuleRefCollection>
+  <SendPortCollection>
+    <SendPort Name="SendPortBulkInsert" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>F:\Temp\Send\%MessageID%.xml</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%MessageID%.xml&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T08:00:00</FromTime>
+        <ToTime>2000-01-01T07:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="BizTalkServerApplication" HostTrusted="false">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T08:00:00</FromTime>
+        <ToTime>2000-01-01T07:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="RxPortBulkInsert" /&gt;
+  &lt;/Group&gt;
+&lt;/Filter&gt;</Filter>
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>BizTalk Application 1</ApplicationName>
+    </SendPort>
+    <SendPort Name="SendPort_PowerShell_V4_TEST" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>PowerShell://SendPort_PowerShell_TEST</Address>
+        <TransportType Name="nsoftware.PowerShell 2016" Capabilities="9474" ConfigurationClsid="7571287c-f326-4248-a478-8748270376f7" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;Firewall&amp;gt;&amp;lt;AutoDetect&amp;gt;False&amp;lt;/AutoDetect&amp;gt;&amp;lt;FirewallType&amp;gt;0&amp;lt;/FirewallType&amp;gt;&amp;lt;Host /&amp;gt;&amp;lt;Password&amp;gt;******&amp;lt;/Password&amp;gt;&amp;lt;Port&amp;gt;0&amp;lt;/Port&amp;gt;&amp;lt;User /&amp;gt;&amp;lt;/Firewall&amp;gt;&amp;lt;Host /&amp;gt;&amp;lt;Other /&amp;gt;&amp;lt;Password&amp;gt;******&amp;lt;/Password&amp;gt;&amp;lt;Port&amp;gt;22&amp;lt;/Port&amp;gt;&amp;lt;PortName&amp;gt;SendPort_PowerShell_TEST&amp;lt;/PortName&amp;gt;&amp;lt;Protocol&amp;gt;0&amp;lt;/Protocol&amp;gt;&amp;lt;RuntimeLicense /&amp;gt;&amp;lt;Script&amp;gt;$filename=$message.GetProperty("ReceivedFileName","http://schemas.microsoft.com/BizTalk/2003/file-properties");
+$newPath="C:\TEMP";
+$filenameWithoutExtention=[System.IO.Path]::GetFileNameWithoutExtension($filename);
+$extension=[System.IO.Path]::GetExtension($filename);
+$date=Get-Date -Format "yyyy-MM-dd";
+$newFileName=[string]::Format("{0}\{1}-{2}{3}",$newPath,$filenameWithoutExtention, $date, $extension);
+write-eventlog -logname Application -source "nsoftware BizTalk PowerShell Transmit Adapter" -eventID 3001 -entrytype Information -message $newFileName;
+$message.GetBody() | set-content $newFileName;
+
+
+
+   Write-EventLog -LogName "Application" -Source "BizTalk Server" -EventID 3001 -EntryType Information -Message "Powershell test";
+try
+{
+  Write-EventLog -LogName "Application" -Source "BizTalk Server" -EventID 3001 -EntryType Information -Message "Powershell test before";
+$url="https://logservice-qa.fi.com/FILogService.asmx"
+$proxy = New-WebServiceProxy -Uri $url -UseDefaultCredential -Namespace "kroger.LogService" -Class "Proxy"
+$proxy = New-WebServiceProxy -Uri $url -UseDefaultCredential -Namespace "kroger.LogService" -Class "Proxy"
+$logger = new-object ("kroger.LogService.FILogService")
+$logger.Log("Docusign Test", "Application", "Docusign", "", "Information","9/29/2017")
+  Write-EventLog -LogName "Application" -Source "BizTalk Server" -EventID 3001 -EntryType Information -Message "Powershell test after";
+}
+  
+catch 
+{
+   Write-EventLog -LogName "Application" -Source "BizTalk Server" -EventID 3001 -EntryType Information -Message $error[0];
+}
+Write-EventLog -LogName "Application" -Source "BizTalk Server" -EventID 3001 -EntryType Information -Message "Powershell test end";&amp;lt;/Script&amp;gt;&amp;lt;SSHAcceptServerHostKey&amp;gt;&amp;lt;Store&amp;gt;MY&amp;lt;/Store&amp;gt;&amp;lt;StorePassword&amp;gt;******&amp;lt;/StorePassword&amp;gt;&amp;lt;StoreType&amp;gt;0&amp;lt;/StoreType&amp;gt;&amp;lt;Subject /&amp;gt;&amp;lt;AcceptAny&amp;gt;False&amp;lt;/AcceptAny&amp;gt;&amp;lt;/SSHAcceptServerHostKey&amp;gt;&amp;lt;SSHAuthMode&amp;gt;2&amp;lt;/SSHAuthMode&amp;gt;&amp;lt;SSHCert&amp;gt;&amp;lt;Store&amp;gt;MY&amp;lt;/Store&amp;gt;&amp;lt;StorePassword&amp;gt;******&amp;lt;/StorePassword&amp;gt;&amp;lt;StoreType&amp;gt;0&amp;lt;/StoreType&amp;gt;&amp;lt;Subject /&amp;gt;&amp;lt;/SSHCert&amp;gt;&amp;lt;SSHCompressionAlgorithms&amp;gt;none&amp;lt;/SSHCompressionAlgorithms&amp;gt;&amp;lt;Timeout&amp;gt;60&amp;lt;/Timeout&amp;gt;&amp;lt;TransportLog&amp;gt;&amp;lt;Location&amp;gt;Application&amp;lt;/Location&amp;gt;&amp;lt;LogMode&amp;gt;0&amp;lt;/LogMode&amp;gt;&amp;lt;LogType&amp;gt;1&amp;lt;/LogType&amp;gt;&amp;lt;/TransportLog&amp;gt;&amp;lt;URIIdentity&amp;gt;PowerShell://&amp;lt;/URIIdentity&amp;gt;&amp;lt;User /&amp;gt;&amp;lt;Variables /&amp;gt;&amp;lt;uri&amp;gt;PowerShell://SendPort_PowerShell_TEST&amp;lt;/uri&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2016-05-26T07:00:00</FromTime>
+        <ToTime>2016-05-27T06:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="BizTalkServerApplication" HostTrusted="false">
+          <TransportType Name="nsoftware.PowerShell 2016" Capabilities="9474" ConfigurationClsid="7571287c-f326-4248-a478-8748270376f7" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2016-05-26T07:00:00</FromTime>
+        <ToTime>2016-05-27T06:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>204</Tracking>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="RecvPort_PowerShell_TEST" /&gt;
+  &lt;/Group&gt;
+&lt;/Filter&gt;</Filter>
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>BizTalk Application 1</ApplicationName>
+    </SendPort>
+    <SendPort Name="SendPort_BinckBank_Test" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>\\fi.com\custfiles\BinckBank\%SourceFileName%</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;2&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%SourceFileName%&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2017-05-12T07:00:00</FromTime>
+        <ToTime>2017-05-13T06:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="SendHost" HostTrusted="false">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2017-05-12T07:00:00</FromTime>
+        <ToTime>2017-05-13T06:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>204</Tracking>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="RecvPort_BinckBank_Test" /&gt;
+  &lt;/Group&gt;
+&lt;/Filter&gt;</Filter>
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>BizTalk Application 1</ApplicationName>
+    </SendPort>
+    <SendPort Name="SendPort_TGS_incoming_Test" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>\\Fi.com\custfiles\TGS\incoming\%SourceFileName%</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%SourceFileName%&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2017-05-12T07:00:00</FromTime>
+        <ToTime>2017-05-13T06:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="SendHost" HostTrusted="false">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2017-05-12T07:00:00</FromTime>
+        <ToTime>2017-05-13T06:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>204</Tracking>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="RecvPort_TGS_incoming_Test" /&gt;
+  &lt;/Group&gt;
+&lt;/Filter&gt;</Filter>
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>BizTalk Application 1</ApplicationName>
+    </SendPort>
+    <SendPort Name="SendPort_SFTP_2016_Test" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>SFTP://user2@DEF:22/%SourceFileName%</Address>
+        <TransportType Name="nsoftware.SFTP 2016" Capabilities="15627" ConfigurationClsid="7571227c-f326-4248-a478-8748270376f7" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;AfterConnect /&amp;gt;&amp;lt;AfterPut /&amp;gt;&amp;lt;Append&amp;gt;False&amp;lt;/Append&amp;gt;&amp;lt;BeforePut /&amp;gt;&amp;lt;CertPassSSOAffiliate /&amp;gt;&amp;lt;ConnectionLifetime&amp;gt;0&amp;lt;/ConnectionLifetime&amp;gt;&amp;lt;Firewall&amp;gt;&amp;lt;AutoDetect&amp;gt;False&amp;lt;/AutoDetect&amp;gt;&amp;lt;FirewallType&amp;gt;0&amp;lt;/FirewallType&amp;gt;&amp;lt;Host /&amp;gt;&amp;lt;Password&amp;gt;******&amp;lt;/Password&amp;gt;&amp;lt;Port&amp;gt;0&amp;lt;/Port&amp;gt;&amp;lt;User /&amp;gt;&amp;lt;/Firewall&amp;gt;&amp;lt;Other /&amp;gt;&amp;lt;Overwrite&amp;gt;False&amp;lt;/Overwrite&amp;gt;&amp;lt;RemoteFile&amp;gt;%SourceFileName%&amp;lt;/RemoteFile&amp;gt;&amp;lt;RemotePath /&amp;gt;&amp;lt;RemoteTempPath /&amp;gt;&amp;lt;SSHAcceptServerHostKey&amp;gt;&amp;lt;Store&amp;gt;MY&amp;lt;/Store&amp;gt;&amp;lt;StorePassword&amp;gt;******&amp;lt;/StorePassword&amp;gt;&amp;lt;StoreType&amp;gt;0&amp;lt;/StoreType&amp;gt;&amp;lt;Subject /&amp;gt;&amp;lt;AcceptAny&amp;gt;False&amp;lt;/AcceptAny&amp;gt;&amp;lt;/SSHAcceptServerHostKey&amp;gt;&amp;lt;SSHAuthMode&amp;gt;2&amp;lt;/SSHAuthMode&amp;gt;&amp;lt;SSHCert&amp;gt;&amp;lt;Store&amp;gt;MY&amp;lt;/Store&amp;gt;&amp;lt;StorePassword&amp;gt;******&amp;lt;/StorePassword&amp;gt;&amp;lt;StoreType&amp;gt;0&amp;lt;/StoreType&amp;gt;&amp;lt;Subject /&amp;gt;&amp;lt;/SSHCert&amp;gt;&amp;lt;SSHCompressionAlgorithms&amp;gt;none&amp;lt;/SSHCompressionAlgorithms&amp;gt;&amp;lt;SSHHost&amp;gt;DEF&amp;lt;/SSHHost&amp;gt;&amp;lt;SSHPassword&amp;gt;******&amp;lt;/SSHPassword&amp;gt;&amp;lt;SSHPort&amp;gt;22&amp;lt;/SSHPort&amp;gt;&amp;lt;SSHUser&amp;gt;user2&amp;lt;/SSHUser&amp;gt;&amp;lt;SSOAffiliate /&amp;gt;&amp;lt;Timeout&amp;gt;60&amp;lt;/Timeout&amp;gt;&amp;lt;TransportLog&amp;gt;&amp;lt;Location&amp;gt;Application&amp;lt;/Location&amp;gt;&amp;lt;LogMode&amp;gt;3&amp;lt;/LogMode&amp;gt;&amp;lt;LogType&amp;gt;1&amp;lt;/LogType&amp;gt;&amp;lt;/TransportLog&amp;gt;&amp;lt;URIIdentity&amp;gt;SFTP://&amp;lt;/URIIdentity&amp;gt;&amp;lt;uri&amp;gt;SFTP://user2@DEF:22/%SourceFileName%&amp;lt;/uri&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2018-03-19T07:00:00</FromTime>
+        <ToTime>2018-03-20T06:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="TrackingHost" HostTrusted="false">
+          <TransportType Name="nsoftware.SFTP 2016" Capabilities="15627" ConfigurationClsid="7571227c-f326-4248-a478-8748270376f7" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2018-03-19T07:00:00</FromTime>
+        <ToTime>2018-03-20T06:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>BizTalk Application 1</ApplicationName>
+    </SendPort>
+    <SendPort Name="SendPort_Powershell_v2016_Test" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>PowerShell://Powershell_2016_test</Address>
+        <TransportType Name="nsoftware.PowerShell 2016" Capabilities="9474" ConfigurationClsid="7571287c-f326-4248-a478-8748270376f7" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;Firewall&amp;gt;&amp;lt;AutoDetect&amp;gt;False&amp;lt;/AutoDetect&amp;gt;&amp;lt;FirewallType&amp;gt;0&amp;lt;/FirewallType&amp;gt;&amp;lt;Host /&amp;gt;&amp;lt;Password&amp;gt;******&amp;lt;/Password&amp;gt;&amp;lt;Port&amp;gt;0&amp;lt;/Port&amp;gt;&amp;lt;User /&amp;gt;&amp;lt;/Firewall&amp;gt;&amp;lt;Host /&amp;gt;&amp;lt;Other /&amp;gt;&amp;lt;Password&amp;gt;******&amp;lt;/Password&amp;gt;&amp;lt;Port&amp;gt;22&amp;lt;/Port&amp;gt;&amp;lt;PortName&amp;gt;Powershell_2016_test&amp;lt;/PortName&amp;gt;&amp;lt;Protocol&amp;gt;0&amp;lt;/Protocol&amp;gt;&amp;lt;Script&amp;gt;##
+  $test="test";
+
+##&amp;lt;/Script&amp;gt;&amp;lt;SSHAcceptServerHostKey&amp;gt;&amp;lt;Store&amp;gt;MY&amp;lt;/Store&amp;gt;&amp;lt;StorePassword&amp;gt;******&amp;lt;/StorePassword&amp;gt;&amp;lt;StoreType&amp;gt;0&amp;lt;/StoreType&amp;gt;&amp;lt;Subject /&amp;gt;&amp;lt;AcceptAny&amp;gt;False&amp;lt;/AcceptAny&amp;gt;&amp;lt;/SSHAcceptServerHostKey&amp;gt;&amp;lt;SSHAuthMode&amp;gt;2&amp;lt;/SSHAuthMode&amp;gt;&amp;lt;SSHCert&amp;gt;&amp;lt;Store&amp;gt;MY&amp;lt;/Store&amp;gt;&amp;lt;StorePassword&amp;gt;******&amp;lt;/StorePassword&amp;gt;&amp;lt;StoreType&amp;gt;0&amp;lt;/StoreType&amp;gt;&amp;lt;Subject /&amp;gt;&amp;lt;/SSHCert&amp;gt;&amp;lt;SSHCompressionAlgorithms&amp;gt;none&amp;lt;/SSHCompressionAlgorithms&amp;gt;&amp;lt;Timeout&amp;gt;60&amp;lt;/Timeout&amp;gt;&amp;lt;TransportLog&amp;gt;&amp;lt;Location&amp;gt;Application&amp;lt;/Location&amp;gt;&amp;lt;LogMode&amp;gt;3&amp;lt;/LogMode&amp;gt;&amp;lt;LogType&amp;gt;1&amp;lt;/LogType&amp;gt;&amp;lt;/TransportLog&amp;gt;&amp;lt;URIIdentity&amp;gt;PowerShell://&amp;lt;/URIIdentity&amp;gt;&amp;lt;User /&amp;gt;&amp;lt;Variables /&amp;gt;&amp;lt;uri&amp;gt;PowerShell://Powershell_2016_test&amp;lt;/uri&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2018-03-21T07:00:00</FromTime>
+        <ToTime>2018-03-22T06:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="TrackingHost" HostTrusted="false">
+          <TransportType Name="nsoftware.PowerShell 2016" Capabilities="9474" ConfigurationClsid="7571287c-f326-4248-a478-8748270376f7" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2018-03-21T07:00:00</FromTime>
+        <ToTime>2018-03-22T06:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>BizTalk Application 1</ApplicationName>
+    </SendPort>
+  </SendPortCollection>
+  <DistributionListCollection />
+  <ReceivePortCollection>
+    <ReceivePort Name="RxPort" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="RxLocExport">
+          <Description xsi:nil="true" />
+          <Address>SSISOleDbToFlatFile://\\fi.com\custfiles\ACD\Work\FINExtracts\In\*.xml</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T08:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T07:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2009-11-11T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2009-11-12T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="SSISBulkExportAdapter" Capabilities="6153" ConfigurationClsid="96aa42cb-fd67-4399-aa2d-b138f8a3dd2b" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;FileReceiveFolder&amp;gt;\\fi.com\custfiles\ACD\Work\FINExtracts\In&amp;lt;/FileReceiveFolder&amp;gt;&amp;lt;FileMask&amp;gt;*.xml&amp;lt;/FileMask&amp;gt;&amp;lt;FileBatchSize&amp;gt;10&amp;lt;/FileBatchSize&amp;gt;&amp;lt;LogFileFolder&amp;gt;f:\temp&amp;lt;/LogFileFolder&amp;gt;&amp;lt;ApplicationName&amp;gt;Custom Export&amp;lt;/ApplicationName&amp;gt;&amp;lt;uri&amp;gt;SSISOleDbToFlatFile://\\fi.com\custfiles\ACD\Work\FINExtracts\In\*.xml&amp;lt;/uri&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="SSISHost" HostTrusted="false">
+            <TransportType Name="SSISBulkExportAdapter" Capabilities="6153" ConfigurationClsid="96aa42cb-fd67-4399-aa2d-b138f8a3dd2b" />
+          </ReceiveHandler>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>51</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>BizTalk Application 1</ApplicationName>
+    </ReceivePort>
+    <ReceivePort Name="RecvPort_TDAmeritrade1" IsTwoWay="false" BindingOption="0">
+      <Description>This is the receive port for TDAmeritrade   Restricted Position Report</Description>
+      <ReceiveLocations />
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>0</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>BizTalk Application 1</ApplicationName>
+    </ReceivePort>
+    <ReceivePort Name="RecvPort_PowerShell_TEST" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="RecvLoc_PowerShell_TEST">
+          <Description xsi:nil="true" />
+          <Address>F:\krogerApplications\kroger.B2BDataExchange\TEST\Trades.txt</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2016-05-26T07:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2016-05-27T06:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2016-05-26T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2016-05-27T00:00:00</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;RenameReceivedFiles vt="11"&gt;0&lt;/RenameReceivedFiles&gt;&lt;RemoveReceivedFileDelay vt="19"&gt;10&lt;/RemoveReceivedFileDelay&gt;&lt;RemoveReceivedFileMaxInterval vt="19"&gt;300000&lt;/RemoveReceivedFileMaxInterval&gt;&lt;FileMask vt="8"&gt;Trades.txt&lt;/FileMask&gt;&lt;FileNetFailRetryInt vt="19"&gt;5&lt;/FileNetFailRetryInt&gt;&lt;RemoveReceivedFileRetryCount vt="19"&gt;5&lt;/RemoveReceivedFileRetryCount&gt;&lt;BatchSizeInBytes vt="19"&gt;102400&lt;/BatchSizeInBytes&gt;&lt;PollingInterval vt="19"&gt;60000&lt;/PollingInterval&gt;&lt;FileNetFailRetryCount vt="19"&gt;5&lt;/FileNetFailRetryCount&gt;&lt;BatchSize vt="19"&gt;20&lt;/BatchSize&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="ACD_Host1_64" HostTrusted="false">
+            <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          </ReceiveHandler>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>51</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>BizTalk Application 1</ApplicationName>
+    </ReceivePort>
+    <ReceivePort Name="RecvPort_TGS_incoming_Test" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="RecvLoc_TGS_incoming_Test">
+          <Description xsi:nil="true" />
+          <Address>F:\krogerApplications\TEST\TGS_incoming\In\*</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2017-05-11T07:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2017-05-12T06:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2017-05-11T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2017-05-12T00:00:00</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;RenameReceivedFiles vt="11"&gt;0&lt;/RenameReceivedFiles&gt;&lt;RemoveReceivedFileDelay vt="19"&gt;10&lt;/RemoveReceivedFileDelay&gt;&lt;RemoveReceivedFileMaxInterval vt="19"&gt;300000&lt;/RemoveReceivedFileMaxInterval&gt;&lt;FileMask vt="8"&gt;*&lt;/FileMask&gt;&lt;FileNetFailRetryInt vt="19"&gt;5&lt;/FileNetFailRetryInt&gt;&lt;RemoveReceivedFileRetryCount vt="19"&gt;5&lt;/RemoveReceivedFileRetryCount&gt;&lt;BatchSizeInBytes vt="19"&gt;102400&lt;/BatchSizeInBytes&gt;&lt;PollingInterval vt="19"&gt;60000&lt;/PollingInterval&gt;&lt;FileNetFailRetryCount vt="19"&gt;5&lt;/FileNetFailRetryCount&gt;&lt;BatchSize vt="19"&gt;20&lt;/BatchSize&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="ReceiveHost" HostTrusted="false">
+            <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          </ReceiveHandler>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>0</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>BizTalk Application 1</ApplicationName>
+    </ReceivePort>
+    <ReceivePort Name="RecvPort_BinckBank_Test" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="RecvLoc_BinckBank_Test">
+          <Description xsi:nil="true" />
+          <Address>F:\krogerApplications\TEST\BinckBank\In\*.*</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2017-05-12T07:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2017-05-13T06:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2017-05-12T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2017-05-13T00:00:00</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;RenameReceivedFiles vt="11"&gt;0&lt;/RenameReceivedFiles&gt;&lt;RemoveReceivedFileDelay vt="19"&gt;10&lt;/RemoveReceivedFileDelay&gt;&lt;RemoveReceivedFileMaxInterval vt="19"&gt;300000&lt;/RemoveReceivedFileMaxInterval&gt;&lt;FileMask vt="8"&gt;*.*&lt;/FileMask&gt;&lt;FileNetFailRetryInt vt="19"&gt;5&lt;/FileNetFailRetryInt&gt;&lt;RemoveReceivedFileRetryCount vt="19"&gt;5&lt;/RemoveReceivedFileRetryCount&gt;&lt;BatchSizeInBytes vt="19"&gt;102400&lt;/BatchSizeInBytes&gt;&lt;PollingInterval vt="19"&gt;60000&lt;/PollingInterval&gt;&lt;FileNetFailRetryCount vt="19"&gt;5&lt;/FileNetFailRetryCount&gt;&lt;BatchSize vt="19"&gt;20&lt;/BatchSize&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="ReceiveHost" HostTrusted="false">
+            <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          </ReceiveHandler>
+        </ReceiveLocation>
+        <ReceiveLocation Name="RecvLoc_SFTP_2016_TEST">
+          <Description xsi:nil="true" />
+          <Address>SFTP://user1@abc:22/*.*</Address>
+          <PublicAddress />
+          <Primary>false</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2018-03-19T07:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2018-03-20T06:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2018-03-19T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2018-03-20T00:00:00</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="nsoftware.SFTP 2016" Capabilities="15627" ConfigurationClsid="7571227c-f326-4248-a478-8748270376f7" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;AfterConnect /&amp;gt;&amp;lt;AfterGet /&amp;gt;&amp;lt;BeforeGet /&amp;gt;&amp;lt;CertPassSSOAffiliate /&amp;gt;&amp;lt;DeleteMode&amp;gt;0&amp;lt;/DeleteMode&amp;gt;&amp;lt;ErrorThreshold&amp;gt;5&amp;lt;/ErrorThreshold&amp;gt;&amp;lt;FileMask&amp;gt;*.*&amp;lt;/FileMask&amp;gt;&amp;lt;Firewall&amp;gt;&amp;lt;AutoDetect&amp;gt;False&amp;lt;/AutoDetect&amp;gt;&amp;lt;FirewallType&amp;gt;0&amp;lt;/FirewallType&amp;gt;&amp;lt;Host /&amp;gt;&amp;lt;Password&amp;gt;******&amp;lt;/Password&amp;gt;&amp;lt;Port&amp;gt;0&amp;lt;/Port&amp;gt;&amp;lt;User /&amp;gt;&amp;lt;/Firewall&amp;gt;&amp;lt;MaxBatchSize&amp;gt;0&amp;lt;/MaxBatchSize&amp;gt;&amp;lt;MaxFileCount&amp;gt;10&amp;lt;/MaxFileCount&amp;gt;&amp;lt;MaxFileSize&amp;gt;0&amp;lt;/MaxFileSize&amp;gt;&amp;lt;Other /&amp;gt;&amp;lt;PersistentConnection&amp;gt;False&amp;lt;/PersistentConnection&amp;gt;&amp;lt;PollingInterval&amp;gt;60&amp;lt;/PollingInterval&amp;gt;&amp;lt;RemotePath /&amp;gt;&amp;lt;SSHAcceptServerHostKey&amp;gt;&amp;lt;Store&amp;gt;MY&amp;lt;/Store&amp;gt;&amp;lt;StorePassword&amp;gt;******&amp;lt;/StorePassword&amp;gt;&amp;lt;StoreType&amp;gt;0&amp;lt;/StoreType&amp;gt;&amp;lt;Subject /&amp;gt;&amp;lt;AcceptAny&amp;gt;False&amp;lt;/AcceptAny&amp;gt;&amp;lt;/SSHAcceptServerHostKey&amp;gt;&amp;lt;SSHAuthMode&amp;gt;2&amp;lt;/SSHAuthMode&amp;gt;&amp;lt;SSHCert&amp;gt;&amp;lt;Store&amp;gt;MY&amp;lt;/Store&amp;gt;&amp;lt;StorePassword&amp;gt;******&amp;lt;/StorePassword&amp;gt;&amp;lt;StoreType&amp;gt;0&amp;lt;/StoreType&amp;gt;&amp;lt;Subject /&amp;gt;&amp;lt;/SSHCert&amp;gt;&amp;lt;SSHCompressionAlgorithms&amp;gt;none&amp;lt;/SSHCompressionAlgorithms&amp;gt;&amp;lt;SSHHost&amp;gt;abc&amp;lt;/SSHHost&amp;gt;&amp;lt;SSHPassword&amp;gt;******&amp;lt;/SSHPassword&amp;gt;&amp;lt;SSHPort&amp;gt;22&amp;lt;/SSHPort&amp;gt;&amp;lt;SSHUser&amp;gt;user1&amp;lt;/SSHUser&amp;gt;&amp;lt;SSOAffiliate /&amp;gt;&amp;lt;TempPath /&amp;gt;&amp;lt;Timeout&amp;gt;60&amp;lt;/Timeout&amp;gt;&amp;lt;TransportLog&amp;gt;&amp;lt;Location&amp;gt;Application&amp;lt;/Location&amp;gt;&amp;lt;LogMode&amp;gt;3&amp;lt;/LogMode&amp;gt;&amp;lt;LogType&amp;gt;1&amp;lt;/LogType&amp;gt;&amp;lt;/TransportLog&amp;gt;&amp;lt;URIIdentity&amp;gt;SFTP://&amp;lt;/URIIdentity&amp;gt;&amp;lt;uri&amp;gt;SFTP://user1@abc:22/*.*&amp;lt;/uri&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>false</Enable>
+          <ReceiveHandler Name="ReceiveHost" HostTrusted="false">
+            <TransportType Name="nsoftware.SFTP 2016" Capabilities="15627" ConfigurationClsid="7571227c-f326-4248-a478-8748270376f7" />
+          </ReceiveHandler>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>51</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>BizTalk Application 1</ApplicationName>
+    </ReceivePort>
+  </ReceivePortCollection>
+  <PartyCollection xsi:nil="true" />
+</BindingInfo>

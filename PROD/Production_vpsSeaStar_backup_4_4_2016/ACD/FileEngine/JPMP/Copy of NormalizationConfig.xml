@@ -1,0 +1,719 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configurations>
+
+  <Configuration ID="JPMP.TRN">
+
+    <Item ID="1" Name="ExtractJPMPTRNData" Type="kroger.ACD.FilePipelineComponents.FileDataSectionExtractor,kroger.ACD.FilePipelineComponents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\JPMPTRNMAIN.{{INSTANCEID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\JPMPTRNMAIN_1.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <ErrFile></ErrFile>
+        <OutputMode>CreateNew</OutputMode>
+        <HeaderRegEx>'^BSP990F TRANSACTION FILE    [0-9]{2}/[0-9]{2}/[0-9]{2}[ ]*$'</HeaderRegEx>
+        <FooterRegEx>''</FooterRegEx>
+      </ConfigData>
+    </Item>
+
+
+    <Item ID="2" Name="JPMPTRXFileDataColumnInserter" Type="kroger.ACD.FilePipelineComponents.FileDataColumnInserter,kroger.ACD.FilePipelineComponents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\JPMPTRNMAIN_1.{{INSTANCEID}}.{{GUID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\JPMPTRNMAIN_2.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+
+        <Columns>
+          <Column>
+            <ColumnData>?IID?</ColumnData>
+            <ColumnDelimiter>','</ColumnDelimiter>
+            <ColumnLength>'12'</ColumnLength>
+          </Column>
+
+        </Columns>
+
+      </ConfigData>
+    </Item>
+
+    <Item ID="3" Name="JPMPTRXComplexXMLSerializer" Type="kroger.ACD.FilePipelineComponents.FileXMLSerializer,kroger.ACD.FilePipelineComponents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\JPMPTRNMAIN_2.{{INSTANCEID}}.{{GUID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\XML\JPMPTRN{{GUID}}.xml</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+       
+        <!--
+            To instruct the serializer to write the text as is, include it within '...'
+            To instruct the serializer to evaluate a expression at runtime, use
+            available functionmacros like substring, itemstring, concat etc.....
+        -->
+        <XMLSchema Root="'Transactions'" MixedSchema="'False'">
+
+          <Transactions SourceCode="'JPMP'" BatchRunDate="concat(#now#,'')">
+            <Transaction Name="'JPMPTransaction'" Value="''">
+              <RecordID Name="'RecordID'" Value="substring($,'0','12')"></RecordID>
+              <CustodianCode Name="'CustodianCode'" Value="'JPMP'"></CustodianCode>
+              <TransactionId Name="''" Value="''"></TransactionId>
+              <TransactionCode Name="'TransactionCode'" Value="substring($,'66','4')"></TransactionCode>
+              <TransactionSubCode Name="'TransactionCodeDescription'" Value="substring($,'73','23')"></TransactionSubCode>
+              <BrokerCode Name="''" Value="''"></BrokerCode>
+              <AcctNumber Name="'AccountNumber'" Value="substring($,'14','8')"></AcctNumber>
+              <AcctType Name="'AccountType'" Value="substring($,'31','1')"></AcctType>
+              <InstrumentLocalId Name="'ADPSecurityNumber'" Value="substring($,'680','8')"></InstrumentLocalId>
+              <InstrumentTypeCode Name="'SecurityType'" Value="substring($,'612','1')"></InstrumentTypeCode>
+              <Cusip Name="'CusipNumber'" Value="substring($,'119','9')"></Cusip>
+              <Sedol Name="'SEDOLNumber'" Value="substring($,'670','7')"></Sedol>
+              <Isin Name="''" Value="''"></Isin>
+              <Symbol Name="'SecuritySymbol'" Value="substring($,'141','9')"></Symbol>
+              <Quantity Name="'Quantity'" Value="substring($,'98','19')"></Quantity>
+              <Amount Name="'NetAmount'" Value="substring($,'303','17')"></Amount>
+              <Price Name="'Price'" Value="substring($,'165','18')"></Price>
+              <EffectDate Name="'AsOfDate'" Value="substring($,'47','8')"></EffectDate>
+              <SettleDate Name="'SettlementDate'" Value="substring($,'56','8')"></SettleDate>
+              <TradeDate Name="'TradeDate'" Value="substring($,'38','8')"></TradeDate>
+              <Currency Name="'CurrencyCode'" Value="substring($,'25','3')"></Currency>
+              <Commission Name="'PrimeBrokerCommission'" Value="substring($,'259','12')"></Commission>
+              <Interest Name="'BondInterest'" Value="substring($,'202','17')"></Interest>
+              <Principal Name="'Principal'" Value="substring($,'184','17')"></Principal>
+              <Fee Name="'Fee'" Value="substring($,'233','12')"></Fee>
+
+              <Description0 Name="''" Value="''"></Description0>
+              <Description1 Name="''" Value="''"></Description1>
+              <Description2 Name="''" Value="''"></Description2>
+              <Description3 Name="''" Value="''"></Description3>
+              <Description4 Name="''" Value="''"></Description4>
+              <DrCrInd Name="''" Value="''"></DrCrInd>
+              <CancelInd Name="'CancelTagNumber'" Value="substring($,'626','16')"></CancelInd>
+              <ConfirmInd Name="''" Value="''"></ConfirmInd>
+              <CashAffectedInd Name="''" Value="''"></CashAffectedInd>
+              <LongShortInd Name="''" Value="''"></LongShortInd>
+              <UdfChar>
+                
+                <Udf Name="'SecurityDescriptionOne'" Value="substring($,'357','30')"></Udf>
+                <Udf Name="'SecurityDescriptionTwo'" Value="substring($,'390','30')"></Udf>
+                <Udf Name="'SecurityDescriptionThree'" Value="substring($,'423','30')"></Udf>
+                <Udf Name="'SecurityDescriptionFour'" Value="substring($,'456','30')"></Udf>
+                <Udf Name="'SecurityDescriptionFive'" Value="substring($,'489','30')"></Udf>
+                <Udf Name="'SecurityDescriptionSix'" Value="substring($,'522','30')"></Udf>
+                <Udf Name="'SecurityDescriptionSeven'" Value="substring($,'555','30')"></Udf>
+                <Udf Name="'OptionType'" Value="substring($,'622','1')"></Udf>
+
+              </UdfChar>
+              <UdfNum>
+                <Udf Name="'ServiceFee'" Value="substring($,'220','12')"></Udf>
+                <Udf Name="'FloorCommission'" Value="substring($,'272','12')"></Udf>
+                <Udf Name="'RedemptionFee'" Value="substring($,'285','17')"></Udf>
+
+              </UdfNum>
+              <UdfDate>
+
+              </UdfDate>
+
+
+
+
+            </Transaction>
+          </Transactions>
+
+
+        </XMLSchema>
+
+
+
+      </ConfigData>
+
+    </Item>
+
+    <Item ID="4" Name="JPMPTRNBREMapper" Type="kroger.ACD.FilePipelineComponents.FileBREMapper,kroger.ACD.FilePipelineComponents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\XML\JPMPTRN{{GUID}}.xml</SrcFile>
+        <DestFile>{{SSISFILEROOT}}\JPMPTRN{{GUID}}.SSIS</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+        <BRE>
+          <Policies>
+            <Policy Name="'kroger.ACD.JPMP.TRN.Stage1'"></Policy>
+            <Policy Name="'kroger.ACD.JPMP.TRN.Stage2'"></Policy>
+            <Policy Name="'kroger.ACD.TRN.Stage3'"></Policy>
+          </Policies>
+          <Helpers>
+            <Helper Name="'kroger.ACD.BRE.Helper.Facts,kroger.ACD.BRE.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c856c7c39650fee4'"></Helper>
+          </Helpers>
+
+        </BRE>
+        <Mapper>
+          <Input>
+            <XMLDocTypeName>'FITDEXTransactionRecord_V1'</XMLDocTypeName>
+            <XMLNodeName>'Transaction'</XMLNodeName>
+          </Input>
+          <Output>
+            <Object TypeName="'kroger.ACD.JPMP.Entities.krogerJPMPTransaction,kroger.ACD.JPMP.Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e'">
+              <ObjectProperties>
+                <Property>'CustodianCode'</Property>
+                <Property>'RecordID'</Property>
+                <Property>'AccountNumber'</Property>
+                <Property>'TransactionType'</Property>
+                <Property>'EffectDate'</Property>
+                <Property>'TradeDate'</Property>
+                <Property>'SettleDate'</Property>
+                <Property>'Quantity'</Property>
+                <Property>'NetAmount'</Property>
+                <Property>'Price'</Property>
+                <Property>'Commission'</Property>
+                <Property>'Postage'</Property>
+                <Property>'SECFee'</Property>
+                <Property>'CancelInd'</Property>
+                <Property>'CashAffectedInd'</Property>
+                <Property>'ConfirmInd'</Property>
+                <Property>'TranxTypeDefiner'</Property>
+                <Property>'OffsetCurrency'</Property>
+                <Property>'OffsetCash'</Property>
+                <Property>'CashID'</Property>
+                <Property>'Cusip'</Property>
+                <Property>'Symbol'</Property>
+                <Property>'Sedol'</Property>
+                <Property>'Isin'</Property>
+                <Property>'AltSymbol'</Property>
+                <Property>'InstrumentId0'</Property>
+                <Property>'InstrumentId1'</Property>
+                <Property>'InstrumentId2'</Property>
+                <Property>'Interest'</Property>
+                <Property>'DrCrInd'</Property>
+                <Property>'LongShortInd'</Property>
+                <Property>'RulesStageId'</Property>
+                <Property>'ErrorCode'</Property>
+                <Property>'ErrorDesc'</Property>
+
+              </ObjectProperties>
+            </Object>
+            <FlatFileFieldDelimiter>'~#@#~'</FlatFileFieldDelimiter>
+          </Output>
+          <References>
+            <Reference>'kroger.ACD.Entities.krogerEntityPolicyTracker,kroger.ACD.Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e'</Reference>
+          </References>
+        </Mapper>
+
+      </ConfigData>
+    </Item>
+
+
+    
+
+
+  </Configuration>
+
+
+
+  <Configuration ID="JPMP.HOLD">
+
+    <Item ID="1" Name="ExtractJPMPHOLDData" Type="kroger.ACD.FilePipelineComponents.FileDataSectionExtractor,kroger.ACD.FilePipelineComponents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\JPMPHOLDMAIN.{{INSTANCEID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\JPMPHOLDMAIN_1.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <ErrFile></ErrFile>
+        <OutputMode>CreateNew</OutputMode>
+        <HeaderRegEx>'^BSO682K POSITION FILE       [0-9]{2}/[0-9]{2}/[0-9]{2}[ ]*$'</HeaderRegEx>
+        <FooterRegEx>''</FooterRegEx>
+      </ConfigData>
+    </Item>
+    
+    
+    <Item ID="2" Name="JPMPHOLDFileDataColumnInserter" Type="kroger.ACD.FilePipelineComponents.FileDataColumnInserter,kroger.ACD.FilePipelineComponents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\JPMPHOLDMAIN_1.{{INSTANCEID}}.{{GUID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\JPMPHOLDMAIN_2.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+
+        <Columns>
+          <Column>
+            <ColumnData>?IID?</ColumnData>
+            <ColumnDelimiter>','</ColumnDelimiter>
+            <ColumnLength>'12'</ColumnLength>
+          </Column>
+
+        </Columns>
+
+      </ConfigData>
+    </Item>
+
+    <Item ID="3" Name="JPMPHOLDComplexXMLSerializer" Type="kroger.ACD.FilePipelineComponents.FileXMLSerializer,kroger.ACD.FilePipelineComponents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\JPMPHOLDMAIN_2.{{INSTANCEID}}.{{GUID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\XML\JPMPHOLD{{GUID}}.xml</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+       
+        <!--
+            To instruct the serializer to write the text as is, include it within '...'
+            To instruct the serializer to evaluate a expression at runtime, use
+            available functionmacros like substring, itemstring, concat etc.....
+        -->
+        <XMLSchema Root="'Positions'" MixedSchema="'False'">
+
+          <Positions SourceCode="'JPMP'" BatchRunDate="concat(#now#,'')">
+            <Position Name="'Position'" Value="''">
+
+              <RecordID Name="'RecordID'" Value="substring($,'0','12')"/>
+              <CustodianCode Name="'CustodianCode'" Value="'JPMP'"/>
+              <AcctNumber Name="'AccountNumber'" Value="substring($,'14','8')"/>
+
+              <EffectDate Name="''" Value="''"/>
+              <InstrumentLocalId Name="''" Value="''"/>
+              <Cusip Name="'CusipNumber'" Value="substring($,'58','9')"/>
+              <Sedol Name="'Sedol'" Value="substring($,'221','7')"/>
+              <Isin Name="'ISIN'" Value="substring($,'206','12')"/>
+              <Symbol Name="'Symbol_SecurityNumber'" Value="substring($,'39','12')"/>
+              <Quantity Name="'Quantity'" Value="substring($,'75','17')"/>
+              <Price Name="'Price'" Value="substring($,'230','14')"/>
+              <MarketValue Name="'MarketValue'" Value="substring($,'112','17')"/>
+              <LongShortInd Name="''" Value="''"/>
+              <RestrictedInd Name="'RestrictedIndicator'" Value="substring($,'54','1')"/>
+              <Description Name="''" Value="''"/>
+
+
+              <UdfChar>
+                <Udf Name="'CurrencyCode'" Value="substring($,'25','3')"></Udf>
+                <Udf Name="'AccountType'" Value="substring($,'31','1')"></Udf>
+                <Udf Name="'AccountCheck'" Value="substring($,'35','1')"></Udf>
+                <Udf Name="'CusipExtension'" Value="substring($,'70','3')"></Udf>
+                <Udf Name="'SecurityType'" Value="substring($,'131','1')"></Udf>
+                <Udf Name="'SecurityDescription1'" Value="substring($,'135','30')"></Udf>
+                <Udf Name="'SecurityDescription2'" Value="substring($,'168','30')"></Udf>
+                <Udf Name="'CountryOfOrigin'" Value="substring($,'201','2')"></Udf>
+                
+
+
+              </UdfChar>
+              <UdfNum>
+                <Udf Name="'UnitCost'" Value="substring($,'93','18')"></Udf>
+               
+              </UdfNum>
+              <UdfDate>
+
+              </UdfDate>
+            </Position>
+          </Positions>
+
+        </XMLSchema>
+
+
+
+
+      </ConfigData>
+
+    </Item>
+
+    <Item ID="4" Name="JPMPHOLDBREMapper" Type="kroger.ACD.FilePipelineComponents.FileBREMapper,kroger.ACD.FilePipelineComponents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\XML\JPMPHOLD{{GUID}}.xml</SrcFile>
+        <DestFile>{{SSISFILEROOT}}\JPMPHOLD{{GUID}}.SSIS</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+        <BRE>
+          <Policies>
+            <Policy Name="'kroger.ACD.JPMP.HOLD.Stage1'"></Policy>
+
+          </Policies>
+          <Helpers>
+            <Helper Name="'kroger.ACD.BRE.Helper.Facts,kroger.ACD.BRE.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c856c7c39650fee4'"></Helper>
+          </Helpers>
+
+        </BRE>
+        <Mapper>
+          <Input>
+            <XMLDocTypeName>'FITDEXPositionRecord_V1'</XMLDocTypeName>
+            <XMLNodeName>'Position'</XMLNodeName>
+          </Input>
+          <Output>
+            <Object TypeName="'kroger.ACD.JPMP.Entities.krogerJPMPPosition,kroger.ACD.JPMP.Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e'">
+              <ObjectProperties>
+                <Property>'CustodianCode'</Property>
+                <Property>'RecordID'</Property>
+
+                <Property>'AccountNumber'</Property>
+                <Property>'EffectiveDate'</Property>
+                <Property>'Quantity'</Property>
+                <Property>'Price'</Property>
+                <Property>'MarketValue'</Property>
+                <Property>'LongShortInd'</Property>
+                <Property>'RestrictedSecInd'</Property>
+                <Property>'CashID'</Property>
+                <Property>'Cusip'</Property>
+                <Property>'Symbol'</Property>
+                <Property>'Sedol'</Property>
+                <Property>'Isin'</Property>
+                <Property>'AltSymbol'</Property>
+                <Property>'InstrumentId0'</Property>
+                <Property>'InstrumentId1'</Property>
+                <Property>'InstrumentId2'</Property>
+
+
+                <Property>'RulesStageId'</Property>
+                <Property>'ErrorCode'</Property>
+                <Property>'ErrorDesc'</Property>
+
+              </ObjectProperties>
+            </Object>
+            <FlatFileFieldDelimiter>'~#@#~'</FlatFileFieldDelimiter>
+          </Output>
+          <References>
+            <Reference>'kroger.ACD.Entities.krogerEntityPolicyTracker,kroger.ACD.Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e'</Reference>
+          </References>
+        </Mapper>
+
+      </ConfigData>
+    </Item>
+
+
+    
+
+  </Configuration>
+  <Configuration ID="JPMP.SEC">
+
+    <Item ID="1" Name="ExtractJPMPSECData" Type="kroger.ACD.FilePipelineComponents.FileDataSectionExtractor,kroger.ACD.FilePipelineComponents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\JPMPSECMAIN.{{INSTANCEID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\JPMPSECMAIN_1.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <ErrFile></ErrFile>
+        <OutputMode>CreateNew</OutputMode>
+        <HeaderRegEx>'^BOR371B SEC MASTER FILE     [0-9]{2}/[0-9]{2}/[0-9]{2}[ ]*$'</HeaderRegEx>
+        <FooterRegEx>'^RECORD COUNT=[0-9]{8}[ ]*$'</FooterRegEx>
+      </ConfigData>
+    </Item>
+
+
+    <Item ID="2" Name="JPMPSECFileDataColumnInserter" Type="kroger.ACD.FilePipelineComponents.FileDataColumnInserter,kroger.ACD.FilePipelineComponents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\JPMPSECMAIN_1.{{INSTANCEID}}.{{GUID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\JPMPSECMAIN_2.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+
+        <Columns>
+          <Column>
+            <ColumnData>?IID?</ColumnData>
+            <ColumnDelimiter>' '</ColumnDelimiter>
+            <ColumnLength>'12'</ColumnLength>
+          </Column>
+
+        </Columns>
+
+      </ConfigData>
+    </Item>
+
+    <Item ID="3" Name="JPMPSECComplexXMLSerializer" Type="kroger.ACD.FilePipelineComponents.FileXMLSerializer,kroger.ACD.FilePipelineComponents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\JPMPSECMAIN_2.{{INSTANCEID}}.{{GUID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\XML\JPMPSEC{{GUID}}.xml</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+       
+        <!--
+            To instruct the serializer to write the text as is, include it within '...'
+            To instruct the serializer to evaluate a expression at runtime, use
+            available functionmacros like substring, itemstring, concat etc.....
+        -->
+        <XMLSchema Root="'Securities'" MixedSchema="'False'">
+
+          <Securities SourceCode="'JPMP'" BatchRunDate="concat(#now#,'')">
+            <Security Name="'Security'" Value="''">
+              <RecordID Name="'RecordID'" Value="substring($,'0','12')"/>
+              <CustodianCode Name="'CustodianCode'" Value="'JPMP'"/>
+              <Price Name="'StrikePrice'" Value="substring($,'162','8')"/>
+              <EffectDate Name="'PricingDate'" Value="substring($,'220','8')"/>
+              <InstrumentLocalId Name="'ADPSecurityNumber'" Value="substring($,'13','7')"/>
+              <Cusip Name="'CUSIPNumber'" Value="substring($,'142','12')"/>
+              <Sedol Name="''" Value="''"/>
+              <Isin Name="''" Value="''"/>
+              <Symbol Name="'SecuritySymbol'" Value="substring($,'22','12')"/>
+              <TypeCode Name="'SecurityType'" Value="substring($,'20','2')"/>
+              <Description Name="'SecurityDescription'" Value="substring($,'52','30')"/>
+              <UdfChar>
+                <Udf Name="'IndustryCode'" Value="substring($,'50','2')"></Udf>
+                <Udf Name="'SecurityDescription(Line2)'" Value="substring($,'82','30')"></Udf>
+                <Udf Name="'SecurityDescription(Line3)'" Value="substring($,'112','30')"></Udf>
+                <Udf Name="'OriginCountry'" Value="substring($,'218','2')"></Udf>
+                <Udf Name="'MarginIndicator'" Value="substring($,'228','1')"></Udf>
+                <Udf Name="'Filler-AtEndOfRecord'" Value="substring($,'229','39')"></Udf>
+
+              </UdfChar>
+              <UdfNum>
+                <Udf Name="'Dividend_Interest-Rate'" Value="substring($,'34','8')"></Udf>
+                <Udf Name="'Moody-Rating'" Value="substring($,'154','4')"></Udf>
+                <Udf Name="'SandP-Rating'" Value="substring($,'158','4')"></Udf>
+
+              </UdfNum>
+              <UdfDate>
+                <Udf Name="'MaturityDate'" Value="substring($,'42','8')"></Udf>
+                <Udf Name="'CashEx-DividendDate1'" Value="substring($,'172','6')"></Udf>
+                <Udf Name="'CashEx-DividendDate2'" Value="substring($,'180','6')"></Udf>
+                <Udf Name="'StockExDate'" Value="substring($,'188','6')"></Udf>
+                <Udf Name="'CashDividendPayDate1'" Value="substring($,'196','6')"></Udf>
+                <Udf Name="'CashDividendPayDate2'" Value="substring($,'204','6')"></Udf>
+                <Udf Name="'StockDividendPayDate'" Value="substring($,'212','6')"></Udf>
+
+              </UdfDate>
+
+            </Security>
+          </Securities>
+
+        </XMLSchema>
+
+
+      </ConfigData>
+
+    </Item>
+
+    <Item ID="4" Name="JPMPSECBREMapper" Type="kroger.ACD.FilePipelineComponents.FileBREMapper,kroger.ACD.FilePipelineComponents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\XML\JPMPSEC{{GUID}}.xml</SrcFile>
+        <DestFile>{{SSISFILEROOT}}\JPMPSEC{{GUID}}.SSIS</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+        <BRE>
+          <Policies>
+            <Policy Name="'kroger.ACD.JPMP.SEC.Stage1'"></Policy>
+
+          </Policies>
+          <Helpers>
+            <Helper Name="'kroger.ACD.BRE.Helper.Facts,kroger.ACD.BRE.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c856c7c39650fee4'"></Helper>
+          </Helpers>
+
+        </BRE>
+        <Mapper>
+          <Input>
+            <XMLDocTypeName>'FITDEXSecurityRecord_V1'</XMLDocTypeName>
+            <XMLNodeName>'Security'</XMLNodeName>
+          </Input>
+          <Output>
+            <Object TypeName="'kroger.ACD.JPMP.Entities.krogerJPMPSecurity,kroger.ACD.JPMP.Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e'">
+              <ObjectProperties>
+                <Property>'CustodianCode'</Property>
+                <Property>'RecordID'</Property>
+                <Property>'Price'</Property>
+                <Property>'EffectiveDate'</Property>
+                <Property>'CashID'</Property>
+                <Property>'Cusip'</Property>
+                <Property>'Symbol'</Property>
+                <Property>'OptionSymbol'</Property>
+                <Property>'Sedol'</Property>
+                <Property>'Isin'</Property>
+                <Property>'AltSymbol'</Property>
+
+
+
+                <Property>'InstrumentId0'</Property>
+                <Property>'InstrumentId1'</Property>
+                <Property>'InstrumentId2'</Property>
+
+
+
+
+
+                <Property>'RulesStageId'</Property>
+                <Property>'ErrorCode'</Property>
+                <Property>'ErrorDesc'</Property>
+
+              </ObjectProperties>
+            </Object>
+            <FlatFileFieldDelimiter>'~#@#~'</FlatFileFieldDelimiter>
+          </Output>
+          <References>
+            <Reference>'kroger.ACD.Entities.krogerEntityPolicyTracker,kroger.ACD.Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e'</Reference>
+          </References>
+        </Mapper>
+
+      </ConfigData>
+    </Item>
+
+    
+
+
+  </Configuration>
+
+
+
+  <Configuration ID="JPMP.ACCT">
+    <Item ID="1" Name="ExtractJPMPACCTData" Type="kroger.ACD.FilePipelineComponents.FileDataSectionExtractor,kroger.ACD.FilePipelineComponents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\JPMPACCTMAIN.{{INSTANCEID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\JPMPACCTMAIN_1.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <ErrFile></ErrFile>
+        <OutputMode>CreateNew</OutputMode>
+        <HeaderRegEx>'^BCR973G FULL NAME AND ADDRS [0-9]{2}/[0-9]{2}/[0-9]{2}[ ]*$'</HeaderRegEx>
+        <FooterRegEx>'^RECORD COUNT=[0-9]{8}[ ]*$'</FooterRegEx>
+      </ConfigData>
+    </Item>
+
+
+    <Item ID="2" Name="JPMPACCTFileDataColumnInserter" Type="kroger.ACD.FilePipelineComponents.FileDataColumnInserter,kroger.ACD.FilePipelineComponents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\JPMPACCTMAIN_1.{{INSTANCEID}}.{{GUID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\JPMPACCTMAIN_2.{{INSTANCEID}}.{{GUID}}</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+
+        <Columns>
+          <Column>
+            <ColumnData>?IID?</ColumnData>
+            <ColumnDelimiter>' '</ColumnDelimiter>
+            <ColumnLength>'12'</ColumnLength>
+          </Column>
+
+        </Columns>
+
+      </ConfigData>
+    </Item>
+
+    <Item ID="3" Name="JPMPACCTComplexXMLSerializer" Type="kroger.ACD.FilePipelineComponents.FileXMLSerializer,kroger.ACD.FilePipelineComponents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\JPMPACCTMAIN_2.{{INSTANCEID}}.{{GUID}}</SrcFile>
+        <DestFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\XML\JPMPACCT{{GUID}}.xml</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+       
+        <!--
+            To instruct the serializer to write the text as is, include it within '...'
+            To instruct the serializer to evaluate a expression at runtime, use
+            available functionmacros like substring, itemstring, concat etc.....
+        -->
+        <XMLSchema Root="'Accounts'" MixedSchema="'False'">
+
+          <Accounts SourceCode="'JPMP'" BatchRunDate="concat(#now#,'')">
+            <Account Name="'Account'" Value="''">
+              <RecordID Name="'RecordID'" Value="substring($,'0','12')"/>
+              <CustodianCode Name="'CustodianCode'" Value="'JPMP'"/>
+              <OpenDate Name="''" Value="''"/>
+              <AcctNumber Name="'AccountNumber'" Value="substring($,'21','5')"/>
+              <AcctName1 Name="'PrincipalPartyInfoLine1'" Value="substring($,'256','30')"/>
+              <AcctName2 Name="'PrincipalPartyInfoLine2'" Value="substring($,'286','30')"/>
+              <AcctName3 Name="'PrincipalPartyInfoLine3'" Value="substring($,'316','30')"/>
+              <AcctType Name="''" Value="''"/>
+              <AcctAddress1 Name="'PrincipalPartyInfoLine4'" Value="substring($,'346','30')"/>
+              <AcctAddress2 Name="'PrincipalPartyInfoLine5'" Value="substring($,'376','30')"/>
+              <AcctAddress3 Name="'PrincipalPartyInfoLine6'" Value="substring($,'406','30')"/>
+              <City Name="''" Value="''"/>
+              <State Name="''" Value="''"/>
+              <ZIPCode Name="'ZipPlus4'" Value="substring($,'71','9')"/>
+              <Country Name="''" Value="''"/>
+              <HomePhoneNumber Name="'PhoneNumber'" Value="substring($,'233','13')"/>
+              <BusPhoneNumber Name="''" Value="''"/>
+              <SweepFnd Name="''" Value="''"/>
+              <MarginApproval Name="'MarginAgreement'" Value="substring($,'97','1')"/>
+              <OptionsApproval Name="'OptionPurchaseCode'" Value="substring($,'107','1')"/>
+              <PeriodicDist Name="''" Value="''"/>
+              <EFTLink Name="''" Value="''"/>
+              <CrDbCard Name="''" Value="''"/>
+              <CheckWrite Name="''" Value="''"/>
+              <OnlineAccess Name="''" Value="''"/>
+              <DuplicateStmts Name="'NumberOfStatements'" Value="substring($,'27','1')"/>
+              <ProxyVoting Name="''" Value="''"/>
+              <ERISAStatus Name="''" Value="''"/>
+              <UdfChar>
+
+                <Udf Name="'BranchNumber'" Value="substring($,'18','3')"></Udf>
+                <Udf Name="'GeographicLocationCode'" Value="substring($,'80','3')"></Udf>
+                <Udf Name="'IRA_Keogh-Indicator'" Value="substring($,'189','1')"></Udf>
+
+
+              </UdfChar>
+              <UdfNum>
+
+              </UdfNum>
+              <UdfDate>
+
+              </UdfDate>
+            </Account>
+          </Accounts>
+
+        </XMLSchema>
+
+      </ConfigData>
+    </Item>
+
+    <Item ID="4" Name="JPMPACCTBREMapper" Type="kroger.ACD.FilePipelineComponents.FileBREMapper,kroger.ACD.FilePipelineComponents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e">
+      <ConfigData>
+        <SrcFile>{{FILEROOT}}{{CUSTCD}}\{{ENTITYCD}}\XML\JPMPACCT{{GUID}}.xml</SrcFile>
+        <DestFile>{{SSISFILEROOT}}\JPMPACCT{{GUID}}.SSIS</DestFile>
+        <OutputMode>CreateNew</OutputMode>
+        <ErrFile></ErrFile>
+        <BRE>
+          <Policies>
+            <Policy Name="'kroger.ACD.JPMP.ACCT.Stage1'"></Policy>
+
+          </Policies>
+          <Helpers>
+            <Helper Name="'kroger.ACD.BRE.Helper.Facts,kroger.ACD.BRE.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c856c7c39650fee4'"></Helper>
+          </Helpers>
+
+        </BRE>
+        <Mapper>
+          <Input>
+            <XMLDocTypeName>'FITDEXAccountRecord_V1'</XMLDocTypeName>
+            <XMLNodeName>'Account'</XMLNodeName>
+          </Input>
+          <Output>
+            <Object TypeName="'kroger.ACD.JPMP.Entities.krogerJPMPAccount,kroger.ACD.JPMP.Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e'">
+              <ObjectProperties>
+                <Property>'CustodianCode'</Property>
+                <Property>'RecordID'</Property>
+
+                <Property>'EffectiveDate'</Property>
+                <Property>'AccountNumber'</Property>
+                <Property>'AccountName1'</Property>
+                <Property>'AccountName2'</Property>
+                <Property>'AccountName3'</Property>
+                <Property>'AccountType'</Property>
+                <Property>'Address1'</Property>
+                <Property>'Address2'</Property>
+                <Property>'Address3'</Property>
+                <Property>'AddressCity'</Property>
+                <Property>'AddressState'</Property>
+                <Property>'AddressZip'</Property>
+                <Property>'AddressCountry'</Property>
+                <Property>'HomePhoneNum'</Property>
+                <Property>'BizPhoneNum'</Property>
+                <Property>'SweepFund'</Property>
+                <Property>'MarginApprovalInd'</Property>
+                <Property>'OptionApprovalInd'</Property>
+                <Property>'PeriodicDistInd'</Property>
+                <Property>'EFTLinkVerifyInd'</Property>
+                <Property>'CrDrCardInd'</Property>
+                <Property>'CheckInd'</Property>
+                <Property>'OnlineAccessInd'</Property>
+                <Property>'DupStmtInd'</Property>
+                <Property>'ProxyVoteInd'</Property>
+                <Property>'ERISAStatusInd'</Property>
+
+
+
+
+                <Property>'RulesStageId'</Property>
+                <Property>'ErrorCode'</Property>
+                <Property>'ErrorDesc'</Property>
+
+              </ObjectProperties>
+            </Object>
+            <FlatFileFieldDelimiter>'~#@#~'</FlatFileFieldDelimiter>
+          </Output>
+          <References>
+            <Reference>'kroger.ACD.Entities.krogerEntityPolicyTracker,kroger.ACD.Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a341866c6f25271e'</Reference>
+          </References>
+        </Mapper>
+
+      </ConfigData>
+    </Item>
+
+
+    
+
+
+  </Configuration>
+
+
+
+</Configurations>

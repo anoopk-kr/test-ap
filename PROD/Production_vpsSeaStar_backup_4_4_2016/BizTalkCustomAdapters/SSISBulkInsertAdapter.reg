@@ -1,0 +1,31 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\Wow6432Node\CLSID\{C1C6936D-66E2-474E-ADA7-3FDBCBF1C15E}]
+@="SSIS Bulk Insert Adapter"
+"AppID"="{610B6FAC-678E-4FA8-B7BA-34541E67DEB7}"
+
+[HKEY_CLASSES_ROOT\Wow6432Node\CLSID\{C1C6936D-66E2-474E-ADA7-3FDBCBF1C15E}\BizTalk]
+@="BizTalk"
+"TransportType"="SSISBulkInsert"
+"Constraints"=dword:00001809
+
+"ReceiveLocation_PageProv"="{2DE93EE6-CB01-4007-93E9-C3D71689A280}"
+
+
+"InboundEngineCLSID"="{0931A735-4D20-4A2B-8C83-0F798C8CFDE9}"
+"InboundTypeName"="FI.BizTalk.Adapters.SSISReceiveAdapter.SSISReceiver"
+"InboundAssemblyPath"="F:\\BizTalkCustomAdapters\\SSISBulkInsertReceiveAdapter.dll"
+
+"AdapterMgmtTypeName"="FI.BizTalk.Adapters.SSISReceiveAdapter.AdapterManagement"
+"AdapterMgmtAssemblyPath"="F:\\BizTalkCustomAdapters\\SSISBulkInsertAdapterManagement.dll"
+
+"AliasesXML"="<AdapterAliasList><AdapterAlias>SSISAdapter://</AdapterAlias></AdapterAliasList>"
+"PropertyNameSpace"="http://schemas.FI.com/BizTalk/Adapters/SSISBulkInsertAdapter"
+
+
+"ReceiveHandlerPropertiesXML"="<CustomProps><AdapterConfig vt=\"8\"/></CustomProps>"
+"ReceiveLocationPropertiesXML"="<CustomProps><AdapterConfig vt=\"8\"/></CustomProps>"
+
+
+[HKEY_CLASSES_ROOT\Wow6432Node\CLSID\{C1C6936D-66E2-474E-ADA7-3FDBCBF1C15E}\Implemented Categories]
+[HKEY_CLASSES_ROOT\Wow6432Node\CLSID\{C1C6936D-66E2-474E-ADA7-3FDBCBF1C15E}\Implemented Categories\{7F46FC3E-3C2C-405B-A47F-8D17942BA8F9}]

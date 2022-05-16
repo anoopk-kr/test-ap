@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="NoBindings" BoundEndpoints="0" TotalEndpoints="0">
+  <Timestamp>2016-04-14T10:27:00.0638771-07:00</Timestamp>
+  <ModuleRefCollection>
+    <ModuleRef Name="[Application:FI.GICS]" Version="" Culture="" PublicKeyToken="" FullName="[Application:FI.GICS], Version=, Culture=, PublicKeyToken=">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="FI.Gics.Pipelines" Version="1.0.0.0" Culture="neutral" PublicKeyToken="09b718e489a7c1b0" FullName="FI.Gics.Pipelines, Version=1.0.0.0, Culture=neutral, PublicKeyToken=09b718e489a7c1b0">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+  </ModuleRefCollection>
+  <SendPortCollection>
+    <SendPort Name="FI.Gics.DummyFileSendPort" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>F:\krogerApplications\FI.GICS\Out\%MessageID%.xml</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%MessageID%.xml&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T08:00:00</FromTime>
+        <ToTime>2000-01-01T07:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="SendHost" HostTrusted="false">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T08:00:00</FromTime>
+        <ToTime>2000-01-01T07:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="FI.Gics.ReceiveFilePort" /&gt;
+  &lt;/Group&gt;
+&lt;/Filter&gt;</Filter>
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>FI.GICS</ApplicationName>
+    </SendPort>
+  </SendPortCollection>
+  <DistributionListCollection />
+  <ReceivePortCollection>
+    <ReceivePort Name="FI.Gics.ReceiveFilePort" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="FI.Gics.ReceiveFile">
+          <Description xsi:nil="true" />
+          <Address>F:\krogerApplications\FI.GICS\In\*.zip</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T08:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T07:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2008-01-30T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2008-01-31T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;RenameReceivedFiles vt="11"&gt;0&lt;/RenameReceivedFiles&gt;&lt;RemoveReceivedFileDelay vt="19"&gt;10&lt;/RemoveReceivedFileDelay&gt;&lt;RemoveReceivedFileMaxInterval vt="19"&gt;300000&lt;/RemoveReceivedFileMaxInterval&gt;&lt;FileMask vt="8"&gt;*.zip&lt;/FileMask&gt;&lt;FileNetFailRetryInt vt="19"&gt;5&lt;/FileNetFailRetryInt&gt;&lt;RemoveReceivedFileRetryCount vt="19"&gt;5&lt;/RemoveReceivedFileRetryCount&gt;&lt;BatchSizeInBytes vt="19"&gt;102400&lt;/BatchSizeInBytes&gt;&lt;PollingInterval vt="19"&gt;60000&lt;/PollingInterval&gt;&lt;FileNetFailRetryCount vt="19"&gt;5&lt;/FileNetFailRetryCount&gt;&lt;BatchSize vt="19"&gt;20&lt;/BatchSize&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="FI.Gics.Pipelines.ReceivePipeline" FullyQualifiedName="FI.Gics.Pipelines.ReceivePipeline, FI.Gics.Pipelines, Version=1.0.0.0, Culture=neutral, PublicKeyToken=09b718e489a7c1b0" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData>&lt;Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;Stages&gt;&lt;Stage CategoryId="9d0e4103-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="FI.CustomPipelineComponents.PreFFDASM.FI.CustomPipelineComponents.GicsFileDownloader.GicsFileDownloader"&gt;&lt;Properties&gt;&lt;FileArchiveFolder vt="8"&gt;F:\krogerApplications\FI.GICS\Archive&lt;/FileArchiveFolder&gt;&lt;FileBizTalkFolder vt="8"&gt;F:\krogerApplications\FI.GICS\Out&lt;/FileBizTalkFolder&gt;&lt;FileWorkingFolder vt="8"&gt;F:\krogerApplications\FI.GICS\Temp&lt;/FileWorkingFolder&gt;&lt;/Properties&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;/Stages&gt;&lt;/Root&gt;</ReceivePipelineData>
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="ReceiveHost" HostTrusted="false">
+            <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          </ReceiveHandler>
+        </ReceiveLocation>
+        <ReceiveLocation Name="FI.Gics.RecCompFTP">
+          <Description xsi:nil="true" />
+          <Address>ftp://proxy.fi.com:21/outbound/fullcxf/asc/pkgGIC02/gic_comp2/*.zip</Address>
+          <PublicAddress />
+          <Primary>false</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T08:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T07:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2008-02-27T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2008-02-28T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="FTP" Capabilities="80907" ConfigurationClsid="3979ffed-0067-4cc6-9f5a-859a5db6e9bb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;uri&amp;gt;ftp://proxy.fi.com:21/outbound/fullcxf/asc/pkgGIC02/gic_comp2/*.zip&amp;lt;/uri&amp;gt;&amp;lt;serverAddress&amp;gt;proxy.fi.com&amp;lt;/serverAddress&amp;gt;&amp;lt;serverPort&amp;gt;21&amp;lt;/serverPort&amp;gt;&amp;lt;userName&amp;gt;fishinv@edx.gicsfiles.com&amp;lt;/userName&amp;gt;&amp;lt;password&amp;gt;******&amp;lt;/password&amp;gt;&amp;lt;accountName /&amp;gt;&amp;lt;fileMask&amp;gt;*.zip&amp;lt;/fileMask&amp;gt;&amp;lt;targetFolder&amp;gt;outbound/fullcxf/asc/pkgGIC02/gic_comp2&amp;lt;/targetFolder&amp;gt;&amp;lt;commandLogFilename&amp;gt;F:\krogerApplications\FI.GICS\Log\Log.txt&amp;lt;/commandLogFilename&amp;gt;&amp;lt;representationType&amp;gt;binary&amp;lt;/representationType&amp;gt;&amp;lt;spoolingFolder&amp;gt;F:\krogerApplications\FI.GICS\temp&amp;lt;/spoolingFolder&amp;gt;&amp;lt;receiveDataTimeout&amp;gt;90000&amp;lt;/receiveDataTimeout&amp;gt;&amp;lt;maximumBatchSize&amp;gt;0&amp;lt;/maximumBatchSize&amp;gt;&amp;lt;maximumNumberOfFiles&amp;gt;0&amp;lt;/maximumNumberOfFiles&amp;gt;&amp;lt;passiveMode&amp;gt;False&amp;lt;/passiveMode&amp;gt;&amp;lt;useNLST&amp;gt;False&amp;lt;/useNLST&amp;gt;&amp;lt;firewallType&amp;gt;NoFirewall&amp;lt;/firewallType&amp;gt;&amp;lt;firewallPort&amp;gt;21&amp;lt;/firewallPort&amp;gt;&amp;lt;pollingUnitOfMeasure&amp;gt;Minutes&amp;lt;/pollingUnitOfMeasure&amp;gt;&amp;lt;pollingInterval&amp;gt;60&amp;lt;/pollingInterval&amp;gt;&amp;lt;redownloadInterval&amp;gt;-1&amp;lt;/redownloadInterval&amp;gt;&amp;lt;errorThreshold&amp;gt;192&amp;lt;/errorThreshold&amp;gt;&amp;lt;maxFileSize&amp;gt;100&amp;lt;/maxFileSize&amp;gt;&amp;lt;useSsl&amp;gt;False&amp;lt;/useSsl&amp;gt;&amp;lt;useDataProtection&amp;gt;True&amp;lt;/useDataProtection&amp;gt;&amp;lt;ftpsConnMode&amp;gt;Explicit&amp;lt;/ftpsConnMode&amp;gt;&amp;lt;deleteAfterDownload&amp;gt;True&amp;lt;/deleteAfterDownload&amp;gt;&amp;lt;enableTimeComparison&amp;gt;False&amp;lt;/enableTimeComparison&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="FI.Gics.Pipelines.ReceivePipeline" FullyQualifiedName="FI.Gics.Pipelines.ReceivePipeline, FI.Gics.Pipelines, Version=1.0.0.0, Culture=neutral, PublicKeyToken=09b718e489a7c1b0" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData>&lt;Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;Stages&gt;&lt;Stage CategoryId="9d0e4103-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="FI.CustomPipelineComponents.PreFFDASM.FI.CustomPipelineComponents.GicsFileDownloader.GicsFileDownloader"&gt;&lt;Properties&gt;&lt;FileArchiveFolder vt="8"&gt;\\fi.com\external_data\sp\gicsdirect&lt;/FileArchiveFolder&gt;&lt;FileBizTalkFolder vt="8"&gt;F:\krogerApplications\FI.GICS\out&lt;/FileBizTalkFolder&gt;&lt;FileWorkingFolder vt="8"&gt;F:\krogerApplications\FI.GICS\Temp&lt;/FileWorkingFolder&gt;&lt;/Properties&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;/Stages&gt;&lt;/Root&gt;</ReceivePipelineData>
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="ReceiveHost_32" HostTrusted="false">
+            <TransportType Name="FTP" Capabilities="80907" ConfigurationClsid="3979ffed-0067-4cc6-9f5a-859a5db6e9bb" />
+          </ReceiveHandler>
+        </ReceiveLocation>
+        <ReceiveLocation Name="FI.Gics.RecSecurFTP">
+          <Description xsi:nil="true" />
+          <Address>ftp://proxy.fi.com:21/outbound/fullcxf/asc/pkgGIC02/gic_secur2/*.zip</Address>
+          <PublicAddress />
+          <Primary>false</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T08:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T07:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2008-02-27T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2008-02-28T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="FTP" Capabilities="80907" ConfigurationClsid="3979ffed-0067-4cc6-9f5a-859a5db6e9bb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;uri&amp;gt;ftp://proxy.fi.com:21/outbound/fullcxf/asc/pkgGIC02/gic_secur2/*.zip&amp;lt;/uri&amp;gt;&amp;lt;serverAddress&amp;gt;proxy.fi.com&amp;lt;/serverAddress&amp;gt;&amp;lt;serverPort&amp;gt;21&amp;lt;/serverPort&amp;gt;&amp;lt;userName&amp;gt;fishinv@edx.gicsfiles.com&amp;lt;/userName&amp;gt;&amp;lt;password&amp;gt;******&amp;lt;/password&amp;gt;&amp;lt;fileMask&amp;gt;*.zip&amp;lt;/fileMask&amp;gt;&amp;lt;targetFolder&amp;gt;outbound/fullcxf/asc/pkgGIC02/gic_secur2&amp;lt;/targetFolder&amp;gt;&amp;lt;commandLogFilename&amp;gt;F:\krogerApplications\FI.GICS\Log\Log.txt&amp;lt;/commandLogFilename&amp;gt;&amp;lt;representationType&amp;gt;binary&amp;lt;/representationType&amp;gt;&amp;lt;spoolingFolder&amp;gt;F:\krogerApplications\FI.GICS\temp&amp;lt;/spoolingFolder&amp;gt;&amp;lt;receiveDataTimeout&amp;gt;90000&amp;lt;/receiveDataTimeout&amp;gt;&amp;lt;maximumBatchSize&amp;gt;0&amp;lt;/maximumBatchSize&amp;gt;&amp;lt;maximumNumberOfFiles&amp;gt;0&amp;lt;/maximumNumberOfFiles&amp;gt;&amp;lt;passiveMode&amp;gt;False&amp;lt;/passiveMode&amp;gt;&amp;lt;useNLST&amp;gt;False&amp;lt;/useNLST&amp;gt;&amp;lt;firewallType&amp;gt;NoFirewall&amp;lt;/firewallType&amp;gt;&amp;lt;firewallPort&amp;gt;21&amp;lt;/firewallPort&amp;gt;&amp;lt;pollingUnitOfMeasure&amp;gt;Minutes&amp;lt;/pollingUnitOfMeasure&amp;gt;&amp;lt;pollingInterval&amp;gt;60&amp;lt;/pollingInterval&amp;gt;&amp;lt;redownloadInterval&amp;gt;-1&amp;lt;/redownloadInterval&amp;gt;&amp;lt;errorThreshold&amp;gt;192&amp;lt;/errorThreshold&amp;gt;&amp;lt;maxFileSize&amp;gt;100&amp;lt;/maxFileSize&amp;gt;&amp;lt;useSsl&amp;gt;False&amp;lt;/useSsl&amp;gt;&amp;lt;useDataProtection&amp;gt;True&amp;lt;/useDataProtection&amp;gt;&amp;lt;ftpsConnMode&amp;gt;Explicit&amp;lt;/ftpsConnMode&amp;gt;&amp;lt;deleteAfterDownload&amp;gt;True&amp;lt;/deleteAfterDownload&amp;gt;&amp;lt;enableTimeComparison&amp;gt;False&amp;lt;/enableTimeComparison&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="FI.Gics.Pipelines.ReceivePipeline" FullyQualifiedName="FI.Gics.Pipelines.ReceivePipeline, FI.Gics.Pipelines, Version=1.0.0.0, Culture=neutral, PublicKeyToken=09b718e489a7c1b0" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData>&lt;Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;Stages&gt;&lt;Stage CategoryId="9d0e4103-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="FI.CustomPipelineComponents.PreFFDASM.FI.CustomPipelineComponents.GicsFileDownloader.GicsFileDownloader"&gt;&lt;Properties&gt;&lt;FileArchiveFolder vt="8"&gt;\\fi.com\external_data\sp\gicsdirect&lt;/FileArchiveFolder&gt;&lt;FileBizTalkFolder vt="8"&gt;F:\krogerApplications\FI.GICS\out&lt;/FileBizTalkFolder&gt;&lt;FileWorkingFolder vt="8"&gt;F:\krogerApplications\FI.GICS\Temp&lt;/FileWorkingFolder&gt;&lt;/Properties&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;/Stages&gt;&lt;/Root&gt;</ReceivePipelineData>
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="ReceiveHost_32" HostTrusted="false">
+            <TransportType Name="FTP" Capabilities="80907" ConfigurationClsid="3979ffed-0067-4cc6-9f5a-859a5db6e9bb" />
+          </ReceiveHandler>
+        </ReceiveLocation>
+        <ReceiveLocation Name="FI.Gics.RecRefpkgFTP">
+          <Description xsi:nil="true" />
+          <Address>ftp://proxy.fi.com:21/outbound/fullcxf/asc/pkgGIC02/refpkgGIC02/*.zip</Address>
+          <PublicAddress />
+          <Primary>false</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T08:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T07:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2008-02-27T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2008-02-28T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="FTP" Capabilities="80907" ConfigurationClsid="3979ffed-0067-4cc6-9f5a-859a5db6e9bb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;uri&amp;gt;ftp://proxy.fi.com:21/outbound/fullcxf/asc/pkgGIC02/refpkgGIC02/*.zip&amp;lt;/uri&amp;gt;&amp;lt;serverAddress&amp;gt;proxy.fi.com&amp;lt;/serverAddress&amp;gt;&amp;lt;serverPort&amp;gt;21&amp;lt;/serverPort&amp;gt;&amp;lt;userName&amp;gt;fishinv@edx.gicsfiles.com&amp;lt;/userName&amp;gt;&amp;lt;password&amp;gt;******&amp;lt;/password&amp;gt;&amp;lt;fileMask&amp;gt;*.zip&amp;lt;/fileMask&amp;gt;&amp;lt;targetFolder&amp;gt;outbound/fullcxf/asc/pkgGIC02/refpkgGIC02&amp;lt;/targetFolder&amp;gt;&amp;lt;commandLogFilename&amp;gt;F:\krogerApplications\FI.GICS\Log\Log.txt&amp;lt;/commandLogFilename&amp;gt;&amp;lt;representationType&amp;gt;binary&amp;lt;/representationType&amp;gt;&amp;lt;spoolingFolder&amp;gt;F:\krogerApplications\FI.GICS\Temp&amp;lt;/spoolingFolder&amp;gt;&amp;lt;receiveDataTimeout&amp;gt;90000&amp;lt;/receiveDataTimeout&amp;gt;&amp;lt;maximumBatchSize&amp;gt;0&amp;lt;/maximumBatchSize&amp;gt;&amp;lt;maximumNumberOfFiles&amp;gt;0&amp;lt;/maximumNumberOfFiles&amp;gt;&amp;lt;passiveMode&amp;gt;False&amp;lt;/passiveMode&amp;gt;&amp;lt;useNLST&amp;gt;False&amp;lt;/useNLST&amp;gt;&amp;lt;firewallType&amp;gt;NoFirewall&amp;lt;/firewallType&amp;gt;&amp;lt;firewallPort&amp;gt;21&amp;lt;/firewallPort&amp;gt;&amp;lt;pollingUnitOfMeasure&amp;gt;Minutes&amp;lt;/pollingUnitOfMeasure&amp;gt;&amp;lt;pollingInterval&amp;gt;60&amp;lt;/pollingInterval&amp;gt;&amp;lt;redownloadInterval&amp;gt;-1&amp;lt;/redownloadInterval&amp;gt;&amp;lt;errorThreshold&amp;gt;192&amp;lt;/errorThreshold&amp;gt;&amp;lt;maxFileSize&amp;gt;100&amp;lt;/maxFileSize&amp;gt;&amp;lt;useSsl&amp;gt;False&amp;lt;/useSsl&amp;gt;&amp;lt;useDataProtection&amp;gt;True&amp;lt;/useDataProtection&amp;gt;&amp;lt;ftpsConnMode&amp;gt;Explicit&amp;lt;/ftpsConnMode&amp;gt;&amp;lt;deleteAfterDownload&amp;gt;True&amp;lt;/deleteAfterDownload&amp;gt;&amp;lt;enableTimeComparison&amp;gt;False&amp;lt;/enableTimeComparison&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="FI.Gics.Pipelines.ReceivePipeline" FullyQualifiedName="FI.Gics.Pipelines.ReceivePipeline, FI.Gics.Pipelines, Version=1.0.0.0, Culture=neutral, PublicKeyToken=09b718e489a7c1b0" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData>&lt;Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;Stages&gt;&lt;Stage CategoryId="9d0e4103-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="FI.CustomPipelineComponents.PreFFDASM.FI.CustomPipelineComponents.GicsFileDownloader.GicsFileDownloader"&gt;&lt;Properties&gt;&lt;FileArchiveFolder vt="8"&gt;\\fi.com\external_data\sp\gicsdirect&lt;/FileArchiveFolder&gt;&lt;FileBizTalkFolder vt="8"&gt;F:\krogerApplications\FI.GICS\out&lt;/FileBizTalkFolder&gt;&lt;FileWorkingFolder vt="8"&gt;F:\krogerApplications\FI.GICS\Temp&lt;/FileWorkingFolder&gt;&lt;/Properties&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;/Stages&gt;&lt;/Root&gt;</ReceivePipelineData>
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="ReceiveHost_32" HostTrusted="false">
+            <TransportType Name="FTP" Capabilities="80907" ConfigurationClsid="3979ffed-0067-4cc6-9f5a-859a5db6e9bb" />
+          </ReceiveHandler>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>51</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>FI.GICS</ApplicationName>
+    </ReceivePort>
+  </ReceivePortCollection>
+  <PartyCollection xsi:nil="true" />
+</BindingInfo>
